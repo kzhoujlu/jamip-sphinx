@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamip.ml.feature_engineering package &mdash; JAMIP 1.3 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c55cb9cb"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jamip.ml.feature_engineering package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-jamip.ml.feature_engineering.base">jamip.ml.feature_engineering.base module</a><ul>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.base.FeaturePreprocessing"><code class="docutils literal notranslate"><span class="pre">FeaturePreprocessing</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.base.FeaturePreprocessing.df_original"><code class="docutils literal notranslate"><span class="pre">FeaturePreprocessing.df_original</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.base.FeaturePreprocessing.mappingFunctions"><code class="docutils literal notranslate"><span class="pre">FeaturePreprocessing.mappingFunctions</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.base.FeaturePreprocessing.original_features"><code class="docutils literal notranslate"><span class="pre">FeaturePreprocessing.original_features</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.base.FeaturePreprocessing.remove_feature"><code class="docutils literal notranslate"><span class="pre">FeaturePreprocessing.remove_feature()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.base.FeaturePreprocessing.transform_dataframe"><code class="docutils literal notranslate"><span class="pre">FeaturePreprocessing.transform_dataframe()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.base.FeaturePreprocessing.transform_x"><code class="docutils literal notranslate"><span class="pre">FeaturePreprocessing.transform_x()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.ml.feature_engineering.feature_construction">jamip.ml.feature_engineering.feature_construction module</a><ul>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_construction.FeatureConstruction"><code class="docutils literal notranslate"><span class="pre">FeatureConstruction</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_construction.FeatureConstruction.add_mappingFunctions"><code class="docutils literal notranslate"><span class="pre">FeatureConstruction.add_mappingFunctions()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_construction.FeatureConstruction.feature_crosses"><code class="docutils literal notranslate"><span class="pre">FeatureConstruction.feature_crosses()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_construction.FeatureConstruction.function_transformation"><code class="docutils literal notranslate"><span class="pre">FeatureConstruction.function_transformation()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_construction.FeatureConstruction.transform_dataframe"><code class="docutils literal notranslate"><span class="pre">FeatureConstruction.transform_dataframe()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_construction.FeatureConstruction.transform_x"><code class="docutils literal notranslate"><span class="pre">FeatureConstruction.transform_x()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_construction.find_exp_log_all"><code class="docutils literal notranslate"><span class="pre">find_exp_log_all()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.ml.feature_engineering.feature_scaling">jamip.ml.feature_engineering.feature_scaling module</a><ul>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_scaling.FeatureScaling"><code class="docutils literal notranslate"><span class="pre">FeatureScaling</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_scaling.FeatureScaling.add_mappingFunctions"><code class="docutils literal notranslate"><span class="pre">FeatureScaling.add_mappingFunctions()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_scaling.FeatureScaling.non_linear_normalization"><code class="docutils literal notranslate"><span class="pre">FeatureScaling.non_linear_normalization()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_scaling.FeatureScaling.normalization"><code class="docutils literal notranslate"><span class="pre">FeatureScaling.normalization()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_scaling.FeatureScaling.regularization"><code class="docutils literal notranslate"><span class="pre">FeatureScaling.regularization()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_scaling.FeatureScaling.standardization"><code class="docutils literal notranslate"><span class="pre">FeatureScaling.standardization()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_scaling.FeatureScaling.transform_dataframe"><code class="docutils literal notranslate"><span class="pre">FeatureScaling.transform_dataframe()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_scaling.FeatureScaling.transform_x"><code class="docutils literal notranslate"><span class="pre">FeatureScaling.transform_x()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.ml.feature_engineering.feature_selection">jamip.ml.feature_engineering.feature_selection module</a><ul>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection"><code class="docutils literal notranslate"><span class="pre">FeatureSelection</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection.df_original"><code class="docutils literal notranslate"><span class="pre">FeatureSelection.df_original</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection.features_df"><code class="docutils literal notranslate"><span class="pre">FeatureSelection.features_df</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection.fit"><code class="docutils literal notranslate"><span class="pre">FeatureSelection.fit()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection.get_selected_features"><code class="docutils literal notranslate"><span class="pre">FeatureSelection.get_selected_features()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection.original_features"><code class="docutils literal notranslate"><span class="pre">FeatureSelection.original_features</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection.target_df"><code class="docutils literal notranslate"><span class="pre">FeatureSelection.target_df</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection"><code class="docutils literal notranslate"><span class="pre">FilterFeatureSelection</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.features_rank"><code class="docutils literal notranslate"><span class="pre">FilterFeatureSelection.features_rank</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.filter"><code class="docutils literal notranslate"><span class="pre">FilterFeatureSelection.filter</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.fit"><code class="docutils literal notranslate"><span class="pre">FilterFeatureSelection.fit()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.get_selected_dataframe"><code class="docutils literal notranslate"><span class="pre">FilterFeatureSelection.get_selected_dataframe</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.get_selected_features"><code class="docutils literal notranslate"><span class="pre">FilterFeatureSelection.get_selected_features</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.selected_feature_num"><code class="docutils literal notranslate"><span class="pre">FilterFeatureSelection.selected_feature_num</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.set_filter_function"><code class="docutils literal notranslate"><span class="pre">FilterFeatureSelection.set_filter_function()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection"><code class="docutils literal notranslate"><span class="pre">RecursiveFeatureSelection</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.features_rank"><code class="docutils literal notranslate"><span class="pre">RecursiveFeatureSelection.features_rank</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.fit"><code class="docutils literal notranslate"><span class="pre">RecursiveFeatureSelection.fit()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.get_scores"><code class="docutils literal notranslate"><span class="pre">RecursiveFeatureSelection.get_scores</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.get_selected_dataframe"><code class="docutils literal notranslate"><span class="pre">RecursiveFeatureSelection.get_selected_dataframe</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.get_selected_features"><code class="docutils literal notranslate"><span class="pre">RecursiveFeatureSelection.get_selected_features</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.plot_rfe_cv"><code class="docutils literal notranslate"><span class="pre">RecursiveFeatureSelection.plot_rfe_cv()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.selector"><code class="docutils literal notranslate"><span class="pre">RecursiveFeatureSelection.selector</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.set_model_hyper"><code class="docutils literal notranslate"><span class="pre">RecursiveFeatureSelection.set_model_hyper()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.set_selector"><code class="docutils literal notranslate"><span class="pre">RecursiveFeatureSelection.set_selector()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection"><code class="docutils literal notranslate"><span class="pre">RegularizationFeatureSelection</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.features_rank"><code class="docutils literal notranslate"><span class="pre">RegularizationFeatureSelection.features_rank</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.fit"><code class="docutils literal notranslate"><span class="pre">RegularizationFeatureSelection.fit()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.get_selected_dataframe"><code class="docutils literal notranslate"><span class="pre">RegularizationFeatureSelection.get_selected_dataframe</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.get_selected_features"><code class="docutils literal notranslate"><span class="pre">RegularizationFeatureSelection.get_selected_features</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.linear_reg"><code class="docutils literal notranslate"><span class="pre">RegularizationFeatureSelection.linear_reg</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.set_model_hyper"><code class="docutils literal notranslate"><span class="pre">RegularizationFeatureSelection.set_model_hyper()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection"><code class="docutils literal notranslate"><span class="pre">TreeBasedFeatureSelection</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.features_rank"><code class="docutils literal notranslate"><span class="pre">TreeBasedFeatureSelection.features_rank</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.fit"><code class="docutils literal notranslate"><span class="pre">TreeBasedFeatureSelection.fit()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.get_selected_dataframe"><code class="docutils literal notranslate"><span class="pre">TreeBasedFeatureSelection.get_selected_dataframe</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.get_selected_features"><code class="docutils literal notranslate"><span class="pre">TreeBasedFeatureSelection.get_selected_features</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.set_model_hyper"><code class="docutils literal notranslate"><span class="pre">TreeBasedFeatureSelection.set_model_hyper()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.tree"><code class="docutils literal notranslate"><span class="pre">TreeBasedFeatureSelection.tree</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.ml.feature_engineering">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">jamip.ml.feature_engineering package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/db/jamip.ml.feature_engineering.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jamip-ml-feature-engineering-package">
+<h1>jamip.ml.feature_engineering package<a class="headerlink" href="#jamip-ml-feature-engineering-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.ml.feature_engineering.base">
+<span id="jamip-ml-feature-engineering-base-module"></span><h2>jamip.ml.feature_engineering.base module<a class="headerlink" href="#module-jamip.ml.feature_engineering.base" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.base.FeaturePreprocessing">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.ml.feature_engineering.base.</span></span><span class="sig-name descname"><span class="pre">FeaturePreprocessing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.base.FeaturePreprocessing" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.base.FeaturePreprocessing.df_original">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">df_original</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.base.FeaturePreprocessing.df_original" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.base.FeaturePreprocessing.mappingFunctions">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mappingFunctions</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.base.FeaturePreprocessing.mappingFunctions" title="Link to this definition"></a></dt>
+<dd><p>Store the mapping function for each feature</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.base.FeaturePreprocessing.original_features">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">original_features</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.base.FeaturePreprocessing.original_features" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.base.FeaturePreprocessing.remove_feature">
+<span class="sig-name descname"><span class="pre">remove_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.base.FeaturePreprocessing.remove_feature" title="Link to this definition"></a></dt>
+<dd><p>Remove a particular feature from a dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>feature</strong> (<em>str</em>) – a feature name in the dataframe.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.base.FeaturePreprocessing.transform_dataframe">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">transform_dataframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.base.FeaturePreprocessing.transform_dataframe" title="Link to this definition"></a></dt>
+<dd><p>Converting processed features to new features.
+Output all features in dataframe format.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.base.FeaturePreprocessing.transform_x">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">transform_x</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.base.FeaturePreprocessing.transform_x" title="Link to this definition"></a></dt>
+<dd><p>Converting processed features to new features.
+Output only the new features in dataframe format.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.ml.feature_engineering.feature_construction">
+<span id="jamip-ml-feature-engineering-feature-construction-module"></span><h2>jamip.ml.feature_engineering.feature_construction module<a class="headerlink" href="#module-jamip.ml.feature_engineering.feature_construction" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_construction.FeatureConstruction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.ml.feature_engineering.feature_construction.</span></span><span class="sig-name descname"><span class="pre">FeatureConstruction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_construction.FeatureConstruction" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jamip.ml.feature_engineering.base.FeaturePreprocessing" title="jamip.ml.feature_engineering.base.FeaturePreprocessing"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeaturePreprocessing</span></code></a></p>
+<p>Feature construction is mainly about generating derived features. By derived
+features, we mean that the original features are transformed as a function and
+combined with features to uncover new features that can improve the predictive
+performance of the model and are valid and reasonable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_df</strong> – pandas.Dataframe
+Dataframe containing all features.</p></li>
+<li><p><strong>target</strong> – str
+Name of the target property to be fitted in the dataframe.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_construction.FeatureConstruction.add_mappingFunctions">
+<span class="sig-name descname"><span class="pre">add_mappingFunctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mappingFunction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_construction.FeatureConstruction.add_mappingFunctions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_construction.FeatureConstruction.feature_crosses">
+<span class="sig-name descname"><span class="pre">feature_crosses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression_of_feature</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_construction.FeatureConstruction.feature_crosses" title="Link to this definition"></a></dt>
+<dd><p>Custom set single-feature function transformation or inter-feature arithmetic
+operation to complete the new feature construction.</p>
+<dl class="simple">
+<dt>Args：</dt><dd><dl class="simple">
+<dt>expression_of_feature: str</dt><dd><p>Custom construction of new features.
+for example:
+type-1: A^2, A^3, …, A^x, A+A^2, tanh(A), etc.
+type-2: A*B, A/B, A+B, etc</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>Returns: self</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_construction.FeatureConstruction.function_transformation">
+<span class="sig-name descname"><span class="pre">function_transformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformation_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'log'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_construction.FeatureConstruction.function_transformation" title="Link to this definition"></a></dt>
+<dd><p>Some methods are provided in advance to perform single feature function transformations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>feature</strong> – str
+Selecting the features to be normalised in the dataframe.</p></li>
+<li><p><strong>transformation_method</strong> – str, {‘log’, ‘log10’,’exp’, ‘x**2’, ‘x**-1’, ‘x**0.5’}, default = ‘log’
+The single-feature transformation method, which provides several common forms of
+function transformation.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns: self</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_construction.FeatureConstruction.transform_dataframe">
+<span class="sig-name descname"><span class="pre">transform_dataframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_construction.FeatureConstruction.transform_dataframe" title="Link to this definition"></a></dt>
+<dd><p>Convert features that have been constructed and output the overall dataframe.</p>
+<dl class="simple">
+<dt>Returns: Pandas.DataFrame</dt><dd><p>The overall dataframe that has been constructed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_construction.FeatureConstruction.transform_x">
+<span class="sig-name descname"><span class="pre">transform_x</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_construction.FeatureConstruction.transform_x" title="Link to this definition"></a></dt>
+<dd><p>Converting features that have been constructed and new features in dataframe format.</p>
+<dl class="simple">
+<dt>Returns: Pandas.DataFrame</dt><dd><p>The new feature dataframe that has been constructed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_construction.find_exp_log_all">
+<span class="sig-prename descclassname"><span class="pre">jamip.ml.feature_engineering.feature_construction.</span></span><span class="sig-name descname"><span class="pre">find_exp_log_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_construction.find_exp_log_all" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-jamip.ml.feature_engineering.feature_scaling">
+<span id="jamip-ml-feature-engineering-feature-scaling-module"></span><h2>jamip.ml.feature_engineering.feature_scaling module<a class="headerlink" href="#module-jamip.ml.feature_engineering.feature_scaling" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_scaling.FeatureScaling">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.ml.feature_engineering.feature_scaling.</span></span><span class="sig-name descname"><span class="pre">FeatureScaling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_scaling.FeatureScaling" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jamip.ml.feature_engineering.base.FeaturePreprocessing" title="jamip.ml.feature_engineering.base.FeaturePreprocessing"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeaturePreprocessing</span></code></a></p>
+<p>Feature scaling is a method used to normalize the range of independent variables or
+features of data. Converting an original feature into a new feature with a defined
+range of feature. Provides four scaling methods: ‘normalization’/’non_linear_normalization’/
+‘standardization’/’regularization’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_df</strong> (<em>pandas.DataFrame</em>) – Dataframe containing all features.</p></li>
+<li><p><strong>target</strong> (<em>str</em>) – Name of the target property to be fitted in the dataframe.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_scaling.FeatureScaling.add_mappingFunctions">
+<span class="sig-name descname"><span class="pre">add_mappingFunctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mappingFunction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_scaling.FeatureScaling.add_mappingFunctions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_scaling.FeatureScaling.non_linear_normalization">
+<span class="sig-name descname"><span class="pre">non_linear_normalization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non_linear_normalization_method</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_scaling.FeatureScaling.non_linear_normalization" title="Link to this definition"></a></dt>
+<dd><p>For data with a distribution that does not belong to the normal range, maps sample data
+into [0,1] or [-1,1] intervals so that the features belong to a uniform order of magnitude.
+Three methods are provided to accomplish normalization:{‘sigmoid’,’log10’,’arctan’}</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>feature</strong> (<em>str</em>) – Selecting the features to be normalised in the dataframe.</p></li>
+<li><p><strong>normalization_method</strong> (<em>str</em>) – Set the normalization method, {‘sigmoid’,’log10’,’arctan’}.
+‘sigmoid’: sigmoid function(1/1+e^(-x))’log10’: logarithmic function(log10(x)/log10(MAX)),
+‘arctan’: arctan function(arctan(x)*2/pai).</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns: self</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_scaling.FeatureScaling.normalization">
+<span class="sig-name descname"><span class="pre">normalization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalization_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'min-max'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_scaling.FeatureScaling.normalization" title="Link to this definition"></a></dt>
+<dd><p>Maps sample data into [0,1] or [-1,1] intervals so that the features belong to a uniform
+order of magnitude. Three methods are provided to accomplish normalization:{‘min-max’,’max-abs’,’mean’}</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>feature</strong> (<em>str</em>) – Selecting the features to be normalised in the dataframe.</p></li>
+<li><p><strong>normalization_method</strong> (<em>str</em><em>, </em><em>default = 'min-max'</em>) – Set the normalization method, {‘min-max’,
+‘max_abs’,’mean’}.’mix-max’: min-max normalization, ‘max-abs’: maximum abs normalisation,
+‘mean’:mean normalization.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns：self</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_scaling.FeatureScaling.regularization">
+<span class="sig-name descname"><span class="pre">regularization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_scaling.FeatureScaling.regularization" title="Link to this definition"></a></dt>
+<dd><p>Regularization is used to deal with collinearity, features that are highly correlated,
+a means of removing data noise to prevent overfitting, where a penalty term is introduced
+to constrain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>feature</strong> (<em>str</em>) – Selecting the features to be normalised in the dataframe.</p></li>
+<li><p><strong>norm</strong> (<em>int</em><em>, </em><em>default = 2</em>) – The norm term in regularization, which is used to scale each sample
+to the unit norm.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns: self</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_scaling.FeatureScaling.standardization">
+<span class="sig-name descname"><span class="pre">standardization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_scaling.FeatureScaling.standardization" title="Link to this definition"></a></dt>
+<dd><p>Scales the data to around 0 and the distribution becomes standard normal with a mean of 0 and
+a standard deviation of 1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>feature</strong> (<em>str</em>) – Selecting the features to be normalised in the dataframe.</p>
+</dd>
+</dl>
+<p>Returns: self</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_scaling.FeatureScaling.transform_dataframe">
+<span class="sig-name descname"><span class="pre">transform_dataframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_scaling.FeatureScaling.transform_dataframe" title="Link to this definition"></a></dt>
+<dd><p>Convert features that have been scaled and output the overall dataframe.</p>
+<dl class="simple">
+<dt>Returns: (Pandas.DataFrame)</dt><dd><p>The overall dataframe that has been scaled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_scaling.FeatureScaling.transform_x">
+<span class="sig-name descname"><span class="pre">transform_x</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_scaling.FeatureScaling.transform_x" title="Link to this definition"></a></dt>
+<dd><p>Converting features that have been scaled and new features in dataframe format.</p>
+<dl class="simple">
+<dt>Returns: (Pandas.DataFrame)</dt><dd><p>The new feature dataframe that has been scaled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.ml.feature_engineering.feature_selection">
+<span id="jamip-ml-feature-engineering-feature-selection-module"></span><h2>jamip.ml.feature_engineering.feature_selection module<a class="headerlink" href="#module-jamip.ml.feature_engineering.feature_selection" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.FeatureSelection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.ml.feature_engineering.feature_selection.</span></span><span class="sig-name descname"><span class="pre">FeatureSelection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_task</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.FeatureSelection.df_original">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">df_original</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection.df_original" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.FeatureSelection.features_df">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">features_df</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection.features_df" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.FeatureSelection.fit">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection.fit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.FeatureSelection.get_selected_features">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_selected_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection.get_selected_features" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.FeatureSelection.original_features">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">original_features</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection.original_features" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.FeatureSelection.target_df">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">target_df</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection.target_df" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.ml.feature_engineering.feature_selection.</span></span><span class="sig-name descname"><span class="pre">FilterFeatureSelection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selected_threshold</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection" title="jamip.ml.feature_engineering.feature_selection.FeatureSelection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureSelection</span></code></a></p>
+<p>Filter method for feature selection, based on mutual information, correlation coefficient
+and chi-square method in sklearn to obtain the minimum number of features required.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_df</strong> – pandas.DataFrame
+Dataframe containing all features and target.</p></li>
+<li><p><strong>target</strong> – str
+Name of the target property to be fitted in the dataframe.</p></li>
+<li><p><strong>learning_task</strong> – str, {‘regression’,’classification’}
+Machine learning algorithms are divided into regression and classification
+tasks according to the category of learning tasks.</p></li>
+<li><p><strong>selected_threshold</strong> – int or float
+The number of features after filtering can be output as int or float number, int
+type must be less than the number of features, float type must be less than 1.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.features_rank">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">features_rank</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.features_rank" title="Link to this definition"></a></dt>
+<dd><p>Get the feature ranking of the original features</p>
+<dl class="simple">
+<dt>Returns: pandas.DataFrame</dt><dd><p>Feature ranking</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.filter">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filter</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.filter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.fit" title="Link to this definition"></a></dt>
+<dd><p>Fit the features to obtain the minimum number of features required.</p>
+<p>Returns: self</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.get_selected_dataframe">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_selected_dataframe</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.get_selected_dataframe" title="Link to this definition"></a></dt>
+<dd><p>Get the selected features in dataframe form.</p>
+<dl class="simple">
+<dt>Returns: pandas.DataFrame</dt><dd><p>selected features</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.get_selected_features">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_selected_features</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.get_selected_features" title="Link to this definition"></a></dt>
+<dd><p>Get the selected features in list form.</p>
+<dl class="simple">
+<dt>Returns: list</dt><dd><p>selected features</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.selected_feature_num">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">selected_feature_num</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.selected_feature_num" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.set_filter_function">
+<span class="sig-name descname"><span class="pre">set_filter_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_function</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.FilterFeatureSelection.set_filter_function" title="Link to this definition"></a></dt>
+<dd><p>Set the parameters of the selected filter model.</p>
+<dl class="simple">
+<dt>filter_function: str, {‘mutual_information’,’F’,’chi’}</dt><dd><p>Filter method has different methods for different learning tasks, for regression
+task, you can choose {‘mutual_information’,’F’}, for classification task, you
+can choose {‘mutual_information’,’F’,’chi’}.</p>
+</dd>
+</dl>
+<p>Returns: self</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.ml.feature_engineering.feature_selection.</span></span><span class="sig-name descname"><span class="pre">RecursiveFeatureSelection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selected_min_features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scoring</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection" title="jamip.ml.feature_engineering.feature_selection.FeatureSelection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureSelection</span></code></a></p>
+<p>Wrapper method for feature selection, use a base model to iterate through the training process
+to select the best features set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model：str</strong> – Base model name, optionally model reference model.py</p></li>
+<li><p><strong>dataset_df</strong> – pandas.DataFrame
+Dataframe containing all features and target.</p></li>
+<li><p><strong>target</strong> – str
+Name of the target property to be fitted in the dataframe.</p></li>
+<li><p><strong>learning_task</strong> – str
+Machine learning algorithms are divided into regression and classification
+tasks according to the category of learning tasks.</p></li>
+<li><p><strong>selected_min_features</strong> – int
+Minimum number of features selected.</p></li>
+<li><p><strong>scoring</strong> – None, str, default = None
+This parameter is considered in conjunction with ‘cv’. If you only want to do
+recursive feature search without considering the whole process, scoring is
+set to ‘None’; if you want to do cross-validation, you need to set both ‘cv’
+and ‘scoring’, with scoring considering a criterion, eg: ‘neg_root_mean_squared_error’.</p></li>
+<li><p><strong>cv</strong> – False, int, default = False
+Cross-validation, if set to ‘False’, means no cross-validation while scoring is set to
+‘None’, if set to ‘int’ means cross-validation.</p></li>
+<li><p><strong>step</strong> – int
+Step size for recursive feature elimination.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.features_rank">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">features_rank</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.features_rank" title="Link to this definition"></a></dt>
+<dd><p>Get the feature ranking of the original features</p>
+<dl class="simple">
+<dt>Returns: pandas.DataFrame</dt><dd><p>Feature ranking</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.fit" title="Link to this definition"></a></dt>
+<dd><p>Fit the features to obtain the minimum number of features required.</p>
+<p>Returns: self</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.get_scores">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_scores</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.get_scores" title="Link to this definition"></a></dt>
+<dd><p>Get the score for each iteration of the recursive feature elimination process for RFECV.</p>
+<dl class="simple">
+<dt>Returns: pandas.DataFrame</dt><dd><p>Iterations number and score.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.get_selected_dataframe">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_selected_dataframe</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.get_selected_dataframe" title="Link to this definition"></a></dt>
+<dd><p>Get the selected features in dataframe form.</p>
+<dl class="simple">
+<dt>Returns: pandas.DataFrame</dt><dd><p>selected features</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.get_selected_features">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_selected_features</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.get_selected_features" title="Link to this definition"></a></dt>
+<dd><p>Get the selected features in list form.</p>
+<dl class="simple">
+<dt>Returns: list</dt><dd><p>selected features</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.plot_rfe_cv">
+<span class="sig-name descname"><span class="pre">plot_rfe_cv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jpg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linewidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_linestyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'--'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.plot_rfe_cv" title="Link to this definition"></a></dt>
+<dd><p>Plot the entire RFECV recursive feature removal process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> – str
+Image name.</p></li>
+<li><p><strong>file_format</strong> – str,default = ‘jpg’
+File format, {‘svg’,’jpg’,’png’,…}</p></li>
+<li><p><strong>linewidth</strong> – float or int, default = 1.5
+Image edge width.</p></li>
+<li><p><strong>dpi</strong> – int, default = 600
+Image resolution.</p></li>
+<li><p><strong>grid</strong> – bool, default = True
+Whether the network is represented in the image.</p></li>
+<li><p><strong>grid_linestyle</strong> – str, default = ‘–’
+Network form.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns： fig</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.selector">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">selector</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.selector" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.set_model_hyper">
+<span class="sig-name descname"><span class="pre">set_model_hyper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.set_model_hyper" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.set_selector">
+<span class="sig-name descname"><span class="pre">set_selector</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RecursiveFeatureSelection.set_selector" title="Link to this definition"></a></dt>
+<dd><p>Choose between ‘RFE’ or ‘RFECV’ for recursive feature elimination.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.ml.feature_engineering.feature_selection.</span></span><span class="sig-name descname"><span class="pre">RegularizationFeatureSelection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coef_selection_threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_task</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'regression'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection" title="jamip.ml.feature_engineering.feature_selection.FeatureSelection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureSelection</span></code></a></p>
+<p>Embedded method for feature selection, feature selection work based on Regularized linear model
+in sklearn that have the .coef_ attribute for regression learning tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_df</strong> – pandas.DataFrame
+Dataframe containing all features and target.</p></li>
+<li><p><strong>target</strong> – str
+Name of the target property to be fitted in the dataframe.</p></li>
+<li><p><strong>model</strong> – str, {‘l1’,’L1’,’l2’,’L2’}
+Select a regularized linear model as the feature selection method.</p></li>
+<li><p><strong>coef_selection_threshold</strong> – float
+Set coefficient threshold for feature and target properties.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.features_rank">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">features_rank</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.features_rank" title="Link to this definition"></a></dt>
+<dd><p>Get the feature ranking of the original features</p>
+<dl class="simple">
+<dt>Returns: pandas.DataFrame</dt><dd><p>Feature ranking</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.fit" title="Link to this definition"></a></dt>
+<dd><p>Fit the features to the target selection to obtain the minimum number of features required.</p>
+<p>Returns: self</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.get_selected_dataframe">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_selected_dataframe</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.get_selected_dataframe" title="Link to this definition"></a></dt>
+<dd><p>Get the selected features in dataframe form.</p>
+<dl class="simple">
+<dt>Returns: pandas.DataFrame</dt><dd><p>selected features</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.get_selected_features">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_selected_features</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.get_selected_features" title="Link to this definition"></a></dt>
+<dd><p>Get the selected features in list form.</p>
+<dl class="simple">
+<dt>Returns: list</dt><dd><p>selected features</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.linear_reg">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">linear_reg</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.linear_reg" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.set_model_hyper">
+<span class="sig-name descname"><span class="pre">set_model_hyper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.RegularizationFeatureSelection.set_model_hyper" title="Link to this definition"></a></dt>
+<dd><p>Set the parameters of the selected regularized linear model.</p>
+<p>Returns: self</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.ml.feature_engineering.feature_selection.</span></span><span class="sig-name descname"><span class="pre">TreeBasedFeatureSelection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">importance_percentile_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.95</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jamip.ml.feature_engineering.feature_selection.FeatureSelection" title="jamip.ml.feature_engineering.feature_selection.FeatureSelection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureSelection</span></code></a></p>
+<p>Enbedded method for feature selection, feature selection work based on tree models in sklearn
+that have the .feature_importances_ attribute.
+:param dataset_df: pandas.DataFrame</p>
+<blockquote>
+<div><p>Dataframe containing all features and target.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> – str
+Name of the target property to be fitted in the dataframe.</p></li>
+<li><p><strong>learning_task</strong> – str, {‘regression’,’classification’}
+Machine learning algorithms are divided into regression and classification
+tasks according to the category of learning tasks.</p></li>
+<li><p><strong>model</strong> – <dl class="simple">
+<dt>str, {‘rfr’,’RandomForestRegressor’,’RF’,’gbrt’, ‘GradientBoostingRegressor’,’GBRT’,</dt><dd><p>’etsr’, ‘ExtraTreesRegressor’, ‘ESRT’,’rfc’, ‘RandomForestClassifier’,
+‘gbct’, ‘GradientBoostingClassifier’, ‘GBCT’, ‘etsc’, ‘ExtraTreesClassifier’, ‘ETSC’}</p>
+</dd>
+</dl>
+<p>Select a tree model for feature selection that is consistent with the ‘learning task’.</p>
+</p></li>
+<li><p><strong>importance_percentile_threshold</strong> – float, default = 0.95
+Select features based on a percentage threshold in descending order of feature importance</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.features_rank">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">features_rank</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.features_rank" title="Link to this definition"></a></dt>
+<dd><p>Get the feature ranking of the original features</p>
+<dl class="simple">
+<dt>Returns: pandas.DataFrame</dt><dd><p>Feature ranking</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.fit" title="Link to this definition"></a></dt>
+<dd><p>Fit the features to the target selection to obtain the minimum number of features required.</p>
+<p>Returns: self</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.get_selected_dataframe">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_selected_dataframe</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.get_selected_dataframe" title="Link to this definition"></a></dt>
+<dd><p>Get the selected features in dataframe form.</p>
+<dl class="simple">
+<dt>Returns: pandas.DataFrame</dt><dd><p>selected features</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.get_selected_features">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_selected_features</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.get_selected_features" title="Link to this definition"></a></dt>
+<dd><p>Get the selected features in list form.</p>
+<dl class="simple">
+<dt>Returns: list</dt><dd><p>selected features</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.set_model_hyper">
+<span class="sig-name descname"><span class="pre">set_model_hyper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.set_model_hyper" title="Link to this definition"></a></dt>
+<dd><p>Set the parameters of the selected tree model.</p>
+<p>Returns: self</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.tree">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tree</span></span><a class="headerlink" href="#jamip.ml.feature_engineering.feature_selection.TreeBasedFeatureSelection.tree" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.ml.feature_engineering">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jamip.ml.feature_engineering" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

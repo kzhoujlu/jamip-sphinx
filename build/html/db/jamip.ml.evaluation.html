@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamip.ml.evaluation package &mdash; JAMIP 1.3 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c55cb9cb"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jamip.ml.evaluation package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-jamip.ml.evaluation.classification">jamip.ml.evaluation.classification module</a><ul>
+<li><a class="reference internal" href="#jamip.ml.evaluation.classification.ClassificationMetrics"><code class="docutils literal notranslate"><span class="pre">ClassificationMetrics</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.ml.evaluation.classification.ClassificationMetrics.accuracy_number"><code class="docutils literal notranslate"><span class="pre">ClassificationMetrics.accuracy_number</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.evaluation.classification.ClassificationMetrics.accuracy_score"><code class="docutils literal notranslate"><span class="pre">ClassificationMetrics.accuracy_score</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.evaluation.classification.ClassificationMetrics.confusion_matrix"><code class="docutils literal notranslate"><span class="pre">ClassificationMetrics.confusion_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.evaluation.classification.ClassificationMetrics.f1_score"><code class="docutils literal notranslate"><span class="pre">ClassificationMetrics.f1_score</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.evaluation.classification.ClassificationMetrics.precision_score"><code class="docutils literal notranslate"><span class="pre">ClassificationMetrics.precision_score</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.evaluation.classification.ClassificationMetrics.recall_score"><code class="docutils literal notranslate"><span class="pre">ClassificationMetrics.recall_score</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.evaluation.classification.ClassificationMetrics.roc_auc"><code class="docutils literal notranslate"><span class="pre">ClassificationMetrics.roc_auc()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.ml.evaluation.classification.DerandomizationClassificationMetrics"><code class="docutils literal notranslate"><span class="pre">DerandomizationClassificationMetrics</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.ml.evaluation.classification.DerandomizationClassificationMetrics.derandomization"><code class="docutils literal notranslate"><span class="pre">DerandomizationClassificationMetrics.derandomization()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.ml.evaluation.regression">jamip.ml.evaluation.regression module</a><ul>
+<li><a class="reference internal" href="#jamip.ml.evaluation.regression.DerandomizationRegessionMetrics"><code class="docutils literal notranslate"><span class="pre">DerandomizationRegessionMetrics</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.ml.evaluation.regression.DerandomizationRegessionMetrics.derandomization"><code class="docutils literal notranslate"><span class="pre">DerandomizationRegessionMetrics.derandomization()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.ml.evaluation.regression.PlotRegression"><code class="docutils literal notranslate"><span class="pre">PlotRegression</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.ml.evaluation.regression.PlotRegression.plot_actuality_predict_scatter"><code class="docutils literal notranslate"><span class="pre">PlotRegression.plot_actuality_predict_scatter()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.evaluation.regression.PlotRegression.plot_data_distribution"><code class="docutils literal notranslate"><span class="pre">PlotRegression.plot_data_distribution()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.ml.evaluation.regression.RegressionMetrics"><code class="docutils literal notranslate"><span class="pre">RegressionMetrics</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.ml.evaluation.regression.RegressionMetrics.mae"><code class="docutils literal notranslate"><span class="pre">RegressionMetrics.mae</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.evaluation.regression.RegressionMetrics.mse"><code class="docutils literal notranslate"><span class="pre">RegressionMetrics.mse</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.evaluation.regression.RegressionMetrics.msle"><code class="docutils literal notranslate"><span class="pre">RegressionMetrics.msle</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.evaluation.regression.RegressionMetrics.r2"><code class="docutils literal notranslate"><span class="pre">RegressionMetrics.r2</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.evaluation.regression.RegressionMetrics.rmse"><code class="docutils literal notranslate"><span class="pre">RegressionMetrics.rmse</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.evaluation.regression.RegressionMetrics.rmsle"><code class="docutils literal notranslate"><span class="pre">RegressionMetrics.rmsle</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.ml.evaluation">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">jamip.ml.evaluation package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/db/jamip.ml.evaluation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jamip-ml-evaluation-package">
+<h1>jamip.ml.evaluation package<a class="headerlink" href="#jamip-ml-evaluation-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.ml.evaluation.classification">
+<span id="jamip-ml-evaluation-classification-module"></span><h2>jamip.ml.evaluation.classification module<a class="headerlink" href="#module-jamip.ml.evaluation.classification" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.classification.ClassificationMetrics">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.ml.evaluation.classification.</span></span><span class="sig-name descname"><span class="pre">ClassificationMetrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">True_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Predicted_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.evaluation.classification.ClassificationMetrics" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Classification metrics</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>True_value</strong> – list, numpy, pandas.DataFrame
+Actual target properties of the material.</p></li>
+<li><p><strong>Predicted_value</strong> – list, numpy, pandas.DataFrame
+Target properties of the material predicted by the model.</p></li>
+<li><p><strong>label</strong> – dict
+Category label dictionary, keys is the material target property,
+values is the numerical property label.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.classification.ClassificationMetrics.accuracy_number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">accuracy_number</span></span><a class="headerlink" href="#jamip.ml.evaluation.classification.ClassificationMetrics.accuracy_number" title="Link to this definition"></a></dt>
+<dd><p>Accuracy number.</p>
+<p>Returns: int</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.classification.ClassificationMetrics.accuracy_score">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">accuracy_score</span></span><a class="headerlink" href="#jamip.ml.evaluation.classification.ClassificationMetrics.accuracy_score" title="Link to this definition"></a></dt>
+<dd><p>Accuracy score.</p>
+<p>Returns: float</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.classification.ClassificationMetrics.confusion_matrix">
+<span class="sig-name descname"><span class="pre">confusion_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'coral'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">600</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.evaluation.classification.ClassificationMetrics.confusion_matrix" title="Link to this definition"></a></dt>
+<dd><p>Confusion matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>normalize</strong> – {‘true’, ‘pred’, ‘None’}, default = None
+Normalizes confusion matrix over the true (rows), predicted (columns).</p></li>
+<li><p><strong>color</strong> – str
+color.</p></li>
+<li><p><strong>plot</strong> – bool
+Whether to plot or not.</p></li>
+<li><p><strong>dpi</strong> – int, default = 600
+Image resolution.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.classification.ClassificationMetrics.f1_score">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">f1_score</span></span><a class="headerlink" href="#jamip.ml.evaluation.classification.ClassificationMetrics.f1_score" title="Link to this definition"></a></dt>
+<dd><p>A measure of the accuracy of a binary classification model. It takes into account both
+the accuracy and recall of the classification model.</p>
+<p>Returns: float</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.classification.ClassificationMetrics.precision_score">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">precision_score</span></span><a class="headerlink" href="#jamip.ml.evaluation.classification.ClassificationMetrics.precision_score" title="Link to this definition"></a></dt>
+<dd><p>Precision score</p>
+<p>Returns: float</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.classification.ClassificationMetrics.recall_score">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">recall_score</span></span><a class="headerlink" href="#jamip.ml.evaluation.classification.ClassificationMetrics.recall_score" title="Link to this definition"></a></dt>
+<dd><p>Recall score</p>
+<p>Returns: float</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.classification.ClassificationMetrics.roc_auc">
+<span class="sig-name descname"><span class="pre">roc_auc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.evaluation.classification.ClassificationMetrics.roc_auc" title="Link to this definition"></a></dt>
+<dd><p>Area Under roc Curve/Receiver Operating Characteristic</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>plot</strong> – bool
+Whether to plot or not.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns: float</dt><dd><p>fpr, tpr, thshold, auc</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.classification.DerandomizationClassificationMetrics">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.ml.evaluation.classification.</span></span><span class="sig-name descname"><span class="pre">DerandomizationClassificationMetrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fixed_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.evaluation.classification.DerandomizationClassificationMetrics" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="jamip.ml.model.html#jamip.ml.model.model_post_processing.ClassificationModelfitProcessing" title="jamip.ml.model.model_post_processing.ClassificationModelfitProcessing"><code class="xref py py-class docutils literal notranslate"><span class="pre">ClassificationModelfitProcessing</span></code></a></p>
+<p>Model derandomisation, as part of the model is an integrated model, there are random seed
+parameters within it and there will be some differences in each fit, eliminating this gap
+and taking the thought of averaging multiple fits to eliminate the random case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fixed_model</strong> – class
+Set up the hyperparameter model.</p></li>
+<li><p><strong>evaluation_index</strong> – str, list
+Evaluate the metrics, either as a string or as a list.
+Optional items:{‘mae’, ‘mse’, ‘rmse’, ‘r2’, ‘msle’, ‘rmsle’}</p></li>
+<li><p><strong>label</strong> – dict
+Category label dictionary, keys is the material target property,
+values is the numerical property label.</p></li>
+<li><p><strong>iteration_number</strong> – int
+Number of iterations</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.classification.DerandomizationClassificationMetrics.derandomization">
+<span class="sig-name descname"><span class="pre">derandomization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_test</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.evaluation.classification.DerandomizationClassificationMetrics.derandomization" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X_train</strong> – numpy, list, pandas.DataFrame
+Training feature set</p></li>
+<li><p><strong>y_train</strong> – numpy, list, pandas.DataFrame
+Training target set</p></li>
+<li><p><strong>X_test</strong> – numpy, list, pandas.DataFrame
+Testing feature set</p></li>
+<li><p><strong>y_test</strong> – numpy, list, pandas.DataFrame
+Testing target set</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns: dict</dt><dd><p>Return averaging evaluation index</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.ml.evaluation.regression">
+<span id="jamip-ml-evaluation-regression-module"></span><h2>jamip.ml.evaluation.regression module<a class="headerlink" href="#module-jamip.ml.evaluation.regression" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.regression.DerandomizationRegessionMetrics">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.ml.evaluation.regression.</span></span><span class="sig-name descname"><span class="pre">DerandomizationRegessionMetrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fixed_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.evaluation.regression.DerandomizationRegessionMetrics" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="jamip.ml.model.html#jamip.ml.model.model_post_processing.RegressionModelfitProcessing" title="jamip.ml.model.model_post_processing.RegressionModelfitProcessing"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegressionModelfitProcessing</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.regression.DerandomizationRegessionMetrics.derandomization">
+<span class="sig-name descname"><span class="pre">derandomization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_test</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.evaluation.regression.DerandomizationRegessionMetrics.derandomization" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X_train</strong> – numpy, list, pandas.DataFrame
+Training feature set</p></li>
+<li><p><strong>y_train</strong> – numpy, list, pandas.DataFrame
+Training target set</p></li>
+<li><p><strong>X_test</strong> – numpy, list, pandas.DataFrame
+Testing feature set</p></li>
+<li><p><strong>y_test</strong> – numpy, list, pandas.DataFrame
+Testing target set</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns: dict</dt><dd><p>Return averaging evaluation index</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.regression.PlotRegression">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.ml.evaluation.regression.</span></span><span class="sig-name descname"><span class="pre">PlotRegression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed_model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.evaluation.regression.PlotRegression" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="jamip.ml.model.html#jamip.ml.model.model_post_processing.RegressionModelfitProcessing" title="jamip.ml.model.model_post_processing.RegressionModelfitProcessing"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegressionModelfitProcessing</span></code></a></p>
+<p>Visualisation of the fit of the regression model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> – str
+model name.</p></li>
+<li><p><strong>fixed_model</strong> – class
+Set up the hyperparameter model.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.regression.PlotRegression.plot_actuality_predict_scatter">
+<span class="sig-name descname"><span class="pre">plot_actuality_predict_scatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derandomization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mediumspringgreen'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'o'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linewidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_linestyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'--'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Actuality_Predict'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jpg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">600</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.evaluation.regression.PlotRegression.plot_actuality_predict_scatter" title="Link to this definition"></a></dt>
+<dd><p>Actual vs. predicted scatter plot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> – str
+Predicted target value.</p></li>
+<li><p><strong>X_train</strong> – numpy, list, pandas.DataFrame
+Training feature set.</p></li>
+<li><p><strong>y_train</strong> – numpy, list, pandas.DataFrame
+Training target set.</p></li>
+<li><p><strong>X_test</strong> – numpy, list, pandas.DataFrame
+Testing feature set.</p></li>
+<li><p><strong>y_test</strong> – numpy, list, pandas.DataFrame
+Testing target set.</p></li>
+<li><p><strong>evaluation_index：str</strong> – Evaluate the metrics, either as a string or as a list.
+Optional items:{‘mae’, ‘mse’, ‘rmse’, ‘r2’, ‘msle’, ‘rmsle’}.</p></li>
+<li><p><strong>list</strong> – Evaluate the metrics, either as a string or as a list.
+Optional items:{‘mae’, ‘mse’, ‘rmse’, ‘r2’, ‘msle’, ‘rmsle’}.</p></li>
+<li><p><strong>derandomization</strong> – bool, default = True
+Whether to derandomize or not.</p></li>
+<li><p><strong>iteration_number</strong> – int, default = 10
+Number of iterations</p></li>
+<li><p><strong>color</strong> – str, default = ‘mediumspringgreen’
+Color.</p></li>
+<li><p><strong>size</strong> – int, float, default = 25
+Scatter size.</p></li>
+<li><p><strong>marker</strong> – str, default = ‘o’
+Scatter markers.</p></li>
+<li><p><strong>linewidth</strong> – float or int, default = 1.5
+Image edge width.</p></li>
+<li><p><strong>grid</strong> – bool, default = True
+Whether the network is represented in the image.</p></li>
+<li><p><strong>grid_linestyle</strong> – str, default = ‘–’
+Network form.</p></li>
+<li><p><strong>file_name</strong> – str
+Image name.</p></li>
+<li><p><strong>file_format</strong> – str,default = ‘jpg’
+File format, {‘svg’,’jpg’,’png’…}.</p></li>
+<li><p><strong>text_x</strong> – float, int, default = 2.5
+Text annotation position x.</p></li>
+<li><p><strong>text_y</strong> – float, int, default = 0.5
+Text annotation position y.</p></li>
+<li><p><strong>dpi</strong> – int, default = 600
+Image resolution.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.regression.PlotRegression.plot_data_distribution">
+<span class="sig-name descname"><span class="pre">plot_data_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_test</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Gaussian</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_up</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mediumspringgreen'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color_down</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mediumorchid'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">40</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linewidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_linestyle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'--'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Data_distribution_comparison'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jpg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.75</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.75</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">600</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.evaluation.regression.PlotRegression.plot_data_distribution" title="Link to this definition"></a></dt>
+<dd><p>Actual vs. predicted bar distribution</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>X_train</strong> – <dl class="simple">
+<dt>numpy, list, pandas.DataFrame</dt><dd><p>Training feature set.</p>
+</dd>
+<dt>y_train: numpy, list, pandas.DataFrame</dt><dd><p>Training target set.</p>
+</dd>
+<dt>X_test: numpy, list, pandas.DataFrame</dt><dd><p>Testing feature set.</p>
+</dd>
+<dt>y_test: numpy, list, pandas.DataFrame</dt><dd><p>Testing target set.</p>
+</dd>
+<dt>Gaussian: bool, default = True</dt><dd><p>Whether to draw a Gaussian curve.</p>
+</dd>
+<dt>bins: int, default = 40</dt><dd><p>Number of columns.</p>
+</dd>
+<dt>linewidth: float or int, default = 1.5</dt><dd><p>Image edge width.</p>
+</dd>
+<dt>grid: bool, default = True</dt><dd><p>Whether the network is represented in the image.</p>
+</dd>
+<dt>grid_linestyle: str, default = ‘–’</dt><dd><p>Network form.</p>
+</dd>
+<dt>file_name: str</dt><dd><p>Image name.</p>
+</dd>
+<dt>file_format: str,default = ‘jpg’</dt><dd><p>File format, {‘svg’,’jpg’,’png’…}.</p>
+</dd>
+<dt>text_x: float, int, default = 0.75</dt><dd><p>Text annotation position x.</p>
+</dd>
+<dt>text_y<span class="classifier">float, int, default = 0.75</span></dt><dd><p>Text annotation position y.</p>
+</dd>
+<dt>dpi: int, default = 600</dt><dd><p>Image resolution.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.regression.RegressionMetrics">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.ml.evaluation.regression.</span></span><span class="sig-name descname"><span class="pre">RegressionMetrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">True_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Predicted_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.evaluation.regression.RegressionMetrics" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Regression metrics</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>True_value</strong> – list, numpy, pandas.DataFrame
+Actual target properties of the material.</p></li>
+<li><p><strong>Predicted_value</strong> – list, numpy, pandas.DataFrame
+Target properties of the material predicted by the model.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.regression.RegressionMetrics.mae">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mae</span></span><a class="headerlink" href="#jamip.ml.evaluation.regression.RegressionMetrics.mae" title="Link to this definition"></a></dt>
+<dd><p>Mean absoluate error.</p>
+<p>Returns: float</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.regression.RegressionMetrics.mse">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mse</span></span><a class="headerlink" href="#jamip.ml.evaluation.regression.RegressionMetrics.mse" title="Link to this definition"></a></dt>
+<dd><p>Mean square error.</p>
+<p>Returns: float</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.regression.RegressionMetrics.msle">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">msle</span></span><a class="headerlink" href="#jamip.ml.evaluation.regression.RegressionMetrics.msle" title="Link to this definition"></a></dt>
+<dd><p>Mean squared log error.</p>
+<p>Returns: float</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.regression.RegressionMetrics.r2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">r2</span></span><a class="headerlink" href="#jamip.ml.evaluation.regression.RegressionMetrics.r2" title="Link to this definition"></a></dt>
+<dd><p>Coefficient of determination.</p>
+<p>Returns： float</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.regression.RegressionMetrics.rmse">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rmse</span></span><a class="headerlink" href="#jamip.ml.evaluation.regression.RegressionMetrics.rmse" title="Link to this definition"></a></dt>
+<dd><p>Root mean square error.</p>
+<p>Returns: float</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.evaluation.regression.RegressionMetrics.rmsle">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rmsle</span></span><a class="headerlink" href="#jamip.ml.evaluation.regression.RegressionMetrics.rmsle" title="Link to this definition"></a></dt>
+<dd><p>Root mean squared log error.</p>
+<p>Returns: float</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.ml.evaluation">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jamip.ml.evaluation" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

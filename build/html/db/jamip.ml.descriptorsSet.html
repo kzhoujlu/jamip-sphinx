@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamip.ml.descriptorsSet package &mdash; JAMIP 1.3 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c55cb9cb"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jamip.ml.descriptorsSet package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-jamip.ml.descriptorsSet.descriptor">jamip.ml.descriptorsSet.descriptor module</a><ul>
+<li><a class="reference internal" href="#jamip.ml.descriptorsSet.descriptor.Descriptor"><code class="docutils literal notranslate"><span class="pre">Descriptor</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.ml.descriptorsSet.descriptor.Descriptor.add_structure"><code class="docutils literal notranslate"><span class="pre">Descriptor.add_structure()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.descriptorsSet.descriptor.Descriptor.builder"><code class="docutils literal notranslate"><span class="pre">Descriptor.builder</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.descriptorsSet.descriptor.Descriptor.feature"><code class="docutils literal notranslate"><span class="pre">Descriptor.feature</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.descriptorsSet.descriptor.Descriptor.remove_structure"><code class="docutils literal notranslate"><span class="pre">Descriptor.remove_structure()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.descriptorsSet.descriptor.Descriptor.set_feature"><code class="docutils literal notranslate"><span class="pre">Descriptor.set_feature()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.descriptorsSet.descriptor.Descriptor.set_structures"><code class="docutils literal notranslate"><span class="pre">Descriptor.set_structures()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.ml.descriptorsSet.descriptor.DescriptorBuilder"><code class="docutils literal notranslate"><span class="pre">DescriptorBuilder</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.ml.descriptorsSet.descriptor.DescriptorBuilder.add_structure"><code class="docutils literal notranslate"><span class="pre">DescriptorBuilder.add_structure()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.descriptorsSet.descriptor.DescriptorBuilder.get_result"><code class="docutils literal notranslate"><span class="pre">DescriptorBuilder.get_result()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.descriptorsSet.descriptor.DescriptorBuilder.remove_structure"><code class="docutils literal notranslate"><span class="pre">DescriptorBuilder.remove_structure()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.descriptorsSet.descriptor.DescriptorBuilder.set_feature"><code class="docutils literal notranslate"><span class="pre">DescriptorBuilder.set_feature()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.ml.descriptorsSet.descriptor.DescriptorBuilder.set_structures"><code class="docutils literal notranslate"><span class="pre">DescriptorBuilder.set_structures()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip-ml-descriptorsset-descriptorsset-module">jamip.ml.descriptorsSet.descriptorsSet module</a></li>
+<li><a class="reference internal" href="#module-jamip.ml.descriptorsSet">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">jamip.ml.descriptorsSet package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/db/jamip.ml.descriptorsSet.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jamip-ml-descriptorsset-package">
+<h1>jamip.ml.descriptorsSet package<a class="headerlink" href="#jamip-ml-descriptorsset-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="jamip.ml.descriptorsSet.property.html">jamip.ml.descriptorsSet.property package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jamip.ml.descriptorsSet.property.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.ml.descriptorsSet.property.html#module-jamip.ml.descriptorsSet.property.propertyDescriptor">jamip.ml.descriptorsSet.property.propertyDescriptor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jamip.ml.descriptorsSet.property.html#jamip.ml.descriptorsSet.property.propertyDescriptor.PropertyDescriptor"><code class="docutils literal notranslate"><span class="pre">PropertyDescriptor</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jamip.ml.descriptorsSet.property.html#jamip.ml.descriptorsSet.property.propertyDescriptor.PropertyDescriptorBuilder"><code class="docutils literal notranslate"><span class="pre">PropertyDescriptorBuilder</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="jamip.ml.descriptorsSet.property.html#jamip.ml.descriptorsSet.property.propertyDescriptor.get_element"><code class="docutils literal notranslate"><span class="pre">get_element()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.ml.descriptorsSet.property.html#module-jamip.ml.descriptorsSet.property">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jamip.ml.descriptorsSet.structure.html">jamip.ml.descriptorsSet.structure package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jamip.ml.descriptorsSet.structure.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.ml.descriptorsSet.structure.html#jamip-ml-descriptorsset-structure-structuredescriptor-module">jamip.ml.descriptorsSet.structure.structureDescriptor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.ml.descriptorsSet.structure.html#module-jamip.ml.descriptorsSet.structure">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.ml.descriptorsSet.descriptor">
+<span id="jamip-ml-descriptorsset-descriptor-module"></span><h2>jamip.ml.descriptorsSet.descriptor module<a class="headerlink" href="#module-jamip.ml.descriptorsSet.descriptor" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.ml.descriptorsSet.descriptor.Descriptor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.ml.descriptorsSet.descriptor.</span></span><span class="sig-name descname"><span class="pre">Descriptor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structures</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.descriptorsSet.descriptor.Descriptor" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.descriptorsSet.descriptor.Descriptor.add_structure">
+<span class="sig-name descname"><span class="pre">add_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.descriptorsSet.descriptor.Descriptor.add_structure" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.descriptorsSet.descriptor.Descriptor.builder">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">builder</span></span><a class="headerlink" href="#jamip.ml.descriptorsSet.descriptor.Descriptor.builder" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.ml.descriptorsSet.descriptor.Descriptor.feature">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">feature</span></span><a class="headerlink" href="#jamip.ml.descriptorsSet.descriptor.Descriptor.feature" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.descriptorsSet.descriptor.Descriptor.remove_structure">
+<span class="sig-name descname"><span class="pre">remove_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.descriptorsSet.descriptor.Descriptor.remove_structure" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.descriptorsSet.descriptor.Descriptor.set_feature">
+<span class="sig-name descname"><span class="pre">set_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">descriptor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.descriptorsSet.descriptor.Descriptor.set_feature" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.descriptorsSet.descriptor.Descriptor.set_structures">
+<span class="sig-name descname"><span class="pre">set_structures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structures</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.descriptorsSet.descriptor.Descriptor.set_structures" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.ml.descriptorsSet.descriptor.DescriptorBuilder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.ml.descriptorsSet.descriptor.</span></span><span class="sig-name descname"><span class="pre">DescriptorBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structures</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.descriptorsSet.descriptor.DescriptorBuilder" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.descriptorsSet.descriptor.DescriptorBuilder.add_structure">
+<span class="sig-name descname"><span class="pre">add_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.descriptorsSet.descriptor.DescriptorBuilder.add_structure" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.descriptorsSet.descriptor.DescriptorBuilder.get_result">
+<span class="sig-name descname"><span class="pre">get_result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.descriptorsSet.descriptor.DescriptorBuilder.get_result" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.descriptorsSet.descriptor.DescriptorBuilder.remove_structure">
+<span class="sig-name descname"><span class="pre">remove_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.descriptorsSet.descriptor.DescriptorBuilder.remove_structure" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.descriptorsSet.descriptor.DescriptorBuilder.set_feature">
+<span class="sig-name descname"><span class="pre">set_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">descriptor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.descriptorsSet.descriptor.DescriptorBuilder.set_feature" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.ml.descriptorsSet.descriptor.DescriptorBuilder.set_structures">
+<span class="sig-name descname"><span class="pre">set_structures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structures</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.ml.descriptorsSet.descriptor.DescriptorBuilder.set_structures" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="jamip-ml-descriptorsset-descriptorsset-module">
+<h2>jamip.ml.descriptorsSet.descriptorsSet module<a class="headerlink" href="#jamip-ml-descriptorsset-descriptorsset-module" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.ml.descriptorsSet">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jamip.ml.descriptorsSet" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

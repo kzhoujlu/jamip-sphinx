@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamip.abtools.espresso package &mdash; JAMIP 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jamip.abtools.espresso package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-jamip.abtools.espresso.check">jamip.abtools.espresso.check module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.espresso.check.CheckStatus"><code class="docutils literal notranslate"><span class="pre">CheckStatus</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.espresso.check.CheckStatus.finish_check"><code class="docutils literal notranslate"><span class="pre">CheckStatus.finish_check()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.check.CheckStatus.get_status"><code class="docutils literal notranslate"><span class="pre">CheckStatus.get_status()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.check.CheckStatus.ions_check"><code class="docutils literal notranslate"><span class="pre">CheckStatus.ions_check()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.check.CheckStatus.load_status"><code class="docutils literal notranslate"><span class="pre">CheckStatus.load_status()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.check.CheckStatus.rebuild_status"><code class="docutils literal notranslate"><span class="pre">CheckStatus.rebuild_status()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.check.CheckStatus.success"><code class="docutils literal notranslate"><span class="pre">CheckStatus.success()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.check.CheckStatus.update_tasks"><code class="docutils literal notranslate"><span class="pre">CheckStatus.update_tasks()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.check.CheckStatus.write_status"><code class="docutils literal notranslate"><span class="pre">CheckStatus.write_status()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.espresso.qeflow">jamip.abtools.espresso.qeflow module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow"><code class="docutils literal notranslate"><span class="pre">QEFlow</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.calculator"><code class="docutils literal notranslate"><span class="pre">QEFlow.calculator()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.get_kpath"><code class="docutils literal notranslate"><span class="pre">QEFlow.get_kpath()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.get_nbands"><code class="docutils literal notranslate"><span class="pre">QEFlow.get_nbands()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.get_stdin"><code class="docutils literal notranslate"><span class="pre">QEFlow.get_stdin()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.initialize_tasks"><code class="docutils literal notranslate"><span class="pre">QEFlow.initialize_tasks()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.mpirun"><code class="docutils literal notranslate"><span class="pre">QEFlow.mpirun()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.nscf_property"><code class="docutils literal notranslate"><span class="pre">QEFlow.nscf_property()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.phonon_property"><code class="docutils literal notranslate"><span class="pre">QEFlow.phonon_property()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.qe_calculator"><code class="docutils literal notranslate"><span class="pre">QEFlow.qe_calculator()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.raw_structure"><code class="docutils literal notranslate"><span class="pre">QEFlow.raw_structure</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.relax_cell_ions"><code class="docutils literal notranslate"><span class="pre">QEFlow.relax_cell_ions()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.run"><code class="docutils literal notranslate"><span class="pre">QEFlow.run()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.self_consistent_field"><code class="docutils literal notranslate"><span class="pre">QEFlow.self_consistent_field()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.set_input"><code class="docutils literal notranslate"><span class="pre">QEFlow.set_input()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.set_kpoints"><code class="docutils literal notranslate"><span class="pre">QEFlow.set_kpoints()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.set_vdw"><code class="docutils literal notranslate"><span class="pre">QEFlow.set_vdw()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.QEFlow.std_structure"><code class="docutils literal notranslate"><span class="pre">QEFlow.std_structure</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.Task.bindir"><code class="docutils literal notranslate"><span class="pre">Task.bindir</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.Task.get_status"><code class="docutils literal notranslate"><span class="pre">Task.get_status()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.Task.group_update"><code class="docutils literal notranslate"><span class="pre">Task.group_update()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.Task.kpoints"><code class="docutils literal notranslate"><span class="pre">Task.kpoints</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.Task.program"><code class="docutils literal notranslate"><span class="pre">Task.program</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.Task.structure"><code class="docutils literal notranslate"><span class="pre">Task.structure</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeflow.Task.xc_func"><code class="docutils literal notranslate"><span class="pre">Task.xc_func</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.espresso.qeio">jamip.abtools.espresso.qeio module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeio.QEIO"><code class="docutils literal notranslate"><span class="pre">QEIO</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeio.QEIO.write_input"><code class="docutils literal notranslate"><span class="pre">QEIO.write_input()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeio.QEIO.write_kpoints"><code class="docutils literal notranslate"><span class="pre">QEIO.write_kpoints()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeio.QEIO.write_pwscf"><code class="docutils literal notranslate"><span class="pre">QEIO.write_pwscf()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.qeio.QEIO.write_structure"><code class="docutils literal notranslate"><span class="pre">QEIO.write_structure()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.espresso.setqe">jamip.abtools.espresso.setqe module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE"><code class="docutils literal notranslate"><span class="pre">SetQE</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.base_tasks"><code class="docutils literal notranslate"><span class="pre">SetQE.base_tasks</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.ecutrho"><code class="docutils literal notranslate"><span class="pre">SetQE.ecutrho</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.ecutwfc"><code class="docutils literal notranslate"><span class="pre">SetQE.ecutwfc</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.energy"><code class="docutils literal notranslate"><span class="pre">SetQE.energy</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.external_files"><code class="docutils literal notranslate"><span class="pre">SetQE.external_files</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.force"><code class="docutils literal notranslate"><span class="pre">SetQE.force</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.get_potential"><code class="docutils literal notranslate"><span class="pre">SetQE.get_potential()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.get_pseudo_licrary"><code class="docutils literal notranslate"><span class="pre">SetQE.get_pseudo_licrary()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.kpoints"><code class="docutils literal notranslate"><span class="pre">SetQE.kpoints</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.links"><code class="docutils literal notranslate"><span class="pre">SetQE.links</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.nbands"><code class="docutils literal notranslate"><span class="pre">SetQE.nbands</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.overwrite"><code class="docutils literal notranslate"><span class="pre">SetQE.overwrite</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.potential"><code class="docutils literal notranslate"><span class="pre">SetQE.potential</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.program"><code class="docutils literal notranslate"><span class="pre">SetQE.program</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.soft"><code class="docutils literal notranslate"><span class="pre">SetQE.soft</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.tasks"><code class="docutils literal notranslate"><span class="pre">SetQE.tasks</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.setqe.SetQE.xc_func"><code class="docutils literal notranslate"><span class="pre">SetQE.xc_func</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.espresso.utils">jamip.abtools.espresso.utils module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.espresso.utils.phonon_format"><code class="docutils literal notranslate"><span class="pre">phonon_format()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.espresso.utils.pwscf_format"><code class="docutils literal notranslate"><span class="pre">pwscf_format()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.espresso">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">jamip.abtools.espresso package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/jamip.abtools.espresso.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jamip-abtools-espresso-package">
+<h1>jamip.abtools.espresso package<a class="headerlink" href="#jamip-abtools-espresso-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.abtools.espresso.check">
+<span id="jamip-abtools-espresso-check-module"></span><h2>jamip.abtools.espresso.check module<a class="headerlink" href="#module-jamip.abtools.espresso.check" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.check.CheckStatus">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.espresso.check.</span></span><span class="sig-name descname"><span class="pre">CheckStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rootdir</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.check.CheckStatus" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="jamip.abtools.base.html#jamip.abtools.base.check.BaseStatus" title="jamip.abtools.base.check.BaseStatus"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseStatus</span></code></a></p>
+<p>cls to check the QE</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.check.CheckStatus.finish_check">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">finish_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.check.CheckStatus.finish_check" title="Link to this definition"></a></dt>
+<dd><p>step1 : finish</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.check.CheckStatus.get_status">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.check.CheckStatus.get_status" title="Link to this definition"></a></dt>
+<dd><p>check chain: finish -&gt; ion step -&gt; electric step -&gt; status</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.check.CheckStatus.ions_check">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ions_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.check.CheckStatus.ions_check" title="Link to this definition"></a></dt>
+<dd><p>step2 : relax</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.check.CheckStatus.load_status">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.check.CheckStatus.load_status" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.check.CheckStatus.rebuild_status">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rebuild_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tasks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.check.CheckStatus.rebuild_status" title="Link to this definition"></a></dt>
+<dd><p>rebuild .status base on calculation files.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.check.CheckStatus.success">
+<span class="sig-name descname"><span class="pre">success</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.check.CheckStatus.success" title="Link to this definition"></a></dt>
+<dd><p>check espresso task run_status base on task.out</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.check.CheckStatus.update_tasks">
+<span class="sig-name descname"><span class="pre">update_tasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tasks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.check.CheckStatus.update_tasks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.check.CheckStatus.write_status">
+<span class="sig-name descname"><span class="pre">write_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.check.CheckStatus.write_status" title="Link to this definition"></a></dt>
+<dd><p>base status update function</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.espresso.qeflow">
+<span id="jamip-abtools-espresso-qeflow-module"></span><h2>jamip.abtools.espresso.qeflow module<a class="headerlink" href="#module-jamip.abtools.espresso.qeflow" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.espresso.qeflow.</span></span><span class="sig-name descname"><span class="pre">QEFlow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envdir</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="jamip.abtools.base.html#jamip.abtools.base.flow.WorkFlow" title="jamip.abtools.base.flow.WorkFlow"><code class="xref py py-class docutils literal notranslate"><span class="pre">WorkFlow</span></code></a>, <a class="reference internal" href="#jamip.abtools.espresso.check.CheckStatus" title="jamip.abtools.espresso.check.CheckStatus"><code class="xref py py-class docutils literal notranslate"><span class="pre">CheckStatus</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.calculator">
+<span class="sig-name descname"><span class="pre">calculator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.calculator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.get_kpath">
+<span class="sig-name descname"><span class="pre">get_kpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">insert</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'suggest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.get_kpath" title="Link to this definition"></a></dt>
+<dd><p>get hsym kpoints path base on structure.
+params:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>prec:</dt><dd><p>suggest: Continuous paths whose total length is greater than 5 segments.
+all: All paths which time inversion are not considered</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.get_nbands">
+<span class="sig-name descname"><span class="pre">get_nbands</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.get_nbands" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.get_stdin">
+<span class="sig-name descname"><span class="pre">get_stdin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.get_stdin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.initialize_tasks">
+<span class="sig-name descname"><span class="pre">initialize_tasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qe</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.initialize_tasks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.mpirun">
+<span class="sig-name descname"><span class="pre">mpirun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.mpirun" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.nscf_property">
+<span class="sig-name descname"><span class="pre">nscf_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.nscf_property" title="Link to this definition"></a></dt>
+<dd><p>select the case of tasks</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.phonon_property">
+<span class="sig-name descname"><span class="pre">phonon_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.phonon_property" title="Link to this definition"></a></dt>
+<dd><p>select the case of tasks</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.qe_calculator">
+<span class="sig-name descname"><span class="pre">qe_calculator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.qe_calculator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.raw_structure">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">raw_structure</span></span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.raw_structure" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.relax_cell_ions">
+<span class="sig-name descname"><span class="pre">relax_cell_ions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relax'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.relax_cell_ions" title="Link to this definition"></a></dt>
+<dd><p>function to relax the cell shape, internal inons and volume.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.run" title="Link to this definition"></a></dt>
+<dd><p>Distributes tasks to specific execution functions</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.self_consistent_field">
+<span class="sig-name descname"><span class="pre">self_consistent_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'scf'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.self_consistent_field" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.set_input">
+<span class="sig-name descname"><span class="pre">set_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.set_input" title="Link to this definition"></a></dt>
+<dd><p>set task.in, task.save</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.set_kpoints">
+<span class="sig-name descname"><span class="pre">set_kpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.set_kpoints" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.set_vdw">
+<span class="sig-name descname"><span class="pre">set_vdw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.set_vdw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.QEFlow.std_structure">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">std_structure</span></span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.QEFlow.std_structure" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.Task">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.espresso.qeflow.</span></span><span class="sig-name descname"><span class="pre">Task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.Task" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserDict</span></code></p>
+<p>name:
+state:
+data:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.Task.bindir">
+<span class="sig-name descname"><span class="pre">bindir</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#jamip.abtools.espresso.qeflow.Task.bindir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.Task.get_status">
+<span class="sig-name descname"><span class="pre">get_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.Task.get_status" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.Task.group_update">
+<span class="sig-name descname"><span class="pre">group_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.Task.group_update" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.Task.kpoints">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kpoints</span></span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.Task.kpoints" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.Task.program">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">program</span></span><a class="headerlink" href="#jamip.abtools.espresso.qeflow.Task.program" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.Task.structure">
+<span class="sig-name descname"><span class="pre">structure</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#jamip.abtools.espresso.qeflow.Task.structure" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeflow.Task.xc_func">
+<span class="sig-name descname"><span class="pre">xc_func</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#jamip.abtools.espresso.qeflow.Task.xc_func" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.espresso.qeio">
+<span id="jamip-abtools-espresso-qeio-module"></span><h2>jamip.abtools.espresso.qeio module<a class="headerlink" href="#module-jamip.abtools.espresso.qeio" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeio.QEIO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.espresso.qeio.</span></span><span class="sig-name descname"><span class="pre">QEIO</span></span><a class="headerlink" href="#jamip.abtools.espresso.qeio.QEIO" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeio.QEIO.write_input">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeio.QEIO.write_input" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeio.QEIO.write_kpoints">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_kpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeio.QEIO.write_kpoints" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeio.QEIO.write_pwscf">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_pwscf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeio.QEIO.write_pwscf" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.qeio.QEIO.write_structure">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">potentials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.qeio.QEIO.write_structure" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.espresso.setqe">
+<span id="jamip-abtools-espresso-setqe-module"></span><h2>jamip.abtools.espresso.setqe module<a class="headerlink" href="#module-jamip.abtools.espresso.setqe" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.espresso.setqe.</span></span><span class="sig-name descname"><span class="pre">SetQE</span></span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.base_tasks">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">base_tasks</span></span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.base_tasks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.ecutrho">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ecutrho</span></span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.ecutrho" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.ecutwfc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ecutwfc</span></span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.ecutwfc" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.energy">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">energy</span></span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.energy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.external_files">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">external_files</span></span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.external_files" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.force">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">force</span></span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.force" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.get_potential">
+<span class="sig-name descname"><span class="pre">get_potential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.get_potential" title="Link to this definition"></a></dt>
+<dd><p>Set the POTCAR according to the species of elements in structure.</p>
+<p>return dict{‘ecutwfc’:wfc, ‘ecutrho’:rho}</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.get_pseudo_licrary">
+<span class="sig-name descname"><span class="pre">get_pseudo_licrary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.get_pseudo_licrary" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.kpoints">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kpoints</span></span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.kpoints" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.links">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">links</span></span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.links" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.nbands">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nbands</span></span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.nbands" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.overwrite">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">overwrite</span></span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.overwrite" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.potential">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">potential</span></span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.potential" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.program">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">program</span></span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.program" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.soft">
+<span class="sig-name descname"><span class="pre">soft</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'qe'</span></em><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.soft" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.tasks">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tasks</span></span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.tasks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.setqe.SetQE.xc_func">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xc_func</span></span><a class="headerlink" href="#jamip.abtools.espresso.setqe.SetQE.xc_func" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.espresso.utils">
+<span id="jamip-abtools-espresso-utils-module"></span><h2>jamip.abtools.espresso.utils module<a class="headerlink" href="#module-jamip.abtools.espresso.utils" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.utils.phonon_format">
+<span class="sig-prename descclassname"><span class="pre">jamip.abtools.espresso.utils.</span></span><span class="sig-name descname"><span class="pre">phonon_format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.utils.phonon_format" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.abtools.espresso.utils.pwscf_format">
+<span class="sig-prename descclassname"><span class="pre">jamip.abtools.espresso.utils.</span></span><span class="sig-name descname"><span class="pre">pwscf_format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.espresso.utils.pwscf_format" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-jamip.abtools.espresso">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jamip.abtools.espresso" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

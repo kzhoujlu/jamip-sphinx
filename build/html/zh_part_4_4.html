@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.4 基于Gaussian软件的高通量计算任务流程 &mdash; JAMIP 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">4.4 基于Gaussian软件的高通量计算任务流程</a><ul>
+<li><a class="reference internal" href="#input-py">input.py参数</a></li>
+<li><a class="reference internal" href="#cluster">.cluster 参数</a></li>
+<li><a class="reference internal" href="#incar">.incar 参数</a></li>
+<li><a class="reference internal" href="#id1">4.4.1 自洽场计算与结构优化</a><ul>
+<li><a class="reference internal" href="#id2">自洽场计算</a></li>
+<li><a class="reference internal" href="#id3">结构优化</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">4.4 基于Gaussian软件的高通量计算任务流程</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/zh_part_4_4.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="gaussian">
+<h1>4.4 基于Gaussian软件的高通量计算任务流程<a class="headerlink" href="#gaussian" title="Link to this heading"></a></h1>
+<section id="input-py">
+<h2>input.py参数<a class="headerlink" href="#input-py" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gau</span><span class="o">.</span><span class="n">program</span> <span class="o">=</span> <span class="s2">&quot;g16&quot;</span>  <span class="c1"># Gaussian 运行强烈的依赖环境变量设置，这里仅声明gaussian版本</span>
+<span class="n">gau</span><span class="o">.</span><span class="n">tasks</span> <span class="o">=</span> <span class="s2">&quot;opt geom=connectivity&quot;</span> <span class="c1"># Gaussian 计算的任务部分，目前不会拆分任务计算</span>
+<span class="n">gau</span><span class="o">.</span><span class="n">xc_func</span> <span class="o">=</span> <span class="s2">&quot;b3lyp/6-31g(d,p)&quot;</span> <span class="c1"># Gaussian 计算的势部分，目前会适用于所有任务</span>
+</pre></div>
+</div>
+</section>
+<section id="cluster">
+<h2>.cluster 参数<a class="headerlink" href="#cluster" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>env:
+-  export PGI_FASTMATH_CPU=sandybridge       # 使用AMD芯片时需要设置
+-  export g16root=/public/apps               # Gaussian目录的父目录
+-  export GAUSS_SCRDIR=`pwd`/tmp             # 计算时临时文件位置
+-  source $g16root/g16/bsd/g16.profile
+</pre></div>
+</div>
+</section>
+<section id="incar">
+<h2>.incar 参数<a class="headerlink" href="#incar" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">base</span><span class="p">:</span>
+  <span class="n">mem</span><span class="p">:</span> <span class="mi">10</span><span class="n">GB</span>                 <span class="c1"># Gaussian的集群参数(%)与计算参数(#)写在一起</span>
+  <span class="n">nprocshared</span><span class="p">:</span> <span class="mi">16</span>           <span class="c1"># 在生成gjf文件时按关键词自动拆分</span>
+<span class="n">opt</span><span class="p">:</span>
+  <span class="n">task</span><span class="p">:</span> <span class="n">opt</span> <span class="n">geom</span><span class="o">=</span><span class="n">connectivity</span>   <span class="c1"># 基于input.py 自动生成</span>
+  <span class="n">chk</span><span class="p">:</span> <span class="o">./</span><span class="n">opt</span><span class="o">.</span><span class="n">chk</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h2>4.4.1 自洽场计算与结构优化<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>自洽场计算<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p><strong>任务名：</strong> <code class="docutils literal notranslate"><span class="pre">scf</span></code></p>
+<p><strong>任务依赖：</strong> <code class="docutils literal notranslate"><span class="pre">relax/None</span></code> (根据relax任务是否存在自动确定)</p>
+</section>
+<section id="id3">
+<h3>结构优化<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p><strong>任务名：</strong> <code class="docutils literal notranslate"><span class="pre">opt</span></code>
+<strong>任务依赖：</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<p>结构优化任务</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

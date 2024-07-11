@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamip.analysis.base package &mdash; JAMIP 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jamip.analysis.base package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-jamip.analysis.base.test">jamip.analysis.base.test module</a><ul>
+<li><a class="reference internal" href="#jamip.analysis.base.test.Finder"><code class="docutils literal notranslate"><span class="pre">Finder</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.analysis.base.test.Finder.grep"><code class="docutils literal notranslate"><span class="pre">Finder.grep()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.test.Finder.seek_calc_with_depth"><code class="docutils literal notranslate"><span class="pre">Finder.seek_calc_with_depth()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.test.Finder.seek_structure"><code class="docutils literal notranslate"><span class="pre">Finder.seek_structure()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.test.Finder.stdscf"><code class="docutils literal notranslate"><span class="pre">Finder.stdscf()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.analysis.base.test.IterableAdapter"><code class="docutils literal notranslate"><span class="pre">IterableAdapter</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.test.get_ftype"><code class="docutils literal notranslate"><span class="pre">get_ftype()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.test.get_soft"><code class="docutils literal notranslate"><span class="pre">get_soft()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.test.seekpath"><code class="docutils literal notranslate"><span class="pre">seekpath()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.test.seekpath_with_depth"><code class="docutils literal notranslate"><span class="pre">seekpath_with_depth()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.test.seekpool"><code class="docutils literal notranslate"><span class="pre">seekpool()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.analysis.base">Module contents</a><ul>
+<li><a class="reference internal" href="#jamip.analysis.base.Finder"><code class="docutils literal notranslate"><span class="pre">Finder</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.analysis.base.Finder.file"><code class="docutils literal notranslate"><span class="pre">Finder.file</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.Finder.get_task_files"><code class="docutils literal notranslate"><span class="pre">Finder.get_task_files()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.Finder.grep"><code class="docutils literal notranslate"><span class="pre">Finder.grep()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.Finder.scfdir"><code class="docutils literal notranslate"><span class="pre">Finder.scfdir</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.Finder.seek_entry_type"><code class="docutils literal notranslate"><span class="pre">Finder.seek_entry_type()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.Finder.seek_multi_entries"><code class="docutils literal notranslate"><span class="pre">Finder.seek_multi_entries()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.Finder.seek_structure_type"><code class="docutils literal notranslate"><span class="pre">Finder.seek_structure_type()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.Finder.stdcell"><code class="docutils literal notranslate"><span class="pre">Finder.stdcell</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.Finder.stdin"><code class="docutils literal notranslate"><span class="pre">Finder.stdin</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.analysis.base.FinderSet"><code class="docutils literal notranslate"><span class="pre">FinderSet</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.analysis.base.FinderSet.files"><code class="docutils literal notranslate"><span class="pre">FinderSet.files</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.FinderSet.from_pool"><code class="docutils literal notranslate"><span class="pre">FinderSet.from_pool()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.FinderSet.recursion"><code class="docutils literal notranslate"><span class="pre">FinderSet.recursion</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.FinderSet.stdin"><code class="docutils literal notranslate"><span class="pre">FinderSet.stdin</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.base.FinderSet.task"><code class="docutils literal notranslate"><span class="pre">FinderSet.task</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">jamip.analysis.base package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/jamip.analysis.base.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jamip-analysis-base-package">
+<h1>jamip.analysis.base package<a class="headerlink" href="#jamip-analysis-base-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.analysis.base.test">
+<span id="jamip-analysis-base-test-module"></span><h2>jamip.analysis.base.test module<a class="headerlink" href="#module-jamip.analysis.base.test" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.analysis.base.test.Finder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.analysis.base.test.</span></span><span class="sig-name descname"><span class="pre">Finder</span></span><a class="headerlink" href="#jamip.analysis.base.test.Finder" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Basic method for querying properties and paths</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.base.test.Finder.grep">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">grep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.test.Finder.grep" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.base.test.Finder.seek_calc_with_depth">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">seek_calc_with_depth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.test.Finder.seek_calc_with_depth" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.base.test.Finder.seek_structure">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">seek_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.test.Finder.seek_structure" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.base.test.Finder.stdscf">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stdscf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.test.Finder.stdscf" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.analysis.base.test.IterableAdapter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.analysis.base.test.</span></span><span class="sig-name descname"><span class="pre">IterableAdapter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable_factory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.test.IterableAdapter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p><a class="reference external" href="https://stackoverflow.com/a/39564774">https://stackoverflow.com/a/39564774</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.analysis.base.test.get_ftype">
+<span class="sig-prename descclassname"><span class="pre">jamip.analysis.base.test.</span></span><span class="sig-name descname"><span class="pre">get_ftype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.test.get_ftype" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.analysis.base.test.get_soft">
+<span class="sig-prename descclassname"><span class="pre">jamip.analysis.base.test.</span></span><span class="sig-name descname"><span class="pre">get_soft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.test.get_soft" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.analysis.base.test.seekpath">
+<span class="sig-prename descclassname"><span class="pre">jamip.analysis.base.test.</span></span><span class="sig-name descname"><span class="pre">seekpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.test.seekpath" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.analysis.base.test.seekpath_with_depth">
+<span class="sig-prename descclassname"><span class="pre">jamip.analysis.base.test.</span></span><span class="sig-name descname"><span class="pre">seekpath_with_depth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.test.seekpath_with_depth" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.analysis.base.test.seekpool">
+<span class="sig-prename descclassname"><span class="pre">jamip.analysis.base.test.</span></span><span class="sig-name descname"><span class="pre">seekpool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.test.seekpool" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-jamip.analysis.base">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jamip.analysis.base" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.analysis.base.Finder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.analysis.base.</span></span><span class="sig-name descname"><span class="pre">Finder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'vasp'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.Finder" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.analysis.base.Finder.file">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">file</span></span><a class="headerlink" href="#jamip.analysis.base.Finder.file" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.base.Finder.get_task_files">
+<span class="sig-name descname"><span class="pre">get_task_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.Finder.get_task_files" title="Link to this definition"></a></dt>
+<dd><p>get task files</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.base.Finder.grep">
+<span class="sig-name descname"><span class="pre">grep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.Finder.grep" title="Link to this definition"></a></dt>
+<dd><p>grep base information from scf calculation</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.analysis.base.Finder.scfdir">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">scfdir</span></span><a class="headerlink" href="#jamip.analysis.base.Finder.scfdir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.base.Finder.seek_entry_type">
+<span class="sig-name descname"><span class="pre">seek_entry_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.Finder.seek_entry_type" title="Link to this definition"></a></dt>
+<dd><p>seek entry type</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.base.Finder.seek_multi_entries">
+<span class="sig-name descname"><span class="pre">seek_multi_entries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.Finder.seek_multi_entries" title="Link to this definition"></a></dt>
+<dd><p>seek multi entry dirs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.base.Finder.seek_structure_type">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">seek_structure_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.Finder.seek_structure_type" title="Link to this definition"></a></dt>
+<dd><p>seek structure type</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.analysis.base.Finder.stdcell">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stdcell</span></span><a class="headerlink" href="#jamip.analysis.base.Finder.stdcell" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.analysis.base.Finder.stdin">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stdin</span></span><a class="headerlink" href="#jamip.analysis.base.Finder.stdin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.analysis.base.FinderSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.analysis.base.</span></span><span class="sig-name descname"><span class="pre">FinderSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'vasp'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.FinderSet" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jamip.analysis.base.Finder" title="jamip.analysis.base.Finder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Finder</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.analysis.base.FinderSet.files">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">files</span></span><a class="headerlink" href="#jamip.analysis.base.FinderSet.files" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.base.FinderSet.from_pool">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_pool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'vasp'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.base.FinderSet.from_pool" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.analysis.base.FinderSet.recursion">
+<span class="sig-name descname"><span class="pre">recursion</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#jamip.analysis.base.FinderSet.recursion" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.analysis.base.FinderSet.stdin">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stdin</span></span><a class="headerlink" href="#jamip.analysis.base.FinderSet.stdin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.analysis.base.FinderSet.task">
+<span class="sig-name descname"><span class="pre">task</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#jamip.analysis.base.FinderSet.task" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

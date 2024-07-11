@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamip.db.modeling package &mdash; JAMIP 1.3 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c55cb9cb"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jamip.db.modeling package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-jamip.db.modeling.interfaceFactory">jamip.db.modeling.interfaceFactory module</a><ul>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.InterfaceFactory"><code class="docutils literal notranslate"><span class="pre">InterfaceFactory</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.InterfaceFactory.attach"><code class="docutils literal notranslate"><span class="pre">InterfaceFactory.attach()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.InterfaceFactory.axis"><code class="docutils literal notranslate"><span class="pre">InterfaceFactory.axis</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.InterfaceFactory.match"><code class="docutils literal notranslate"><span class="pre">InterfaceFactory.match()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.InterfaceFactory.match_zsl"><code class="docutils literal notranslate"><span class="pre">InterfaceFactory.match_zsl()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.InterfaceFactory.raw_layers"><code class="docutils literal notranslate"><span class="pre">InterfaceFactory.raw_layers</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.InterfaceFactory.structure"><code class="docutils literal notranslate"><span class="pre">InterfaceFactory.structure</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.InterfaceFactory.twister_match"><code class="docutils literal notranslate"><span class="pre">InterfaceFactory.twister_match()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.Supercell"><code class="docutils literal notranslate"><span class="pre">Supercell</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.Supercell.center"><code class="docutils literal notranslate"><span class="pre">Supercell.center()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.Supercell.equivalent_vectors"><code class="docutils literal notranslate"><span class="pre">Supercell.equivalent_vectors()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.Supercell.fixed"><code class="docutils literal notranslate"><span class="pre">Supercell.fixed()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.Supercell.hkl"><code class="docutils literal notranslate"><span class="pre">Supercell.hkl</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.Supercell.multiple"><code class="docutils literal notranslate"><span class="pre">Supercell.multiple()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.Supercell.redefine_matrix"><code class="docutils literal notranslate"><span class="pre">Supercell.redefine_matrix</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.Supercell.set_terminal"><code class="docutils literal notranslate"><span class="pre">Supercell.set_terminal()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.Supercell.structure"><code class="docutils literal notranslate"><span class="pre">Supercell.structure</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.Supercell.supercell_matrix"><code class="docutils literal notranslate"><span class="pre">Supercell.supercell_matrix</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.Supercell.surface_matrix"><code class="docutils literal notranslate"><span class="pre">Supercell.surface_matrix</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.Supercell.symmetry_operation"><code class="docutils literal notranslate"><span class="pre">Supercell.symmetry_operation()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.gen_sl_transform_matricies"><code class="docutils literal notranslate"><span class="pre">gen_sl_transform_matricies()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.get_2dmask"><code class="docutils literal notranslate"><span class="pre">get_2dmask()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.get_factors"><code class="docutils literal notranslate"><span class="pre">get_factors()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.get_match_transformation"><code class="docutils literal notranslate"><span class="pre">get_match_transformation()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.reduce_vectors"><code class="docutils literal notranslate"><span class="pre">reduce_vectors()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.shape_supercell_matrix"><code class="docutils literal notranslate"><span class="pre">shape_supercell_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.vec_angle"><code class="docutils literal notranslate"><span class="pre">vec_angle()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.interfaceFactory.vec_area"><code class="docutils literal notranslate"><span class="pre">vec_area()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.db.modeling.structureAnalyser">jamip.db.modeling.structureAnalyser module</a><ul>
+<li><a class="reference internal" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser"><code class="docutils literal notranslate"><span class="pre">StructureAnalyser</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.delaunay_reduce"><code class="docutils literal notranslate"><span class="pre">StructureAnalyser.delaunay_reduce()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.get_RDF_of_all"><code class="docutils literal notranslate"><span class="pre">StructureAnalyser.get_RDF_of_all()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.get_RDF_of_atom"><code class="docutils literal notranslate"><span class="pre">StructureAnalyser.get_RDF_of_atom()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.get_XRD_pattern"><code class="docutils literal notranslate"><span class="pre">StructureAnalyser.get_XRD_pattern()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.get_atomic_packing_factor"><code class="docutils literal notranslate"><span class="pre">StructureAnalyser.get_atomic_packing_factor()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.get_averaged_coordination_number"><code class="docutils literal notranslate"><span class="pre">StructureAnalyser.get_averaged_coordination_number()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.get_coordination_atoms_of_atom"><code class="docutils literal notranslate"><span class="pre">StructureAnalyser.get_coordination_atoms_of_atom()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.get_coordination_number_of_atom"><code class="docutils literal notranslate"><span class="pre">StructureAnalyser.get_coordination_number_of_atom()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.get_tolerance_factor"><code class="docutils literal notranslate"><span class="pre">StructureAnalyser.get_tolerance_factor()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.niggli_reduce"><code class="docutils literal notranslate"><span class="pre">StructureAnalyser.niggli_reduce()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.db.modeling.structureFactory">jamip.db.modeling.structureFactory module</a><ul>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory"><code class="docutils literal notranslate"><span class="pre">StructureFactory</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.addUnit"><code class="docutils literal notranslate"><span class="pre">StructureFactory.addUnit()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.add_atoms"><code class="docutils literal notranslate"><span class="pre">StructureFactory.add_atoms()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.adsorption"><code class="docutils literal notranslate"><span class="pre">StructureFactory.adsorption()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.alloy"><code class="docutils literal notranslate"><span class="pre">StructureFactory.alloy()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.center"><code class="docutils literal notranslate"><span class="pre">StructureFactory.center()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.constraint"><code class="docutils literal notranslate"><span class="pre">StructureFactory.constraint()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.conventional"><code class="docutils literal notranslate"><span class="pre">StructureFactory.conventional()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.cut"><code class="docutils literal notranslate"><span class="pre">StructureFactory.cut()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.del_atoms"><code class="docutils literal notranslate"><span class="pre">StructureFactory.del_atoms()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.getUnit"><code class="docutils literal notranslate"><span class="pre">StructureFactory.getUnit()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.images"><code class="docutils literal notranslate"><span class="pre">StructureFactory.images()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.initializeVelocityDistribution"><code class="docutils literal notranslate"><span class="pre">StructureFactory.initializeVelocityDistribution()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.insertMolecule"><code class="docutils literal notranslate"><span class="pre">StructureFactory.insertMolecule()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.joint"><code class="docutils literal notranslate"><span class="pre">StructureFactory.joint()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.magnetism_order"><code class="docutils literal notranslate"><span class="pre">StructureFactory.magnetism_order()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.mirror"><code class="docutils literal notranslate"><span class="pre">StructureFactory.mirror()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.perturb"><code class="docutils literal notranslate"><span class="pre">StructureFactory.perturb()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.primitive"><code class="docutils literal notranslate"><span class="pre">StructureFactory.primitive()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.raw_structure"><code class="docutils literal notranslate"><span class="pre">StructureFactory.raw_structure</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.redefine"><code class="docutils literal notranslate"><span class="pre">StructureFactory.redefine()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.removeUnit"><code class="docutils literal notranslate"><span class="pre">StructureFactory.removeUnit()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.rotation"><code class="docutils literal notranslate"><span class="pre">StructureFactory.rotation()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.scale"><code class="docutils literal notranslate"><span class="pre">StructureFactory.scale()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.standardize"><code class="docutils literal notranslate"><span class="pre">StructureFactory.standardize()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.structure"><code class="docutils literal notranslate"><span class="pre">StructureFactory.structure</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.substitute_atoms"><code class="docutils literal notranslate"><span class="pre">StructureFactory.substitute_atoms()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.supercell"><code class="docutils literal notranslate"><span class="pre">StructureFactory.supercell()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.surface"><code class="docutils literal notranslate"><span class="pre">StructureFactory.surface()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.translation"><code class="docutils literal notranslate"><span class="pre">StructureFactory.translation()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.vacuum"><code class="docutils literal notranslate"><span class="pre">StructureFactory.vacuum()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory.zoom"><code class="docutils literal notranslate"><span class="pre">StructureFactory.zoom()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.db.modeling">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">jamip.db.modeling package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/db/jamip.db.modeling.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jamip-db-modeling-package">
+<h1>jamip.db.modeling package<a class="headerlink" href="#jamip-db-modeling-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="jamip.db.modeling.advance.html">jamip.db.modeling.advance package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.modeling.advance.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.modeling.advance.html#module-jamip.db.modeling.advance.advancedStructureFactory">jamip.db.modeling.advance.advancedStructureFactory module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jamip.db.modeling.advance.html#jamip.db.modeling.advance.advancedStructureFactory.AdvancedStructureFactory"><code class="docutils literal notranslate"><span class="pre">AdvancedStructureFactory</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.modeling.advance.html#jamip.db.modeling.advance.advancedStructureFactory.AdvancedStructureFactory.bending"><code class="docutils literal notranslate"><span class="pre">AdvancedStructureFactory.bending()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.modeling.advance.html#jamip.db.modeling.advance.advancedStructureFactory.AdvancedStructureFactory.moire_pattern"><code class="docutils literal notranslate"><span class="pre">AdvancedStructureFactory.moire_pattern()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.modeling.advance.html#jamip.db.modeling.advance.advancedStructureFactory.AdvancedStructureFactory.twin"><code class="docutils literal notranslate"><span class="pre">AdvancedStructureFactory.twin()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.modeling.advance.html#module-jamip.db.modeling.advance">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.db.modeling.interfaceFactory">
+<span id="jamip-db-modeling-interfacefactory-module"></span><h2>jamip.db.modeling.interfaceFactory module<a class="headerlink" href="#module-jamip.db.modeling.interfaceFactory" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.InterfaceFactory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.modeling.interfaceFactory.</span></span><span class="sig-name descname"><span class="pre">InterfaceFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.InterfaceFactory" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.InterfaceFactory.attach">
+<span class="sig-name descname"><span class="pre">attach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spacing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.InterfaceFactory.attach" title="Link to this definition"></a></dt>
+<dd><p>direction: [x, y, z, dtype]</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.InterfaceFactory.axis">
+<span class="sig-name descname"><span class="pre">axis</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'x':</span> <span class="pre">0,</span> <span class="pre">'y':</span> <span class="pre">1,</span> <span class="pre">'z':</span> <span class="pre">2}</span></em><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.InterfaceFactory.axis" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.InterfaceFactory.match">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lattice1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lattice2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nmiller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fix_angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerate_vector_mismatch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.04</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerate_angle_mismatch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.InterfaceFactory.match" title="Link to this definition"></a></dt>
+<dd><p>以手动旋转的方式匹配两个平面格子</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.InterfaceFactory.match_zsl">
+<span class="sig-name descname"><span class="pre">match_zsl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">400</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.08</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.InterfaceFactory.match_zsl" title="Link to this definition"></a></dt>
+<dd><p><a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0927025615003365#b0050">https://www.sciencedirect.com/science/article/pii/S0927025615003365#b0050</a></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.InterfaceFactory.raw_layers">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">raw_layers</span></span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.InterfaceFactory.raw_layers" title="Link to this definition"></a></dt>
+<dd><p>raw structure.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.InterfaceFactory.structure">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">structure</span></span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.InterfaceFactory.structure" title="Link to this definition"></a></dt>
+<dd><p>structure object after operation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.InterfaceFactory.twister_match">
+<span class="sig-name descname"><span class="pre">twister_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nmiller</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fix_angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerate_vector_mismatch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.04</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerate_angle_mismatch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.InterfaceFactory.twister_match" title="Link to this definition"></a></dt>
+<dd><p>angle: Upper layer cell rotation Angle, unit degree
+nmiller: Maximum allowable Miller index
+fix_angle: Fixed Angle of the matching lattice, unit degree
+attach_axis: The lattice direction for interface matching
+tolerate_vector_mismatch: Lattice vector mismatch tolerance, assert <a href="#id1"><span class="problematic" id="id2">|a-a'|</span></a> &lt; tol
+tolerate_angle_mismatch: Lattice vector mismatch tolerance, assert <a href="#id3"><span class="problematic" id="id4">|cos(alpha) - cos(alpha')|</span></a> &lt; tol</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.Supercell">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.modeling.interfaceFactory.</span></span><span class="sig-name descname"><span class="pre">Supercell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">supercell_matrix</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.Supercell" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jamip.db.modeling.structureFactory.StructureFactory" title="jamip.db.modeling.structureFactory.StructureFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">StructureFactory</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.Supercell.center">
+<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.Supercell.center" title="Link to this definition"></a></dt>
+<dd><p>基于最大层间距，将结构移至晶胞中心
+:param axis_index: 垂直层的方向
+:param tol: 检查最大层间距是否够大</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.Supercell.equivalent_vectors">
+<span class="sig-name descname"><span class="pre">equivalent_vectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nmiller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.Supercell.equivalent_vectors" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.Supercell.fixed">
+<span class="sig-name descname"><span class="pre">fixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.Supercell.fixed" title="Link to this definition"></a></dt>
+<dd><p>对于已经预移动的晶胞，直接确定边界</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.Supercell.hkl">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hkl</span></span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.Supercell.hkl" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.Supercell.multiple">
+<span class="sig-name descname"><span class="pre">multiple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vectors</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.Supercell.multiple" title="Link to this definition"></a></dt>
+<dd><p>基于平移操作，重复结构中的原子
+:param axis_index: 垂直层的方向
+:param tol: 检查最大层间距是否够大</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.Supercell.redefine_matrix">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">redefine_matrix</span></span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.Supercell.redefine_matrix" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.Supercell.set_terminal">
+<span class="sig-name descname"><span class="pre">set_terminal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thickness</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loweratom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upperatom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.Supercell.set_terminal" title="Link to this definition"></a></dt>
+<dd><p>对于体相结构，需要根据原子类型及厚度设置终端</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.Supercell.structure">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">structure</span></span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.Supercell.structure" title="Link to this definition"></a></dt>
+<dd><p>structure object after operation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.Supercell.supercell_matrix">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">supercell_matrix</span></span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.Supercell.supercell_matrix" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.Supercell.surface_matrix">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">surface_matrix</span></span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.Supercell.surface_matrix" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.Supercell.symmetry_operation">
+<span class="sig-name descname"><span class="pre">symmetry_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.Supercell.symmetry_operation" title="Link to this definition"></a></dt>
+<dd><p>site: direct position (3,)
+theta: radian</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.gen_sl_transform_matricies">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.modeling.interfaceFactory.</span></span><span class="sig-name descname"><span class="pre">gen_sl_transform_matricies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area_multiple</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.gen_sl_transform_matricies" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.get_2dmask">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.modeling.interfaceFactory.</span></span><span class="sig-name descname"><span class="pre">get_2dmask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.get_2dmask" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.get_factors">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.modeling.interfaceFactory.</span></span><span class="sig-name descname"><span class="pre">get_factors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.get_factors" title="Link to this definition"></a></dt>
+<dd><p>Generate all factors of n</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.get_match_transformation">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.modeling.interfaceFactory.</span></span><span class="sig-name descname"><span class="pre">get_match_transformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector_set1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector_set2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.get_match_transformation" title="Link to this definition"></a></dt>
+<dd><p>The tranformation matrix to conver set2 to set1</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.reduce_vectors">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.modeling.interfaceFactory.</span></span><span class="sig-name descname"><span class="pre">reduce_vectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.reduce_vectors" title="Link to this definition"></a></dt>
+<dd><p>Generate independent and unique basis vectors based on the
+methodology of Zur and McGill</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.shape_supercell_matrix">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.modeling.interfaceFactory.</span></span><span class="sig-name descname"><span class="pre">shape_supercell_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.shape_supercell_matrix" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.vec_angle">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.modeling.interfaceFactory.</span></span><span class="sig-name descname"><span class="pre">vec_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.vec_angle" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.modeling.interfaceFactory.vec_area">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.modeling.interfaceFactory.</span></span><span class="sig-name descname"><span class="pre">vec_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector12</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.interfaceFactory.vec_area" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-jamip.db.modeling.structureAnalyser">
+<span id="jamip-db-modeling-structureanalyser-module"></span><h2>jamip.db.modeling.structureAnalyser module<a class="headerlink" href="#module-jamip.db.modeling.structureAnalyser" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureAnalyser.StructureAnalyser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.modeling.structureAnalyser.</span></span><span class="sig-name descname"><span class="pre">StructureAnalyser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureAnalyser.StructureAnalyser.delaunay_reduce">
+<span class="sig-name descname"><span class="pre">delaunay_reduce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.delaunay_reduce" title="Link to this definition"></a></dt>
+<dd><p>Delaunay reduction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>eps</strong> (<em>default=1e-5</em>) – tolerance parameter, see niggliReduce.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureAnalyser.StructureAnalyser.get_RDF_of_all">
+<span class="sig-name descname"><span class="pre">get_RDF_of_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.get_RDF_of_all" title="Link to this definition"></a></dt>
+<dd><p>radius distribution function (RDF) for all atom.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>max_r</strong> (<em>default=10.0</em>) – max radius (unit: Angstrom).</p></li>
+<li><p><strong>min_r</strong> (<em>default=1e-3</em>) – min radius (unit: Angstrom).</p></li>
+<li><p><strong>dr</strong> (<em>default=0.1</em>) – delta radius (unit: Angstrom).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl>
+<dt>list-type [distance, number_of_atoms, [formated_atom1, formated_atom2,…],</dt><dd><blockquote>
+<div><p>…</p>
+</div></blockquote>
+<p>]</p>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureAnalyser.StructureAnalyser.get_RDF_of_atom">
+<span class="sig-name descname"><span class="pre">get_RDF_of_atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formated_atom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol_of_element</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.get_RDF_of_atom" title="Link to this definition"></a></dt>
+<dd><p>radius distribution function (RDF) for atom.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>max_r</strong> (<em>default=10.0</em>) – max radius (unit: Angstrom).</p></li>
+<li><p><strong>min_r</strong> (<em>default=1e-3</em>) – min radius (unit: Angstrom).</p></li>
+<li><p><strong>dr</strong> (<em>default=0.1</em>) – delta radius (unit: Angstrom).</p></li>
+<li><p><strong>symbol_of_element</strong> (<em>default=structure.elements</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl>
+<dt>list-type [distance, number_of_atoms, [formated_atom1, formated_atom2,…],</dt><dd><blockquote>
+<div><p>…</p>
+</div></blockquote>
+<p>]</p>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureAnalyser.StructureAnalyser.get_XRD_pattern">
+<span class="sig-name descname"><span class="pre">get_XRD_pattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_of_anode_material</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.get_XRD_pattern" title="Link to this definition"></a></dt>
+<dd><p>calculate XRD pattern.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target_of_anode_material</strong> – target of anode material.
+Anode   Cr   Fe   Co   Cu   Mo   Ag
+K_alpha 2.29 1.94 1.79 1.54 0.71 0.56</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>XRD pattern.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureAnalyser.StructureAnalyser.get_atomic_packing_factor">
+<span class="sig-name descname"><span class="pre">get_atomic_packing_factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atomic_radii</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.get_atomic_packing_factor" title="Link to this definition"></a></dt>
+<dd><p>get the atomic packing factor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureAnalyser.StructureAnalyser.get_averaged_coordination_number">
+<span class="sig-name descname"><span class="pre">get_averaged_coordination_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_of_element</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.get_averaged_coordination_number" title="Link to this definition"></a></dt>
+<dd><p>get the averaged coordination number of given element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureAnalyser.StructureAnalyser.get_coordination_atoms_of_atom">
+<span class="sig-name descname"><span class="pre">get_coordination_atoms_of_atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formated_atom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.get_coordination_atoms_of_atom" title="Link to this definition"></a></dt>
+<dd><p>get the coordination atoms of given atom.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cutoff</strong> (<em>default=3.0</em>) – cutoff radius when calculating the coordiantion atoms.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the coordination atoms of given atom. list-type [formated_atom1, formated_atom2,…]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureAnalyser.StructureAnalyser.get_coordination_number_of_atom">
+<span class="sig-name descname"><span class="pre">get_coordination_number_of_atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formated_atom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.get_coordination_number_of_atom" title="Link to this definition"></a></dt>
+<dd><p>get the coordination number of given atom within the cutoff radius.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureAnalyser.StructureAnalyser.get_tolerance_factor">
+<span class="sig-name descname"><span class="pre">get_tolerance_factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.get_tolerance_factor" title="Link to this definition"></a></dt>
+<dd><p>get the Goldschmidt tolerance factor by given atomic radii.
+<a class="reference external" href="https://blog.csdn.net/weixin_44210796/article/details/106120423">https://blog.csdn.net/weixin_44210796/article/details/106120423</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureAnalyser.StructureAnalyser.niggli_reduce">
+<span class="sig-name descname"><span class="pre">niggli_reduce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureAnalyser.StructureAnalyser.niggli_reduce" title="Link to this definition"></a></dt>
+<dd><p>Niggli reduction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>eps</strong> (<em>default=1e-5</em>) – tolerance parameter, but unlike symprec the unit is not a length.
+This is used to check if difference of norms of two basis vectors
+is close to zero or not and if two basis vectors are orthogonal
+by the value of dot product being close to zero or not. The detail
+is shown at <a class="reference external" href="https://atztogo.github.io/niggli/">https://atztogo.github.io/niggli/</a>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Niggli reduction.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.db.modeling.structureFactory">
+<span id="jamip-db-modeling-structurefactory-module"></span><h2>jamip.db.modeling.structureFactory module<a class="headerlink" href="#module-jamip.db.modeling.structureFactory" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.modeling.structureFactory.</span></span><span class="sig-name descname"><span class="pre">StructureFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isOperateOnSelf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.addUnit">
+<span class="sig-name descname"><span class="pre">addUnit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nrepeat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.addUnit" title="Link to this definition"></a></dt>
+<dd><p>add repeat unit with giving range along a direction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit</strong> – unit of operation. The valid format is [start, end, direction(0/1/2)]. i.e. [0.24980, 0.31235, 2] (Direct-type for position)</p></li>
+<li><p><strong>nrepeat</strong> – number of repeat.</p></li>
+<li><p><strong>tolerance</strong> (<em>default=0.1</em>) – tolerance for unit to exclude the right atoms near boundary (unit: Angstrom).</p></li>
+<li><p><strong>kwargs</strong> – <p>symprec (default=1e-5): precision when to find the symmetry.
+angle_tolerance (default=-1.0): a experimental argument that controls angle tolerance between basis vectors.</p>
+<p>isPersistLattice (defalt=False): whether persist the lattice parameters when cutting unit.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.add_atoms">
+<span class="sig-name descname"><span class="pre">add_atoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.add_atoms" title="Link to this definition"></a></dt>
+<dd><p>add atoms to structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>atoms</strong> – <p>collection of atom’s object or formated string. i.e. [atom0, atom1, atom2,…]
+[‘Na’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na’, 0.1, 0.0, 0.0]
+[‘Na’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+<p>contain species information:
+[‘Na1+’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na1+’, 0.1, 0.0, 0.0]
+[‘Na1+’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+</p></li>
+<li><p><strong>kwargs</strong> – <dl class="simple">
+<dt>isNormalizingCoordinate (default=True): whether to remove the periodic boundary condition,</dt><dd><p>ensure the value of atomic coordinate is between 0 and 1 (i.e. 1.3 -&gt; 0.3).</p>
+</dd>
+<dt>precision (default=1e-3): used to determine whether the two atoms are overlapped. Note that,</dt><dd><p>to determine whether this atom is in collection by comparing its distance
+from other atoms.</p>
+</dd>
+</dl>
+<p>symprec (default=1e-5): precision when to find the symmetry.
+angle_tolerance (default=-1.0): a experimental argument that controls angle tolerance between basis vectors.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.adsorption">
+<span class="sig-name descname"><span class="pre">adsorption</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.adsorption" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.alloy">
+<span class="sig-name descname"><span class="pre">alloy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.alloy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.center">
+<span class="sig-name descname"><span class="pre">center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype_of_move</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'position'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.center" title="Link to this definition"></a></dt>
+<dd><p>move atoms to center by given direction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>direction</strong> – direction vector. The valid format is [1, 0, 0], [0, 1, 0], [0, 0, 1].</p></li>
+<li><p><strong>type_of_move</strong> (<em>default='position'</em>) – type of move.
+‘mass’: moving by center of mass.
+‘position’: moving by boundary of position.</p></li>
+<li><p><strong>isUpdatedInfo</strong> (<em>default=False</em>) – whether to update the composition and symmetry information (include the site, operation, wyckoffSite, spacegroup).</p></li>
+<li><p><strong>isPersist</strong> (<em>default=False</em>) – whether to save to the database.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.constraint">
+<span class="sig-name descname"><span class="pre">constraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isConstraint_of_remainder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.constraint" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>selected dynamics. assign the constraint information to given atoms. Meanwhile, the constraint of remainder atoms</dt><dd><p>are set to the default [False, False, False] if don’t give the value of ‘constraint_of_remainder’.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>atoms</strong> – <p>collection of atom contain constraint information. The valid formation:
+[‘Na’, 0.1, 0.0, 0.0, True, True, False],
+[‘Na’, 0.1, 0.0, 0.0, ‘Direct, True, True, False],
+[‘Na’, 5.234, 0.0, 0.0, ‘Cartesian’, True, True, False],</p>
+<p>contain species information:
+[‘Na1+’, 0.1, 0.0, 0.0, ‘Direct’, True, True, False]
+[‘Na1+’, 0.1, 0.0, 0.0, True, True, False]
+[‘Na1+’, 5.234, 0.0, 0.0, ‘Cartesian’, True, True, False]</p>
+<p>[atom1, True, True, True]]</p>
+</p></li>
+<li><p><strong>isPersist</strong> (<em>default=False</em>) – whether to save to the database.</p></li>
+<li><p><strong>isConstraint_of_remainder</strong> (<em>default=False</em>) – whether to update constraint of remainder atoms</p></li>
+<li><p><strong>kwarges</strong> – constraints: constraints of given atoms.
+constraint_of_remainder (default=[True, True, True]): constraint of remainder atoms.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.conventional">
+<span class="sig-name descname"><span class="pre">conventional</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symprec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.conventional" title="Link to this definition"></a></dt>
+<dd><p>conventional structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symprec</strong> (<em>default=1e-5</em><em>, </em><em>symmetry tolerance</em>) – distance tolerance in Cartesian coordinates to find crystal symmetry.buj</p></li>
+<li><p><strong>isPersist</strong> (<em>default=False</em>) – whether to save to the database.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.cut">
+<span class="sig-name descname"><span class="pre">cut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lattce_surface</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.cut" title="Link to this definition"></a></dt>
+<dd><p>cut along a lattice surface.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.del_atoms">
+<span class="sig-name descname"><span class="pre">del_atoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.del_atoms" title="Link to this definition"></a></dt>
+<dd><p>delete atoms from structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>atoms</strong> – <p>collection of atom’s formated atom or object. i.e. [atom0, atom1, atom2,…]
+[‘Na’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na’, 0.1, 0.0, 0.0]
+[‘Na’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+<p>contain species information:
+[‘Na1+’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na1+’, 0.1, 0.0, 0.0]
+[‘Na1+’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+</p></li>
+<li><p><strong>kwargs</strong> – symprec (default=1e-5): precision when to find the symmetry.
+angle_tolerance (default=-1.0): a experimental argument that controls angle tolerance between basis vectors.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.getUnit">
+<span class="sig-name descname"><span class="pre">getUnit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.getUnit" title="Link to this definition"></a></dt>
+<dd><p>get a unit with giving range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit</strong> – unit of operation. The valid format is [start, end, direction(0/1/2)]. i.e. [0.24980, 0.31235, 2] or [[0.1, 0.2],
+[0.1, 0.2],
+[0.1, 0.2]]</p></li>
+<li><p><strong>tolerance</strong> (<em>default=0.1</em>) – tolerance for unit to exclude the right atoms near boundary (unit: Angstrom).</p></li>
+<li><p><strong>kwargs</strong> – symbol_of_atoms:symbol of atoms. i.e. [‘Na’, ‘Cl’]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.images">
+<span class="sig-name descname"><span class="pre">images</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numbers_of_images</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.images" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.initializeVelocityDistribution">
+<span class="sig-name descname"><span class="pre">initializeVelocityDistribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.initializeVelocityDistribution" title="Link to this definition"></a></dt>
+<dd><p>initialize the velocity (unit: angstrom/fs) distribution of atoms at given temperature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>temperature</strong> – desired temperature (unit: K).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.insertMolecule">
+<span class="sig-name descname"><span class="pre">insertMolecule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure_of_molecule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_in_molecule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.insertMolecule" title="Link to this definition"></a></dt>
+<dd><p>insert a molecule to structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>structure_of_molecule</strong> – molecule’s object.</p></li>
+<li><p><strong>position_in_molecule</strong> – reference position in molecule for moving. the valid format is : [5.234, 0, 0, ‘Cartesian’]</p></li>
+<li><p><strong>position</strong> – reference position in structure for moving. the valid format is :
+[0.1, 0, 0, ‘Direct’]
+[0.1, 0, 0] (for Direct, can not be specify)
+[5.234, 0, 0, ‘Cartesian’] (for Cartesian, must be given)</p></li>
+<li><p><strong>isUpdatedInfo</strong> (<em>default=False</em>) – whether to update the composition and symmetry information (include the site, operation, wyckoffSite, spacegroup).</p></li>
+<li><p><strong>isPersist</strong> (<em>default=False</em>) – whether to save to the database.</p></li>
+<li><p><strong>kwargs</strong> – symprec (default=1e-5): precision when to find the symmetry.
+angle_tolerance (default=-1.0): a experimental argument that controls angle tolerance between basis vectors.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.joint">
+<span class="sig-name descname"><span class="pre">joint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jointed_structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.joint" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>joint two structures along given direction. Note that the size of the section perpendicular to the splicing direction</dt><dd><p>is equal to that of the structure, not the jointed structure.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jointed_structure</strong> – structure needed to joint.</p></li>
+<li><p><strong>direction</strong> – direction vector to add the vacuum along lattice vector(a/b/c). The valid format is :
+[1, 0, 0, ‘Direct’] # right of a
+[-1, 0, 0, ‘Direct’] # left of a</p></li>
+<li><p><strong>isUpdatedInfo</strong> (<em>default=False</em>) – whether to update the composition and symmetry information (include the site, operation, wyckoffSite, spacegroup).</p></li>
+<li><p><strong>isPersist</strong> (<em>default=False</em>) – whether to save to the database.</p></li>
+<li><p><strong>kwargs</strong> – symprec (default=1e-5): precision when to find the symmetry.
+angle_tolerance (default=-1.0): a experimental argument that controls angle tolerance between basis vectors.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.magnetism_order">
+<span class="sig-name descname"><span class="pre">magnetism_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element_magmoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.magnetism_order" title="Link to this definition"></a></dt>
+<dd><p>At present, only consider FM configuration. Other magnetic configuration need to set the atomic magnetism by hand.</p>
+<dl>
+<dt>Arguments</dt><dd><dl>
+<dt>element_magmoms: dictionary of element’s symbol and its magnetic moment. The valid formation:</dt><dd><dl class="simple">
+<dt>{‘Fe’:5,</dt><dd><p>‘Cr’:3,</p>
+</dd>
+</dl>
+<p>…}</p>
+</dd>
+</dl>
+<p>isPersist (default=False): whether to save to the database.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.mirror">
+<span class="sig-name descname"><span class="pre">mirror</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mirror_plane</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.mirror" title="Link to this definition"></a></dt>
+<dd><p>mirror given atoms along</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.perturb">
+<span class="sig-name descname"><span class="pre">perturb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.perturb" title="Link to this definition"></a></dt>
+<dd><p>perturb the atomic position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cutoff</strong> (<em>default=0.1</em>) – cutoff of perturbation (unit: Angstrom).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.primitive">
+<span class="sig-name descname"><span class="pre">primitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symprec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.primitive" title="Link to this definition"></a></dt>
+<dd><p>primitive structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symprec</strong> (<em>default=1e-5</em><em>, </em><em>symmetry tolerance</em>) – distance tolerance in Cartesian coordinates to find crystal symmetry.</p></li>
+<li><p><strong>isPersist</strong> (<em>default=False</em>) – whether to save to the database.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.raw_structure">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">raw_structure</span></span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.raw_structure" title="Link to this definition"></a></dt>
+<dd><p>raw structure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.redefine">
+<span class="sig-name descname"><span class="pre">redefine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operator_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.redefine" title="Link to this definition"></a></dt>
+<dd><p>redefine lattcie cell: C’=C x M.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>operator_matrix</strong> – <p>operator matrix (M). The valid formation:
+[[0, 1, 1],</p>
+<blockquote>
+<div><p>[1, 0, 1],
+[1, 1, 0]]</p>
+</div></blockquote>
+<p>Note that the component of M should be integer. And the volume of M is an integer greater than 0.</p>
+</p></li>
+<li><p><strong>isPersist</strong> (<em>default=False</em>) – whether to save to the database.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.removeUnit">
+<span class="sig-name descname"><span class="pre">removeUnit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isMoveAtoms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.removeUnit" title="Link to this definition"></a></dt>
+<dd><p>remove a unit with giving range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>unit</strong> – unit of operation. The valid format is [start, end, direction(0/1/2)]. i.e. [0.24980, 0.31235, 2] (Direct-type for position)</p></li>
+<li><p><strong>tolerance</strong> (<em>default=0.1</em>) – tolerance for unit to exclude the right atoms near boundary (unit: Angstrom).</p></li>
+<li><p><strong>isMoveAtoms</strong> (<em>default=True</em>) – whether to move right atoms to fill the space caused by cutting unit.</p></li>
+<li><p><strong>kwargs</strong> – <p>symprec (default=1e-5): precision when to find the symmetry.
+angle_tolerance (default=-1.0): a experimental argument that controls angle tolerance between basis vectors.</p>
+<dl class="simple">
+<dt>for isMoveAtoms (optional)</dt><dd><p>isPersistLattice (defalt=True): whether persist the lattice parameters when cutting unit. if False, the lattice will shrink by the length of cutting unit.</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.rotation">
+<span class="sig-name descname"><span class="pre">rotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.rotation" title="Link to this definition"></a></dt>
+<dd><p>rotation given atoms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>axis</strong> – rotation axis. Note that, for molecule, the type of axis is only ‘Cartesian’. The valid format:
+[0.1, 0.0, 0.0, ‘Direct’]
+[0.1, 0.0, 0.0]
+[5.234, 0.0, 0.0, ‘Cartesian’]</p></li>
+<li><p><strong>theta</strong> – rotation angle. The valid format:
+[30, ‘Degree’]
+[0.2, ‘Radian’]</p></li>
+<li><p><strong>atoms</strong> – <p>collection of atom’s formated atom or object. i.e. [atom0, atom1, atom2,…]
+[‘Na’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na’, 0.1, 0.0, 0.0]
+[‘Na’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+<p>contain species information:
+[‘Na1+’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na1+’, 0.1, 0.0, 0.0]
+[‘Na1+’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+</p></li>
+<li><p><strong>isUpdatedInfo</strong> (<em>default=False</em>) – whether to update the composition and symmetry information (include the site, operation, wyckoffSite, spacegroup).</p></li>
+<li><p><strong>isPersist</strong> (<em>default=False</em>) – whether to save to the database.</p></li>
+<li><p><strong>kwargs</strong> – <p>symprec (default=1e-5): precision when to find the symmetry.
+angle_tolerance (default=-1.0): a experimental argument that controls angle tolerance between basis vectors.
+origin: rotation origin. Noth that it is the origin of the axis of rotation, not a point on the axis of rotation.</p>
+<blockquote>
+<div><p>The valid format:
+[0.1, 0.0, 0.0, ‘Direct’]
+[0.1, 0.0, 0.0]
+[5.234, 0.0, 0.0, ‘Cartesian’]</p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.scale" title="Link to this definition"></a></dt>
+<dd><p>scale the lattice vector by given direction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>direction</strong> – coefficient of zoom for lattice parameters along three axes. i.e. [0.9, 1, 1], [0.9, 0.9, 1], [0.9, 0.9, 0.9]</p></li>
+<li><p><strong>isPersist</strong> (<em>default=False</em>) – whether to save to the database.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.standardize">
+<span class="sig-name descname"><span class="pre">standardize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.standardize" title="Link to this definition"></a></dt>
+<dd><p>convert to standardized structure.
+Note that if not specify the hall number, always the first one (the smallest serial number corresponding to
+the space-group-type in list of space groups (Seto’s web site)) among possible choices and settings is chosen as default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>isPersist</strong> (<em>default=False</em>) – whether to save to the database.</p></li>
+<li><p><strong>kwargs</strong> – symprec (default=1e-5): precision when to find the symmetry.
+angle_tolerance (default=-1.0): a experimental argument that controls angle tolerance between basis vectors.
+hall_number (default=0): hall number.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structure’s self (standardized).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.structure">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">structure</span></span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.structure" title="Link to this definition"></a></dt>
+<dd><p>structure object after operation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.substitute_atoms">
+<span class="sig-name descname"><span class="pre">substitute_atoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol_of_elements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.substitute_atoms" title="Link to this definition"></a></dt>
+<dd><p>delete atoms from structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>atoms</strong> – <p>collection of atom’s formated atom or object. i.e. [atom0, atom1, atom2,…]
+[‘Na’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na’, 0.1, 0.0, 0.0]
+[‘Na’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+<p>contain species information:
+[‘Na1+’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na1+’, 0.1, 0.0, 0.0]
+[‘Na1+’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+</p></li>
+<li><p><strong>symbol_of_elements</strong> – element’s symbol. If replacing by an element for all atom, you can only specify the a element’ symbol.
+i.e. ‘Na’, [‘Na’, ‘Na’, ‘Na’]</p></li>
+<li><p><strong>kwargs</strong> – symprec (default=1e-5): precision when to find the symmetry.
+angle_tolerance (default=-1.0): a experimental argument that controls angle tolerance between basis vectors.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.supercell">
+<span class="sig-name descname"><span class="pre">supercell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.supercell" title="Link to this definition"></a></dt>
+<dd><p>supercell structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> – size of supercell. i.e. [2, 2, 2] (integral)</p></li>
+<li><p><strong>isPersist</strong> (<em>default=False</em>) – whether to save to the database.</p></li>
+<li><p><strong>kwargs</strong> – symprec (default=1e-5): precision when to find the symmetry.
+angle_tolerance (default=-1.0): a experimental argument that controls angle tolerance between basis vectors.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.surface">
+<span class="sig-name descname"><span class="pre">surface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hkl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxindex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">saxis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'c'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.surface" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hkl</strong> – The free surface plane to generate expressed in 3 indices
+Miller (hkl) format</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.translation">
+<span class="sig-name descname"><span class="pre">translation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.translation" title="Link to this definition"></a></dt>
+<dd><p>translation given atoms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>direction</strong> – direction vector to add the vacuum along lattice vector(a/b/c). The valid format is :
+[0.1, 0, 0, ‘Direct’]
+[0.1, 0, 0] (for Direct, can not be specify)
+[5.234, 0, 0, ‘Cartesian’] (for Cartesian, must be given)</p></li>
+<li><p><strong>atoms</strong> – <p>collection of atom’s formated atom or object. i.e. [atom0, atom1, atom2,…]
+[‘Na’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na’, 0.1, 0.0, 0.0]
+[‘Na’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+<p>contain species information:
+[‘Na1+’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na1+’, 0.1, 0.0, 0.0]
+[‘Na1+’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+</p></li>
+<li><p><strong>isUpdatedInfo</strong> (<em>default=False</em>) – whether to update the composition and symmetry information (include the site, operation, wyckoffSite, spacegroup).</p></li>
+<li><p><strong>isPersist</strong> (<em>default=False</em>) – whether to save to the database.</p></li>
+<li><p><strong>kwargs</strong> – symprec (default=1e-5): precision when to find the symmetry.
+angle_tolerance (default=-1.0): a experimental argument that controls angle tolerance between basis vectors.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.vacuum">
+<span class="sig-name descname"><span class="pre">vacuum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isUpdatedInfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.vacuum" title="Link to this definition"></a></dt>
+<dd><p>add vacuum along a direction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>direction</strong> – direction vector to add the vacuum along lattice vector(a/b/c). The valid format is :
+[0.1, 0, 0, ‘Direct’]
+[0.1, 0, 0] (for Direct, can not be specify)
+[5.234, 0, 0, ‘Cartesian’] (for Cartesian, must be given)</p></li>
+<li><p><strong>isUpdatedInfo</strong> (<em>default=False</em>) – whether to update the composition and symmetry information (include the site, operation, wyckoffSite, spacegroup).</p></li>
+<li><p><strong>isPersist</strong> (<em>default=False</em>) – whether to save to the database.</p></li>
+<li><p><strong>kwargs</strong> – <p>isCenter (default=True): whether to centralize for all atoms in structure.
+distance: moving distance for all atoms in the structure along the given direction (unit: Angstrom). i.e. 1.0</p>
+<blockquote>
+<div><p>Note that distance don’t beyond the lattice after vacuuming (&lt;= direction).</p>
+</div></blockquote>
+<p>#isConstraint (default=False):True/False .
+symprec (default=1e-5): precision when to find the symmetry.
+angle_tolerance (default=-1.0): a experimental argument that controls angle tolerance between basis vectors.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.modeling.structureFactory.StructureFactory.zoom">
+<span class="sig-name descname"><span class="pre">zoom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.modeling.structureFactory.StructureFactory.zoom" title="Link to this definition"></a></dt>
+<dd><p>scale the lattice vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scale</strong> – coefficient of zoom for lattice parameters.</p></li>
+<li><p><strong>isPersist</strong> (<em>default=False</em>) – whether to save to the database.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>structureFactory’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.db.modeling">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jamip.db.modeling" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

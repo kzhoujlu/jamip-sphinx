@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamip.compute package &mdash; JAMIP 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jamip.compute package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-jamip.compute.batch">jamip.compute.batch module</a><ul>
+<li><a class="reference internal" href="#jamip.compute.batch.TaskBatch"><code class="docutils literal notranslate"><span class="pre">TaskBatch</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.compute.batch.TaskBatch.calculator"><code class="docutils literal notranslate"><span class="pre">TaskBatch.calculator()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.batch.TaskBatch.get_all_status"><code class="docutils literal notranslate"><span class="pre">TaskBatch.get_all_status()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.batch.TaskBatch.get_final_status"><code class="docutils literal notranslate"><span class="pre">TaskBatch.get_final_status()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.batch.TaskBatch.get_script"><code class="docutils literal notranslate"><span class="pre">TaskBatch.get_script()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.batch.TaskBatch.launch"><code class="docutils literal notranslate"><span class="pre">TaskBatch.launch()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.batch.TaskBatch.run"><code class="docutils literal notranslate"><span class="pre">TaskBatch.run()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.compute.cluster">jamip.compute.cluster module</a><ul>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster"><code class="docutils literal notranslate"><span class="pre">Cluster</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.cmd"><code class="docutils literal notranslate"><span class="pre">Cluster.cmd</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.cores"><code class="docutils literal notranslate"><span class="pre">Cluster.cores</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.dcu"><code class="docutils literal notranslate"><span class="pre">Cluster.dcu</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.manager"><code class="docutils literal notranslate"><span class="pre">Cluster.manager</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.maximum"><code class="docutils literal notranslate"><span class="pre">Cluster.maximum</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.maxsleep"><code class="docutils literal notranslate"><span class="pre">Cluster.maxsleep</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.mpi"><code class="docutils literal notranslate"><span class="pre">Cluster.mpi</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.nodes"><code class="docutils literal notranslate"><span class="pre">Cluster.nodes</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.ntasks"><code class="docutils literal notranslate"><span class="pre">Cluster.ntasks</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.overwrite"><code class="docutils literal notranslate"><span class="pre">Cluster.overwrite</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.restart"><code class="docutils literal notranslate"><span class="pre">Cluster.restart</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.resubmit"><code class="docutils literal notranslate"><span class="pre">Cluster.resubmit</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.run"><code class="docutils literal notranslate"><span class="pre">Cluster.run()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.script"><code class="docutils literal notranslate"><span class="pre">Cluster.script</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.submit"><code class="docutils literal notranslate"><span class="pre">Cluster.submit()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.user"><code class="docutils literal notranslate"><span class="pre">Cluster.user</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.cluster.Cluster.write_script"><code class="docutils literal notranslate"><span class="pre">Cluster.write_script()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.compute.launch">jamip.compute.launch module</a><ul>
+<li><a class="reference internal" href="#jamip.compute.launch.LaunchTasks"><code class="docutils literal notranslate"><span class="pre">LaunchTasks</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.compute.launch.LaunchTasks.get_pool"><code class="docutils literal notranslate"><span class="pre">LaunchTasks.get_pool()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.compute.manager">jamip.compute.manager module</a><ul>
+<li><a class="reference internal" href="#jamip.compute.manager.DonauManager"><code class="docutils literal notranslate"><span class="pre">DonauManager</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.compute.manager.DonauManager.get_host_by_id"><code class="docutils literal notranslate"><span class="pre">DonauManager.get_host_by_id()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.manager.DonauManager.get_task_by_id"><code class="docutils literal notranslate"><span class="pre">DonauManager.get_task_by_id()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.manager.DonauManager.get_task_by_user"><code class="docutils literal notranslate"><span class="pre">DonauManager.get_task_by_user()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.compute.manager.LSFManager"><code class="docutils literal notranslate"><span class="pre">LSFManager</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.compute.manager.LSFManager.get_task_by_id"><code class="docutils literal notranslate"><span class="pre">LSFManager.get_task_by_id()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.manager.LSFManager.get_task_by_user"><code class="docutils literal notranslate"><span class="pre">LSFManager.get_task_by_user()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.compute.manager.PBSManager"><code class="docutils literal notranslate"><span class="pre">PBSManager</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.compute.manager.PBSManager.get_host_by_id"><code class="docutils literal notranslate"><span class="pre">PBSManager.get_host_by_id()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.manager.PBSManager.get_task_by_id"><code class="docutils literal notranslate"><span class="pre">PBSManager.get_task_by_id()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.manager.PBSManager.get_task_by_user"><code class="docutils literal notranslate"><span class="pre">PBSManager.get_task_by_user()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.compute.manager.SLURMManager"><code class="docutils literal notranslate"><span class="pre">SLURMManager</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.compute.manager.SLURMManager.get_host_by_id"><code class="docutils literal notranslate"><span class="pre">SLURMManager.get_host_by_id()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.manager.SLURMManager.get_task_by_id"><code class="docutils literal notranslate"><span class="pre">SLURMManager.get_task_by_id()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.manager.SLURMManager.get_task_by_user"><code class="docutils literal notranslate"><span class="pre">SLURMManager.get_task_by_user()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.compute.manager.TaskManager"><code class="docutils literal notranslate"><span class="pre">TaskManager</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.compute.manager.TaskManager.calculator"><code class="docutils literal notranslate"><span class="pre">TaskManager.calculator()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.manager.TaskManager.from_yaml"><code class="docutils literal notranslate"><span class="pre">TaskManager.from_yaml()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.manager.TaskManager.get_host_by_id"><code class="docutils literal notranslate"><span class="pre">TaskManager.get_host_by_id()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.manager.TaskManager.get_queue_num"><code class="docutils literal notranslate"><span class="pre">TaskManager.get_queue_num()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.manager.TaskManager.get_task_by_id"><code class="docutils literal notranslate"><span class="pre">TaskManager.get_task_by_id()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.manager.TaskManager.get_task_by_user"><code class="docutils literal notranslate"><span class="pre">TaskManager.get_task_by_user()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.manager.TaskManager.resubmit"><code class="docutils literal notranslate"><span class="pre">TaskManager.resubmit()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.manager.TaskManager.unique"><code class="docutils literal notranslate"><span class="pre">TaskManager.unique()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.compute.manager.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.compute.pool">jamip.compute.pool module</a><ul>
+<li><a class="reference internal" href="#jamip.compute.pool.Pool"><code class="docutils literal notranslate"><span class="pre">Pool</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.compute.pool.Pool.add_tasks"><code class="docutils literal notranslate"><span class="pre">Pool.add_tasks()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.pool.Pool.close"><code class="docutils literal notranslate"><span class="pre">Pool.close()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.pool.Pool.functional"><code class="docutils literal notranslate"><span class="pre">Pool.functional</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.pool.Pool.joblist"><code class="docutils literal notranslate"><span class="pre">Pool.joblist</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.pool.Pool.loader"><code class="docutils literal notranslate"><span class="pre">Pool.loader()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.pool.Pool.mainkey"><code class="docutils literal notranslate"><span class="pre">Pool.mainkey</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.pool.Pool.merged"><code class="docutils literal notranslate"><span class="pre">Pool.merged()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.pool.Pool.open"><code class="docutils literal notranslate"><span class="pre">Pool.open</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.pool.Pool.pool"><code class="docutils literal notranslate"><span class="pre">Pool.pool</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.pool.Pool.save"><code class="docutils literal notranslate"><span class="pre">Pool.save()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.compute.pool.PoolDict"><code class="docutils literal notranslate"><span class="pre">PoolDict</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.compute.pool.PoolDict.keys"><code class="docutils literal notranslate"><span class="pre">PoolDict.keys()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.pool.PoolDict.update_jobid"><code class="docutils literal notranslate"><span class="pre">PoolDict.update_jobid()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.pool.PoolDict.update_status"><code class="docutils literal notranslate"><span class="pre">PoolDict.update_status()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.compute.pool.get_pool_list"><code class="docutils literal notranslate"><span class="pre">get_pool_list()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.compute.prepare">jamip.compute.prepare module</a><ul>
+<li><a class="reference internal" href="#jamip.compute.prepare.PoolTools"><code class="docutils literal notranslate"><span class="pre">PoolTools</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.compute.prepare.PoolTools.save"><code class="docutils literal notranslate"><span class="pre">PoolTools.save()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.prepare.PoolTools.set_extra"><code class="docutils literal notranslate"><span class="pre">PoolTools.set_extra()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.prepare.PoolTools.set_potential"><code class="docutils literal notranslate"><span class="pre">PoolTools.set_potential()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.prepare.PoolTools.set_structure"><code class="docutils literal notranslate"><span class="pre">PoolTools.set_structure()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.compute.prepare.Prepare"><code class="docutils literal notranslate"><span class="pre">Prepare</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.compute.prepare.Prepare.checkdb"><code class="docutils literal notranslate"><span class="pre">Prepare.checkdb()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.prepare.Prepare.cluster"><code class="docutils literal notranslate"><span class="pre">Prepare.cluster()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.prepare.Prepare.incar"><code class="docutils literal notranslate"><span class="pre">Prepare.incar()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.prepare.Prepare.links"><code class="docutils literal notranslate"><span class="pre">Prepare.links()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.prepare.Prepare.pool"><code class="docutils literal notranslate"><span class="pre">Prepare.pool()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.compute.single">jamip.compute.single module</a><ul>
+<li><a class="reference internal" href="#jamip.compute.single.SingleManager"><code class="docutils literal notranslate"><span class="pre">SingleManager</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.compute.single.SingleManager.calculator"><code class="docutils literal notranslate"><span class="pre">SingleManager.calculator()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.single.SingleManager.submit"><code class="docutils literal notranslate"><span class="pre">SingleManager.submit()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.compute.workflow">jamip.compute.workflow module</a><ul>
+<li><a class="reference internal" href="#jamip.compute.workflow.WorkFlow"><code class="docutils literal notranslate"><span class="pre">WorkFlow</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.compute.workflow.WorkFlow.analysis"><code class="docutils literal notranslate"><span class="pre">WorkFlow.analysis()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.workflow.WorkFlow.check_status"><code class="docutils literal notranslate"><span class="pre">WorkFlow.check_status()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.workflow.WorkFlow.molecular_dynamic"><code class="docutils literal notranslate"><span class="pre">WorkFlow.molecular_dynamic()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.workflow.WorkFlow.optimize"><code class="docutils literal notranslate"><span class="pre">WorkFlow.optimize()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.workflow.WorkFlow.properties"><code class="docutils literal notranslate"><span class="pre">WorkFlow.properties()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.compute.workflow.WorkFlow.single_point"><code class="docutils literal notranslate"><span class="pre">WorkFlow.single_point()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.compute">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">jamip.compute package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/jamip.compute.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jamip-compute-package">
+<h1>jamip.compute package<a class="headerlink" href="#jamip-compute-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.compute.batch">
+<span id="jamip-compute-batch-module"></span><h2>jamip.compute.batch module<a class="headerlink" href="#module-jamip.compute.batch" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.compute.batch.TaskBatch">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.compute.batch.</span></span><span class="sig-name descname"><span class="pre">TaskBatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">program</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.batch.TaskBatch" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.batch.TaskBatch.calculator">
+<span class="sig-name descname"><span class="pre">calculator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.batch.TaskBatch.calculator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.batch.TaskBatch.get_all_status">
+<span class="sig-name descname"><span class="pre">get_all_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.batch.TaskBatch.get_all_status" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.batch.TaskBatch.get_final_status">
+<span class="sig-name descname"><span class="pre">get_final_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.batch.TaskBatch.get_final_status" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.batch.TaskBatch.get_script">
+<span class="sig-name descname"><span class="pre">get_script</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.batch.TaskBatch.get_script" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.batch.TaskBatch.launch">
+<span class="sig-name descname"><span class="pre">launch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.batch.TaskBatch.launch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.batch.TaskBatch.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.batch.TaskBatch.run" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.compute.cluster">
+<span id="jamip-compute-cluster-module"></span><h2>jamip.compute.cluster module<a class="headerlink" href="#module-jamip.compute.cluster" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.compute.cluster.</span></span><span class="sig-name descname"><span class="pre">Cluster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.cluster.Cluster" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserDict</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.cmd">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cmd</span></span><a class="headerlink" href="#jamip.compute.cluster.Cluster.cmd" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.cores">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cores</span></span><a class="headerlink" href="#jamip.compute.cluster.Cluster.cores" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.dcu">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dcu</span></span><a class="headerlink" href="#jamip.compute.cluster.Cluster.dcu" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.manager">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">manager</span></span><a class="headerlink" href="#jamip.compute.cluster.Cluster.manager" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.maximum">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maximum</span></span><a class="headerlink" href="#jamip.compute.cluster.Cluster.maximum" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.maxsleep">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maxsleep</span></span><a class="headerlink" href="#jamip.compute.cluster.Cluster.maxsleep" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.mpi">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mpi</span></span><a class="headerlink" href="#jamip.compute.cluster.Cluster.mpi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.nodes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nodes</span></span><a class="headerlink" href="#jamip.compute.cluster.Cluster.nodes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.ntasks">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ntasks</span></span><a class="headerlink" href="#jamip.compute.cluster.Cluster.ntasks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.overwrite">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">overwrite</span></span><a class="headerlink" href="#jamip.compute.cluster.Cluster.overwrite" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.restart">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">restart</span></span><a class="headerlink" href="#jamip.compute.cluster.Cluster.restart" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.resubmit">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">resubmit</span></span><a class="headerlink" href="#jamip.compute.cluster.Cluster.resubmit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outfile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">infile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.cluster.Cluster.run" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.script">
+<span class="sig-name descname"><span class="pre">script</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'submit.sh'</span></em><a class="headerlink" href="#jamip.compute.cluster.Cluster.script" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.submit">
+<span class="sig-name descname"><span class="pre">submit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outdir</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.cluster.Cluster.submit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.user">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#jamip.compute.cluster.Cluster.user" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.cluster.Cluster.write_script">
+<span class="sig-name descname"><span class="pre">write_script</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outdir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jamip.compute.manager'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.cluster.Cluster.write_script" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.compute.launch">
+<span id="jamip-compute-launch-module"></span><h2>jamip.compute.launch module<a class="headerlink" href="#module-jamip.compute.launch" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.compute.launch.LaunchTasks">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.compute.launch.</span></span><span class="sig-name descname"><span class="pre">LaunchTasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.launch.LaunchTasks" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.launch.LaunchTasks.get_pool">
+<span class="sig-name descname"><span class="pre">get_pool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pool</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.launch.LaunchTasks.get_pool" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.compute.manager">
+<span id="jamip-compute-manager-module"></span><h2>jamip.compute.manager module<a class="headerlink" href="#module-jamip.compute.manager" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.compute.manager.DonauManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.compute.manager.</span></span><span class="sig-name descname"><span class="pre">DonauManager</span></span><a class="headerlink" href="#jamip.compute.manager.DonauManager" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.DonauManager.get_host_by_id">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_host_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jobid</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.DonauManager.get_host_by_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.DonauManager.get_task_by_id">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_task_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jobid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.DonauManager.get_task_by_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.DonauManager.get_task_by_user">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_task_by_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.DonauManager.get_task_by_user" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.compute.manager.LSFManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.compute.manager.</span></span><span class="sig-name descname"><span class="pre">LSFManager</span></span><a class="headerlink" href="#jamip.compute.manager.LSFManager" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.LSFManager.get_task_by_id">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_task_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jobid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.LSFManager.get_task_by_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.LSFManager.get_task_by_user">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_task_by_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.LSFManager.get_task_by_user" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.compute.manager.PBSManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.compute.manager.</span></span><span class="sig-name descname"><span class="pre">PBSManager</span></span><a class="headerlink" href="#jamip.compute.manager.PBSManager" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.PBSManager.get_host_by_id">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_host_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jobid</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.PBSManager.get_host_by_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.PBSManager.get_task_by_id">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_task_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jobid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.PBSManager.get_task_by_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.PBSManager.get_task_by_user">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_task_by_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.PBSManager.get_task_by_user" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.compute.manager.SLURMManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.compute.manager.</span></span><span class="sig-name descname"><span class="pre">SLURMManager</span></span><a class="headerlink" href="#jamip.compute.manager.SLURMManager" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.SLURMManager.get_host_by_id">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_host_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jobid</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.SLURMManager.get_host_by_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.SLURMManager.get_task_by_id">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_task_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jobid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.SLURMManager.get_task_by_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.SLURMManager.get_task_by_user">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_task_by_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.SLURMManager.get_task_by_user" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.compute.manager.TaskManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.compute.manager.</span></span><span class="sig-name descname"><span class="pre">TaskManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manager</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.TaskManager" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.TaskManager.calculator">
+<span class="sig-name descname"><span class="pre">calculator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">poolfile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.TaskManager.calculator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.TaskManager.from_yaml">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_yaml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.TaskManager.from_yaml" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.TaskManager.get_host_by_id">
+<span class="sig-name descname"><span class="pre">get_host_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jobid</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.TaskManager.get_host_by_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.TaskManager.get_queue_num">
+<span class="sig-name descname"><span class="pre">get_queue_num</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.TaskManager.get_queue_num" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.TaskManager.get_task_by_id">
+<span class="sig-name descname"><span class="pre">get_task_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jobid</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.TaskManager.get_task_by_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.TaskManager.get_task_by_user">
+<span class="sig-name descname"><span class="pre">get_task_by_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.TaskManager.get_task_by_user" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.TaskManager.resubmit">
+<span class="sig-name descname"><span class="pre">resubmit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">poolfile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.TaskManager.resubmit" title="Link to this definition"></a></dt>
+<dd><p>submit next job</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.manager.TaskManager.unique">
+<span class="sig-name descname"><span class="pre">unique</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.TaskManager.unique" title="Link to this definition"></a></dt>
+<dd><p>job repeat check</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.compute.manager.main">
+<span class="sig-prename descclassname"><span class="pre">jamip.compute.manager.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outdir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.manager.main" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-jamip.compute.pool">
+<span id="jamip-compute-pool-module"></span><h2>jamip.compute.pool module<a class="headerlink" href="#module-jamip.compute.pool" title="Link to this heading"></a></h2>
+<p>This module defines the classes relating to tasks pool.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.compute.pool.Pool">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.compute.pool.</span></span><span class="sig-name descname"><span class="pre">Pool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.pool.Pool" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>任务池是存储计算输入数据，并将根据任务提交请求提交和记录任务状态。
+任务池分为数据部分(jp.pool)和记录部分(jp.dat/jp.dir/jp.bak)
+其中数据部分基于pickle，记录部分基于dbm
+任务池整体支持轻量级的并行访问，安全性有待测试，可能通过冗余的方式解决</p>
+<dl class="simple">
+<dt>Atributes:</dt><dd><p>_pool: Calculation data saved in <a href="#id1"><span class="problematic" id="id2">*</span></a>.pool
+__db: Work status of jobs, saved in <a href="#id3"><span class="problematic" id="id4">*</span></a>.dat</p>
+</dd>
+<dt>Functions:</dt><dd><p>pass</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.pool.Pool.add_tasks">
+<span class="sig-name descname"><span class="pre">add_tasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.pool.Pool.add_tasks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.pool.Pool.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.pool.Pool.close" title="Link to this definition"></a></dt>
+<dd><p>close pool and pool-db</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.pool.Pool.functional">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">functional</span></span><a class="headerlink" href="#jamip.compute.pool.Pool.functional" title="Link to this definition"></a></dt>
+<dd><p>Object of program, type ModuleFactory.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.pool.Pool.joblist">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">joblist</span></span><a class="headerlink" href="#jamip.compute.pool.Pool.joblist" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.pool.Pool.loader">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">loader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.pool.Pool.loader" title="Link to this definition"></a></dt>
+<dd><p>load the pool with only one proccess %</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.pool.Pool.mainkey">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mainkey</span></span><a class="headerlink" href="#jamip.compute.pool.Pool.mainkey" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.pool.Pool.merged">
+<span class="sig-name descname"><span class="pre">merged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.pool.Pool.merged" title="Link to this definition"></a></dt>
+<dd><p>merge the files exists pool files</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.compute.pool.Pool.open">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.pool.Pool.open" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.compute.pool.Pool.pool">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pool</span></span><a class="headerlink" href="#jamip.compute.pool.Pool.pool" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.pool.Pool.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'n'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.pool.Pool.save" title="Link to this definition"></a></dt>
+<dd><p>Method aims to store input information in a binary file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong></p></li>
+<li><p><strong>pool_name:</strong> – string:</p></li>
+<li><p><strong>file;</strong> (<em>name</em><em> of </em><em>output</em>)</p></li>
+<li><p><strong>overwrite:</strong> – bool:</p></li>
+<li><p><strong>not;</strong> (<em>overwrite the file or</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.compute.pool.PoolDict">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.compute.pool.</span></span><span class="sig-name descname"><span class="pre">PoolDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.pool.PoolDict" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserDict</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.pool.PoolDict.keys">
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">a</span> <span class="pre">set-like</span> <span class="pre">object</span> <span class="pre">providing</span> <span class="pre">a</span> <span class="pre">view</span> <span class="pre">on</span> <span class="pre">D's</span> <span class="pre">keys</span></span></span><a class="headerlink" href="#jamip.compute.pool.PoolDict.keys" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.pool.PoolDict.update_jobid">
+<span class="sig-name descname"><span class="pre">update_jobid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.pool.PoolDict.update_jobid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.pool.PoolDict.update_status">
+<span class="sig-name descname"><span class="pre">update_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'C'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.pool.PoolDict.update_status" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.compute.pool.get_pool_list">
+<span class="sig-prename descclassname"><span class="pre">jamip.compute.pool.</span></span><span class="sig-name descname"><span class="pre">get_pool_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.pool.get_pool_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-jamip.compute.prepare">
+<span id="jamip-compute-prepare-module"></span><h2>jamip.compute.prepare module<a class="headerlink" href="#module-jamip.compute.prepare" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.compute.prepare.PoolTools">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.compute.prepare.</span></span><span class="sig-name descname"><span class="pre">PoolTools</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.prepare.PoolTools" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.prepare.PoolTools.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pool/jamip'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'n'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.prepare.PoolTools.save" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.prepare.PoolTools.set_extra">
+<span class="sig-name descname"><span class="pre">set_extra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.prepare.PoolTools.set_extra" title="Link to this definition"></a></dt>
+<dd><p>create magmom configuration file with default format</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.prepare.PoolTools.set_potential">
+<span class="sig-name descname"><span class="pre">set_potential</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.prepare.PoolTools.set_potential" title="Link to this definition"></a></dt>
+<dd><p>create potential configuration file with default format</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.prepare.PoolTools.set_structure">
+<span class="sig-name descname"><span class="pre">set_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./Results'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.prepare.PoolTools.set_structure" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.compute.prepare.Prepare">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.compute.prepare.</span></span><span class="sig-name descname"><span class="pre">Prepare</span></span><a class="headerlink" href="#jamip.compute.prepare.Prepare" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.prepare.Prepare.checkdb">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">checkdb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mysqld'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.prepare.Prepare.checkdb" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.prepare.Prepare.cluster">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cluster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pbs'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.prepare.Prepare.cluster" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.prepare.Prepare.incar">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">incar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.prepare.Prepare.incar" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.prepare.Prepare.links">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.prepare.Prepare.links" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.prepare.Prepare.pool">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.prepare.Prepare.pool" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.compute.single">
+<span id="jamip-compute-single-module"></span><h2>jamip.compute.single module<a class="headerlink" href="#module-jamip.compute.single" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.compute.single.SingleManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.compute.single.</span></span><span class="sig-name descname"><span class="pre">SingleManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.single.SingleManager" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.single.SingleManager.calculator">
+<span class="sig-name descname"><span class="pre">calculator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.single.SingleManager.calculator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.single.SingleManager.submit">
+<span class="sig-name descname"><span class="pre">submit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outdir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.single.SingleManager.submit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.compute.workflow">
+<span id="jamip-compute-workflow-module"></span><h2>jamip.compute.workflow module<a class="headerlink" href="#module-jamip.compute.workflow" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.compute.workflow.WorkFlow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.compute.workflow.</span></span><span class="sig-name descname"><span class="pre">WorkFlow</span></span><a class="headerlink" href="#jamip.compute.workflow.WorkFlow" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.workflow.WorkFlow.analysis">
+<span class="sig-name descname"><span class="pre">analysis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.workflow.WorkFlow.analysis" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.workflow.WorkFlow.check_status">
+<span class="sig-name descname"><span class="pre">check_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.workflow.WorkFlow.check_status" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.workflow.WorkFlow.molecular_dynamic">
+<span class="sig-name descname"><span class="pre">molecular_dynamic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.workflow.WorkFlow.molecular_dynamic" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.workflow.WorkFlow.optimize">
+<span class="sig-name descname"><span class="pre">optimize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.workflow.WorkFlow.optimize" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.workflow.WorkFlow.properties">
+<span class="sig-name descname"><span class="pre">properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.workflow.WorkFlow.properties" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.compute.workflow.WorkFlow.single_point">
+<span class="sig-name descname"><span class="pre">single_point</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.compute.workflow.WorkFlow.single_point" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.compute">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jamip.compute" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

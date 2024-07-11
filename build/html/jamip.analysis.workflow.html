@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamip.analysis.workflow package &mdash; JAMIP 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jamip.analysis.workflow package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#jamip-analysis-workflow-unitflow-module">jamip.analysis.workflow.unitflow module</a></li>
+<li><a class="reference internal" href="#module-jamip.analysis.workflow">Module contents</a><ul>
+<li><a class="reference internal" href="#jamip.analysis.workflow.FlowManager"><code class="docutils literal notranslate"><span class="pre">FlowManager</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.analysis.workflow.FlowManager.load_logger"><code class="docutils literal notranslate"><span class="pre">FlowManager.load_logger()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.workflow.FlowManager.mpirun"><code class="docutils literal notranslate"><span class="pre">FlowManager.mpirun()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.workflow.FlowManager.run"><code class="docutils literal notranslate"><span class="pre">FlowManager.run()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.workflow.FlowManager.test"><code class="docutils literal notranslate"><span class="pre">FlowManager.test()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.analysis.workflow.default_dump"><code class="docutils literal notranslate"><span class="pre">default_dump()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.workflow.flowvars"><code class="docutils literal notranslate"><span class="pre">flowvars</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.analysis.workflow.flowvars.debug"><code class="docutils literal notranslate"><span class="pre">flowvars.debug</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.workflow.flowvars.level"><code class="docutils literal notranslate"><span class="pre">flowvars.level</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.workflow.flowvars.logfile"><code class="docutils literal notranslate"><span class="pre">flowvars.logfile</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.workflow.flowvars.logmode"><code class="docutils literal notranslate"><span class="pre">flowvars.logmode</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.workflow.flowvars.output"><code class="docutils literal notranslate"><span class="pre">flowvars.output</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.workflow.flowvars.source"><code class="docutils literal notranslate"><span class="pre">flowvars.source</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.analysis.workflow.get_dimension"><code class="docutils literal notranslate"><span class="pre">get_dimension()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.workflow.get_unit_data"><code class="docutils literal notranslate"><span class="pre">get_unit_data()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.workflow.globalvar"><code class="docutils literal notranslate"><span class="pre">globalvar</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.analysis.workflow.globalvar.icsdflow"><code class="docutils literal notranslate"><span class="pre">globalvar.icsdflow</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.workflow.globalvar.unitflow"><code class="docutils literal notranslate"><span class="pre">globalvar.unitflow</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">jamip.analysis.workflow package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/jamip.analysis.workflow.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jamip-analysis-workflow-package">
+<h1>jamip.analysis.workflow package<a class="headerlink" href="#jamip-analysis-workflow-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="jamip-analysis-workflow-unitflow-module">
+<h2>jamip.analysis.workflow.unitflow module<a class="headerlink" href="#jamip-analysis-workflow-unitflow-module" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.analysis.workflow">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jamip.analysis.workflow" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.FlowManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.analysis.workflow.</span></span><span class="sig-name descname"><span class="pre">FlowManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.workflow.FlowManager" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.FlowManager.load_logger">
+<span class="sig-name descname"><span class="pre">load_logger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.workflow.FlowManager.load_logger" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.FlowManager.mpirun">
+<span class="sig-name descname"><span class="pre">mpirun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cifs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.workflow.FlowManager.mpirun" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.FlowManager.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cifs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.workflow.FlowManager.run" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.FlowManager.test">
+<span class="sig-name descname"><span class="pre">test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cifs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.workflow.FlowManager.test" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.default_dump">
+<span class="sig-prename descclassname"><span class="pre">jamip.analysis.workflow.</span></span><span class="sig-name descname"><span class="pre">default_dump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.workflow.default_dump" title="Link to this definition"></a></dt>
+<dd><p>Convert numpy classes to JSON serializable objects.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.flowvars">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.analysis.workflow.</span></span><span class="sig-name descname"><span class="pre">flowvars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'info'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logfile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'run.log'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logmode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'a'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.workflow.flowvars" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>global variables
+emin, emax: energy range
+limit: energy range for dos plot
+scissor: energy shift for band/dos above fermi level
+title: title of the plot
+xlabel: xlabel of the plot
+ylabel: ylabel of the plot</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.flowvars.debug">
+<span class="sig-name descname"><span class="pre">debug</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#jamip.analysis.workflow.flowvars.debug" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.flowvars.level">
+<span class="sig-name descname"><span class="pre">level</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'info'</span></em><a class="headerlink" href="#jamip.analysis.workflow.flowvars.level" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.flowvars.logfile">
+<span class="sig-name descname"><span class="pre">logfile</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'run.log'</span></em><a class="headerlink" href="#jamip.analysis.workflow.flowvars.logfile" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.flowvars.logmode">
+<span class="sig-name descname"><span class="pre">logmode</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'a'</span></em><a class="headerlink" href="#jamip.analysis.workflow.flowvars.logmode" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.flowvars.output">
+<span class="sig-name descname"><span class="pre">output</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#jamip.analysis.workflow.flowvars.output" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.flowvars.source">
+<span class="sig-name descname"><span class="pre">source</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#jamip.analysis.workflow.flowvars.source" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.get_dimension">
+<span class="sig-prename descclassname"><span class="pre">jamip.analysis.workflow.</span></span><span class="sig-name descname"><span class="pre">get_dimension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cif</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.workflow.get_dimension" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.get_unit_data">
+<span class="sig-prename descclassname"><span class="pre">jamip.analysis.workflow.</span></span><span class="sig-name descname"><span class="pre">get_unit_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cif</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.workflow.get_unit_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.globalvar">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.analysis.workflow.</span></span><span class="sig-name descname"><span class="pre">globalvar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.workflow.globalvar" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>global variables for different plot types</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.globalvar.icsdflow">
+<span class="sig-name descname"><span class="pre">icsdflow</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">flowvars(source=None,</span> <span class="pre">output=None,</span> <span class="pre">debug=False,</span> <span class="pre">level=20,</span> <span class="pre">logfile='icsd.log',</span> <span class="pre">logmode='a')</span></em><a class="headerlink" href="#jamip.analysis.workflow.globalvar.icsdflow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.analysis.workflow.globalvar.unitflow">
+<span class="sig-name descname"><span class="pre">unitflow</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">flowvars(source=None,</span> <span class="pre">output=None,</span> <span class="pre">debug=False,</span> <span class="pre">level=20,</span> <span class="pre">logfile='unit.log',</span> <span class="pre">logmode='a')</span></em><a class="headerlink" href="#jamip.analysis.workflow.globalvar.unitflow" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

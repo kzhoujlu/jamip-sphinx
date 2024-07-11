@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamip.analysis.qe package &mdash; JAMIP 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jamip.analysis.qe package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-jamip.analysis.qe.band">jamip.analysis.qe.band module</a><ul>
+<li><a class="reference internal" href="#jamip.analysis.qe.band.GrepBand"><code class="docutils literal notranslate"><span class="pre">GrepBand</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.analysis.qe.dos">jamip.analysis.qe.dos module</a><ul>
+<li><a class="reference internal" href="#jamip.analysis.qe.dos.GrepDos"><code class="docutils literal notranslate"><span class="pre">GrepDos</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.analysis.qe.dos.GrepDos.fermi_energy"><code class="docutils literal notranslate"><span class="pre">GrepDos.fermi_energy()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.analysis.qe.qexml">jamip.analysis.qe.qexml module</a><ul>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml"><code class="docutils literal notranslate"><span class="pre">GrepXml</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.bands"><code class="docutils literal notranslate"><span class="pre">GrepXml.bands()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.basesearch"><code class="docutils literal notranslate"><span class="pre">GrepXml.basesearch()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.calculation"><code class="docutils literal notranslate"><span class="pre">GrepXml.calculation()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.conv_thr"><code class="docutils literal notranslate"><span class="pre">GrepXml.conv_thr()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.date"><code class="docutils literal notranslate"><span class="pre">GrepXml.date()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.diagonalization"><code class="docutils literal notranslate"><span class="pre">GrepXml.diagonalization()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.ecutrho"><code class="docutils literal notranslate"><span class="pre">GrepXml.ecutrho()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.ecutwfc"><code class="docutils literal notranslate"><span class="pre">GrepXml.ecutwfc()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.ediff"><code class="docutils literal notranslate"><span class="pre">GrepXml.ediff()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.ediffg"><code class="docutils literal notranslate"><span class="pre">GrepXml.ediffg()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.etot_conv_thr"><code class="docutils literal notranslate"><span class="pre">GrepXml.etot_conv_thr()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.fermi_energy"><code class="docutils literal notranslate"><span class="pre">GrepXml.fermi_energy()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.forc_conv_thr"><code class="docutils literal notranslate"><span class="pre">GrepXml.forc_conv_thr()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.functional"><code class="docutils literal notranslate"><span class="pre">GrepXml.functional()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.highestOccupiedLevel"><code class="docutils literal notranslate"><span class="pre">GrepXml.highestOccupiedLevel()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.kpoints"><code class="docutils literal notranslate"><span class="pre">GrepXml.kpoints()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.kpoints_weight"><code class="docutils literal notranslate"><span class="pre">GrepXml.kpoints_weight()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.lattice"><code class="docutils literal notranslate"><span class="pre">GrepXml.lattice()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.lowestUnoccupiedLevel"><code class="docutils literal notranslate"><span class="pre">GrepXml.lowestUnoccupiedLevel()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.lsda"><code class="docutils literal notranslate"><span class="pre">GrepXml.lsda()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.nbnd"><code class="docutils literal notranslate"><span class="pre">GrepXml.nbnd()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.nelec"><code class="docutils literal notranslate"><span class="pre">GrepXml.nelec()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.nk"><code class="docutils literal notranslate"><span class="pre">GrepXml.nk()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.noinv"><code class="docutils literal notranslate"><span class="pre">GrepXml.noinv()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.noncolin"><code class="docutils literal notranslate"><span class="pre">GrepXml.noncolin()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.nosym"><code class="docutils literal notranslate"><span class="pre">GrepXml.nosym()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.nprocs"><code class="docutils literal notranslate"><span class="pre">GrepXml.nprocs()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.occupations"><code class="docutils literal notranslate"><span class="pre">GrepXml.occupations()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.outdir"><code class="docutils literal notranslate"><span class="pre">GrepXml.outdir()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.paw"><code class="docutils literal notranslate"><span class="pre">GrepXml.paw()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.prefix"><code class="docutils literal notranslate"><span class="pre">GrepXml.prefix()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.press_conv_thr"><code class="docutils literal notranslate"><span class="pre">GrepXml.press_conv_thr()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.soft"><code class="docutils literal notranslate"><span class="pre">GrepXml.soft()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.spinorbit"><code class="docutils literal notranslate"><span class="pre">GrepXml.spinorbit()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.time"><code class="docutils literal notranslate"><span class="pre">GrepXml.time()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.total_energy"><code class="docutils literal notranslate"><span class="pre">GrepXml.total_energy()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.uspp"><code class="docutils literal notranslate"><span class="pre">GrepXml.uspp()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml.version"><code class="docutils literal notranslate"><span class="pre">GrepXml.version()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.analysis.qe.qexml.str2bool"><code class="docutils literal notranslate"><span class="pre">str2bool()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.analysis.qe">Module contents</a><ul>
+<li><a class="reference internal" href="#jamip.analysis.qe.BandFinder"><code class="docutils literal notranslate"><span class="pre">BandFinder</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.analysis.qe.BandFinder.get_bands"><code class="docutils literal notranslate"><span class="pre">BandFinder.get_bands()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.BandFinder.get_cbmvbm"><code class="docutils literal notranslate"><span class="pre">BandFinder.get_cbmvbm()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.BandFinder.get_cbvb"><code class="docutils literal notranslate"><span class="pre">BandFinder.get_cbvb()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.BandFinder.get_fermi"><code class="docutils literal notranslate"><span class="pre">BandFinder.get_fermi()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.BandFinder.get_kpoints"><code class="docutils literal notranslate"><span class="pre">BandFinder.get_kpoints()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.BandFinder.get_rec_lattice"><code class="docutils literal notranslate"><span class="pre">BandFinder.get_rec_lattice()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.BandFinder.insert"><code class="docutils literal notranslate"><span class="pre">BandFinder.insert</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.BandFinder.kpath"><code class="docutils literal notranslate"><span class="pre">BandFinder.kpath</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.BandFinder.stdin"><code class="docutils literal notranslate"><span class="pre">BandFinder.stdin</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.analysis.qe.DosFinder"><code class="docutils literal notranslate"><span class="pre">DosFinder</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.analysis.qe.DosFinder.get_dos"><code class="docutils literal notranslate"><span class="pre">DosFinder.get_dos()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.DosFinder.get_fermi"><code class="docutils literal notranslate"><span class="pre">DosFinder.get_fermi()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.DosFinder.get_pdos"><code class="docutils literal notranslate"><span class="pre">DosFinder.get_pdos()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.DosFinder.get_tdos"><code class="docutils literal notranslate"><span class="pre">DosFinder.get_tdos()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.DosFinder.get_vbm"><code class="docutils literal notranslate"><span class="pre">DosFinder.get_vbm()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.DosFinder.get_volume"><code class="docutils literal notranslate"><span class="pre">DosFinder.get_volume()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.analysis.qe.DosFinder.stdin"><code class="docutils literal notranslate"><span class="pre">DosFinder.stdin</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">jamip.analysis.qe package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/jamip.analysis.qe.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jamip-analysis-qe-package">
+<h1>jamip.analysis.qe package<a class="headerlink" href="#jamip-analysis-qe-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.analysis.qe.band">
+<span id="jamip-analysis-qe-band-module"></span><h2>jamip.analysis.qe.band module<a class="headerlink" href="#module-jamip.analysis.qe.band" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.analysis.qe.band.GrepBand">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.analysis.qe.band.</span></span><span class="sig-name descname"><span class="pre">GrepBand</span></span><a class="headerlink" href="#jamip.analysis.qe.band.GrepBand" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml" title="jamip.analysis.qe.qexml.GrepXml"><code class="xref py py-class docutils literal notranslate"><span class="pre">GrepXml</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-jamip.analysis.qe.dos">
+<span id="jamip-analysis-qe-dos-module"></span><h2>jamip.analysis.qe.dos module<a class="headerlink" href="#module-jamip.analysis.qe.dos" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.analysis.qe.dos.GrepDos">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.analysis.qe.dos.</span></span><span class="sig-name descname"><span class="pre">GrepDos</span></span><a class="headerlink" href="#jamip.analysis.qe.dos.GrepDos" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.dos.GrepDos.fermi_energy">
+<span class="sig-name descname"><span class="pre">fermi_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.dos.GrepDos.fermi_energy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.analysis.qe.qexml">
+<span id="jamip-analysis-qe-qexml-module"></span><h2>jamip.analysis.qe.qexml module<a class="headerlink" href="#module-jamip.analysis.qe.qexml" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.analysis.qe.qexml.</span></span><span class="sig-name descname"><span class="pre">GrepXml</span></span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.bands">
+<span class="sig-name descname"><span class="pre">bands</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.bands" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.basesearch">
+<span class="sig-name descname"><span class="pre">basesearch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keyword</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.basesearch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.calculation">
+<span class="sig-name descname"><span class="pre">calculation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.calculation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.conv_thr">
+<span class="sig-name descname"><span class="pre">conv_thr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.conv_thr" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.date">
+<span class="sig-name descname"><span class="pre">date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.diagonalization">
+<span class="sig-name descname"><span class="pre">diagonalization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.diagonalization" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.ecutrho">
+<span class="sig-name descname"><span class="pre">ecutrho</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.ecutrho" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.ecutwfc">
+<span class="sig-name descname"><span class="pre">ecutwfc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.ecutwfc" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.ediff">
+<span class="sig-name descname"><span class="pre">ediff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.ediff" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.ediffg">
+<span class="sig-name descname"><span class="pre">ediffg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.ediffg" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.etot_conv_thr">
+<span class="sig-name descname"><span class="pre">etot_conv_thr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.etot_conv_thr" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.fermi_energy">
+<span class="sig-name descname"><span class="pre">fermi_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.fermi_energy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.forc_conv_thr">
+<span class="sig-name descname"><span class="pre">forc_conv_thr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.forc_conv_thr" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.functional">
+<span class="sig-name descname"><span class="pre">functional</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.functional" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.highestOccupiedLevel">
+<span class="sig-name descname"><span class="pre">highestOccupiedLevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.highestOccupiedLevel" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.kpoints">
+<span class="sig-name descname"><span class="pre">kpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.kpoints" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.kpoints_weight">
+<span class="sig-name descname"><span class="pre">kpoints_weight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.kpoints_weight" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.lattice">
+<span class="sig-name descname"><span class="pre">lattice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.lattice" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.lowestUnoccupiedLevel">
+<span class="sig-name descname"><span class="pre">lowestUnoccupiedLevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.lowestUnoccupiedLevel" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.lsda">
+<span class="sig-name descname"><span class="pre">lsda</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.lsda" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.nbnd">
+<span class="sig-name descname"><span class="pre">nbnd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.nbnd" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.nelec">
+<span class="sig-name descname"><span class="pre">nelec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.nelec" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.nk">
+<span class="sig-name descname"><span class="pre">nk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.nk" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.noinv">
+<span class="sig-name descname"><span class="pre">noinv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.noinv" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.noncolin">
+<span class="sig-name descname"><span class="pre">noncolin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.noncolin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.nosym">
+<span class="sig-name descname"><span class="pre">nosym</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.nosym" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.nprocs">
+<span class="sig-name descname"><span class="pre">nprocs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.nprocs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.occupations">
+<span class="sig-name descname"><span class="pre">occupations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.occupations" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.outdir">
+<span class="sig-name descname"><span class="pre">outdir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.outdir" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.paw">
+<span class="sig-name descname"><span class="pre">paw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.paw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.prefix">
+<span class="sig-name descname"><span class="pre">prefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.prefix" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.press_conv_thr">
+<span class="sig-name descname"><span class="pre">press_conv_thr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.press_conv_thr" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.soft">
+<span class="sig-name descname"><span class="pre">soft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.soft" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.spinorbit">
+<span class="sig-name descname"><span class="pre">spinorbit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.spinorbit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.time">
+<span class="sig-name descname"><span class="pre">time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.time" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.total_energy">
+<span class="sig-name descname"><span class="pre">total_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.total_energy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.uspp">
+<span class="sig-name descname"><span class="pre">uspp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.uspp" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.GrepXml.version">
+<span class="sig-name descname"><span class="pre">version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.GrepXml.version" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.analysis.qe.qexml.str2bool">
+<span class="sig-prename descclassname"><span class="pre">jamip.analysis.qe.qexml.</span></span><span class="sig-name descname"><span class="pre">str2bool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.qexml.str2bool" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-jamip.analysis.qe">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jamip.analysis.qe" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.analysis.qe.BandFinder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.analysis.qe.</span></span><span class="sig-name descname"><span class="pre">BandFinder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.BandFinder" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="jamip.analysis.html#jamip.analysis.Finder" title="jamip.analysis.Finder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Finder</span></code></a>, <a class="reference internal" href="#jamip.analysis.qe.band.GrepBand" title="jamip.analysis.qe.band.GrepBand"><code class="xref py py-class docutils literal notranslate"><span class="pre">GrepBand</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.BandFinder.get_bands">
+<span class="sig-name descname"><span class="pre">get_bands</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.BandFinder.get_bands" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.BandFinder.get_cbmvbm">
+<span class="sig-name descname"><span class="pre">get_cbmvbm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.BandFinder.get_cbmvbm" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.BandFinder.get_cbvb">
+<span class="sig-name descname"><span class="pre">get_cbvb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isdata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.BandFinder.get_cbvb" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.BandFinder.get_fermi">
+<span class="sig-name descname"><span class="pre">get_fermi</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.BandFinder.get_fermi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.BandFinder.get_kpoints">
+<span class="sig-name descname"><span class="pre">get_kpoints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.BandFinder.get_kpoints" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.BandFinder.get_rec_lattice">
+<span class="sig-name descname"><span class="pre">get_rec_lattice</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.BandFinder.get_rec_lattice" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.analysis.qe.BandFinder.insert">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">insert</span></span><a class="headerlink" href="#jamip.analysis.qe.BandFinder.insert" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.analysis.qe.BandFinder.kpath">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kpath</span></span><a class="headerlink" href="#jamip.analysis.qe.BandFinder.kpath" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.analysis.qe.BandFinder.stdin">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stdin</span></span><a class="headerlink" href="#jamip.analysis.qe.BandFinder.stdin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.analysis.qe.DosFinder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.analysis.qe.</span></span><span class="sig-name descname"><span class="pre">DosFinder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.DosFinder" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="jamip.analysis.html#jamip.analysis.Finder" title="jamip.analysis.Finder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Finder</span></code></a>, <a class="reference internal" href="#jamip.analysis.qe.qexml.GrepXml" title="jamip.analysis.qe.qexml.GrepXml"><code class="xref py py-class docutils literal notranslate"><span class="pre">GrepXml</span></code></a>, <a class="reference internal" href="#jamip.analysis.qe.dos.GrepDos" title="jamip.analysis.qe.dos.GrepDos"><code class="xref py py-class docutils literal notranslate"><span class="pre">GrepDos</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.DosFinder.get_dos">
+<span class="sig-name descname"><span class="pre">get_dos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.DosFinder.get_dos" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.DosFinder.get_fermi">
+<span class="sig-name descname"><span class="pre">get_fermi</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.DosFinder.get_fermi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.DosFinder.get_pdos">
+<span class="sig-name descname"><span class="pre">get_pdos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.DosFinder.get_pdos" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.DosFinder.get_tdos">
+<span class="sig-name descname"><span class="pre">get_tdos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.DosFinder.get_tdos" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.DosFinder.get_vbm">
+<span class="sig-name descname"><span class="pre">get_vbm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.DosFinder.get_vbm" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.analysis.qe.DosFinder.get_volume">
+<span class="sig-name descname"><span class="pre">get_volume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.analysis.qe.DosFinder.get_volume" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.analysis.qe.DosFinder.stdin">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stdin</span></span><a class="headerlink" href="#jamip.analysis.qe.DosFinder.stdin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

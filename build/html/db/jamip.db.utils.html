@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamip.db.utils package &mdash; JAMIP 1.3 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c55cb9cb"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jamip.db.utils package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-jamip.db.utils.check">jamip.db.utils.check module</a><ul>
+<li><a class="reference internal" href="#jamip.db.utils.check.check_consistency_between_memory_and_db"><code class="docutils literal notranslate"><span class="pre">check_consistency_between_memory_and_db()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.check_constraint"><code class="docutils literal notranslate"><span class="pre">check_constraint()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.check_formated_angle"><code class="docutils literal notranslate"><span class="pre">check_formated_angle()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.check_formated_angle_only_degree"><code class="docutils literal notranslate"><span class="pre">check_formated_angle_only_degree()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.check_formated_angle_only_radian"><code class="docutils literal notranslate"><span class="pre">check_formated_angle_only_radian()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.check_formated_atom"><code class="docutils literal notranslate"><span class="pre">check_formated_atom()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.check_formated_atom_only_cartesian"><code class="docutils literal notranslate"><span class="pre">check_formated_atom_only_cartesian()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.check_formated_atom_only_direct"><code class="docutils literal notranslate"><span class="pre">check_formated_atom_only_direct()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.check_formated_position"><code class="docutils literal notranslate"><span class="pre">check_formated_position()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.check_formated_position_only_cartesian"><code class="docutils literal notranslate"><span class="pre">check_formated_position_only_cartesian()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.check_formated_position_only_direct"><code class="docutils literal notranslate"><span class="pre">check_formated_position_only_direct()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.check_species"><code class="docutils literal notranslate"><span class="pre">check_species()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.check_symbol"><code class="docutils literal notranslate"><span class="pre">check_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.isOverlap"><code class="docutils literal notranslate"><span class="pre">isOverlap()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.is_all_in_collection"><code class="docutils literal notranslate"><span class="pre">is_all_in_collection()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.is_inside"><code class="docutils literal notranslate"><span class="pre">is_inside()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.is_int_or_float"><code class="docutils literal notranslate"><span class="pre">is_int_or_float()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.is_overlap_of_positions"><code class="docutils literal notranslate"><span class="pre">is_overlap_of_positions()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.is_overlap_of_positions_for_molecule"><code class="docutils literal notranslate"><span class="pre">is_overlap_of_positions_for_molecule()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.check.is_same"><code class="docutils literal notranslate"><span class="pre">is_same()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.db.utils.convert">jamip.db.utils.convert module</a><ul>
+<li><a class="reference internal" href="#jamip.db.utils.convert.any2cartesian"><code class="docutils literal notranslate"><span class="pre">any2cartesian()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.any2degree"><code class="docutils literal notranslate"><span class="pre">any2degree()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.any2direct"><code class="docutils literal notranslate"><span class="pre">any2direct()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.any2radian"><code class="docutils literal notranslate"><span class="pre">any2radian()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.cartesian2direct"><code class="docutils literal notranslate"><span class="pre">cartesian2direct()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.cell2poscar"><code class="docutils literal notranslate"><span class="pre">cell2poscar()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.degree2radian"><code class="docutils literal notranslate"><span class="pre">degree2radian()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.direct2cartesian"><code class="docutils literal notranslate"><span class="pre">direct2cartesian()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.enum2dict"><code class="docutils literal notranslate"><span class="pre">enum2dict()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.formatting_position"><code class="docutils literal notranslate"><span class="pre">formatting_position()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.formatting_species"><code class="docutils literal notranslate"><span class="pre">formatting_species()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.mp2jamip"><code class="docutils literal notranslate"><span class="pre">mp2jamip()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.normalize_position"><code class="docutils literal notranslate"><span class="pre">normalize_position()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.poscar2cell"><code class="docutils literal notranslate"><span class="pre">poscar2cell()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.radian2degree"><code class="docutils literal notranslate"><span class="pre">radian2degree()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.raw2std_position"><code class="docutils literal notranslate"><span class="pre">raw2std_position()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.rotation"><code class="docutils literal notranslate"><span class="pre">rotation()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.to_poscar5x"><code class="docutils literal notranslate"><span class="pre">to_poscar5x()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.convert.translation"><code class="docutils literal notranslate"><span class="pre">translation()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.db.utils.customField">jamip.db.utils.customField module</a><ul>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedDictField"><code class="docutils literal notranslate"><span class="pre">CompressedDictField</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedDictField.description"><code class="docutils literal notranslate"><span class="pre">CompressedDictField.description</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedDictField.from_db_value"><code class="docutils literal notranslate"><span class="pre">CompressedDictField.from_db_value()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedDictField.get_prep_value"><code class="docutils literal notranslate"><span class="pre">CompressedDictField.get_prep_value()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedDictField.to_python"><code class="docutils literal notranslate"><span class="pre">CompressedDictField.to_python()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedDictField.value_to_string"><code class="docutils literal notranslate"><span class="pre">CompressedDictField.value_to_string()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedListField"><code class="docutils literal notranslate"><span class="pre">CompressedListField</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedListField.description"><code class="docutils literal notranslate"><span class="pre">CompressedListField.description</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedListField.from_db_value"><code class="docutils literal notranslate"><span class="pre">CompressedListField.from_db_value()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedListField.get_prep_value"><code class="docutils literal notranslate"><span class="pre">CompressedListField.get_prep_value()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedListField.to_python"><code class="docutils literal notranslate"><span class="pre">CompressedListField.to_python()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedListField.value_to_string"><code class="docutils literal notranslate"><span class="pre">CompressedListField.value_to_string()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedNumpyArrayField"><code class="docutils literal notranslate"><span class="pre">CompressedNumpyArrayField</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedNumpyArrayField.description"><code class="docutils literal notranslate"><span class="pre">CompressedNumpyArrayField.description</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedNumpyArrayField.from_db_value"><code class="docutils literal notranslate"><span class="pre">CompressedNumpyArrayField.from_db_value()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedNumpyArrayField.get_prep_value"><code class="docutils literal notranslate"><span class="pre">CompressedNumpyArrayField.get_prep_value()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedNumpyArrayField.to_python"><code class="docutils literal notranslate"><span class="pre">CompressedNumpyArrayField.to_python()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedNumpyArrayField.value_to_string"><code class="docutils literal notranslate"><span class="pre">CompressedNumpyArrayField.value_to_string()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedTextField"><code class="docutils literal notranslate"><span class="pre">CompressedTextField</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedTextField.description"><code class="docutils literal notranslate"><span class="pre">CompressedTextField.description</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedTextField.from_db_value"><code class="docutils literal notranslate"><span class="pre">CompressedTextField.from_db_value()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedTextField.get_prep_value"><code class="docutils literal notranslate"><span class="pre">CompressedTextField.get_prep_value()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.CompressedTextField.to_python"><code class="docutils literal notranslate"><span class="pre">CompressedTextField.to_python()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.DictField"><code class="docutils literal notranslate"><span class="pre">DictField</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.utils.customField.DictField.description"><code class="docutils literal notranslate"><span class="pre">DictField.description</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.DictField.from_db_value"><code class="docutils literal notranslate"><span class="pre">DictField.from_db_value()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.DictField.get_prep_value"><code class="docutils literal notranslate"><span class="pre">DictField.get_prep_value()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.DictField.to_python"><code class="docutils literal notranslate"><span class="pre">DictField.to_python()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.ListField"><code class="docutils literal notranslate"><span class="pre">ListField</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.utils.customField.ListField.description"><code class="docutils literal notranslate"><span class="pre">ListField.description</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.ListField.from_db_value"><code class="docutils literal notranslate"><span class="pre">ListField.from_db_value()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.ListField.get_prep_value"><code class="docutils literal notranslate"><span class="pre">ListField.get_prep_value()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.ListField.to_python"><code class="docutils literal notranslate"><span class="pre">ListField.to_python()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.NumpyArrayField"><code class="docutils literal notranslate"><span class="pre">NumpyArrayField</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.utils.customField.NumpyArrayField.description"><code class="docutils literal notranslate"><span class="pre">NumpyArrayField.description</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.NumpyArrayField.from_db_value"><code class="docutils literal notranslate"><span class="pre">NumpyArrayField.from_db_value()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.NumpyArrayField.get_prep_value"><code class="docutils literal notranslate"><span class="pre">NumpyArrayField.get_prep_value()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.customField.NumpyArrayField.to_python"><code class="docutils literal notranslate"><span class="pre">NumpyArrayField.to_python()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.db.utils.fetch">jamip.db.utils.fetch module</a><ul>
+<li><a class="reference internal" href="#jamip.db.utils.fetch.get_atoms_from_cell"><code class="docutils literal notranslate"><span class="pre">get_atoms_from_cell()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.fetch.get_group_by_symbol"><code class="docutils literal notranslate"><span class="pre">get_group_by_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.fetch.get_index_from_positions"><code class="docutils literal notranslate"><span class="pre">get_index_from_positions()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.fetch.get_mass_by_symbol"><code class="docutils literal notranslate"><span class="pre">get_mass_by_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.fetch.get_name_by_symbol"><code class="docutils literal notranslate"><span class="pre">get_name_by_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.fetch.get_oxidation_state_from_species"><code class="docutils literal notranslate"><span class="pre">get_oxidation_state_from_species()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.fetch.get_period_by_symbol"><code class="docutils literal notranslate"><span class="pre">get_period_by_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.fetch.get_symbol_by_z"><code class="docutils literal notranslate"><span class="pre">get_symbol_by_z()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.fetch.get_symbol_from_species"><code class="docutils literal notranslate"><span class="pre">get_symbol_from_species()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.fetch.get_time"><code class="docutils literal notranslate"><span class="pre">get_time()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.fetch.get_z_by_symbol"><code class="docutils literal notranslate"><span class="pre">get_z_by_symbol()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.db.utils.variables">jamip.db.utils.variables module</a><ul>
+<li><a class="reference internal" href="#jamip.db.utils.variables.default_constants"><code class="docutils literal notranslate"><span class="pre">default_constants</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.utils.variables.default_constants.angle_tolerance"><code class="docutils literal notranslate"><span class="pre">default_constants.angle_tolerance</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.default_constants.hall_number"><code class="docutils literal notranslate"><span class="pre">default_constants.hall_number</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.default_constants.isContainedConstraints"><code class="docutils literal notranslate"><span class="pre">default_constants.isContainedConstraints</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.default_constants.isContainedVelocities"><code class="docutils literal notranslate"><span class="pre">default_constants.isContainedVelocities</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.default_constants.isNormalizingCoordinate"><code class="docutils literal notranslate"><span class="pre">default_constants.isNormalizingCoordinate</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.default_constants.precision"><code class="docutils literal notranslate"><span class="pre">default_constants.precision</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.default_constants.symprec"><code class="docutils literal notranslate"><span class="pre">default_constants.symprec</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.environment_variables"><code class="docutils literal notranslate"><span class="pre">environment_variables</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.utils.variables.environment_variables.engine_of_database"><code class="docutils literal notranslate"><span class="pre">environment_variables.engine_of_database</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.environment_variables.host_of_database"><code class="docutils literal notranslate"><span class="pre">environment_variables.host_of_database</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.environment_variables.name_of_database"><code class="docutils literal notranslate"><span class="pre">environment_variables.name_of_database</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.environment_variables.password_of_database"><code class="docutils literal notranslate"><span class="pre">environment_variables.password_of_database</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.environment_variables.port_of_database"><code class="docutils literal notranslate"><span class="pre">environment_variables.port_of_database</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.environment_variables.pseudopotential_of_VASP"><code class="docutils literal notranslate"><span class="pre">environment_variables.pseudopotential_of_VASP</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.environment_variables.user_of_database"><code class="docutils literal notranslate"><span class="pre">environment_variables.user_of_database</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.state_of_calculation"><code class="docutils literal notranslate"><span class="pre">state_of_calculation</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.utils.variables.state_of_calculation.calculating"><code class="docutils literal notranslate"><span class="pre">state_of_calculation.calculating</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.state_of_calculation.error"><code class="docutils literal notranslate"><span class="pre">state_of_calculation.error</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.state_of_calculation.finished"><code class="docutils literal notranslate"><span class="pre">state_of_calculation.finished</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.state_of_calculation.prepare"><code class="docutils literal notranslate"><span class="pre">state_of_calculation.prepare</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.utils.variables.state_of_calculation.unknown"><code class="docutils literal notranslate"><span class="pre">state_of_calculation.unknown</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.db.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">jamip.db.utils package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/db/jamip.db.utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jamip-db-utils-package">
+<h1>jamip.db.utils package<a class="headerlink" href="#jamip-db-utils-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.db.utils.check">
+<span id="jamip-db-utils-check-module"></span><h2>jamip.db.utils.check module<a class="headerlink" href="#module-jamip.db.utils.check" title="Link to this heading"></a></h2>
+<p>Created on Dec 11, 2017</p>
+<p>&#64;author: Yuhao Fu</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.check_consistency_between_memory_and_db">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">check_consistency_between_memory_and_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.check_consistency_between_memory_and_db" title="Link to this definition"></a></dt>
+<dd><p>check data consistency between memory and database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>structure</strong></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.check_constraint">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">check_constraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">constraint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.check_constraint" title="Link to this definition"></a></dt>
+<dd><p>check whether the value of constraint is boolean.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>constraint</strong> – array of boolean. The valid formation: [False, False, True].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.check_formated_angle">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">check_formated_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.check_formated_angle" title="Link to this definition"></a></dt>
+<dd><p>check whether the format of angle is valid.
+:param theta: formated angle. The valid formation:</p>
+<blockquote>
+<div><p>[90, ‘Degree’]
+[1.2, ‘Radian’]</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.check_formated_angle_only_degree">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">check_formated_angle_only_degree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.check_formated_angle_only_degree" title="Link to this definition"></a></dt>
+<dd><p>check whether the format of angle is valid.
+:param theta: formated angle. The valid formation:</p>
+<blockquote>
+<div><p>[90, ‘Degree’]</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.check_formated_angle_only_radian">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">check_formated_angle_only_radian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.check_formated_angle_only_radian" title="Link to this definition"></a></dt>
+<dd><p>check whether the format of angle is valid.
+:param theta: formated angle. The valid formation:</p>
+<blockquote>
+<div><p>[90, ‘Radia’]</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.check_formated_atom">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">check_formated_atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.check_formated_atom" title="Link to this definition"></a></dt>
+<dd><p>check whether the format of atom is valid.
+:param atom: formated atom. if type of coordinate is ‘Direct’,  you can not specify</p>
+<blockquote>
+<div><dl>
+<dt>the type. But, for ‘Cartesian’, must be given. the valid formation:</dt><dd><p>[‘Na’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na’, 0.1, 0.0, 0.0]
+[‘Na’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+<p>contain species information:
+[‘Na1+’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na1+’, 0.1, 0.0, 0.0]
+[‘Na1+’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.check_formated_atom_only_cartesian">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">check_formated_atom_only_cartesian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.check_formated_atom_only_cartesian" title="Link to this definition"></a></dt>
+<dd><p>check whether the format of atom is valid.
+:param atom: formated atom. The type of coordinate is only ‘Cartesian’,  you must specify</p>
+<blockquote>
+<div><dl>
+<dt>the type. The valid formation:</dt><dd><p>[‘Na’, 2.3, 1.4, 0.0, ‘Cartesian’]</p>
+<p>contain species information:
+[‘Na1+’, 2.3, 1.4, 0.0, ‘Cartesian’]</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.check_formated_atom_only_direct">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">check_formated_atom_only_direct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.check_formated_atom_only_direct" title="Link to this definition"></a></dt>
+<dd><p>check whether the format of atom is valid.
+:param atom: formated atom. The type of coordinate is only ‘Direct’,  you can not specify</p>
+<blockquote>
+<div><dl>
+<dt>the type. The valid formation:</dt><dd><p>[‘Na’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na’, 0.1, 0.0, 0.0]</p>
+<p>contain species information:
+[‘Na1+’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na1+’, 0.1, 0.0, 0.0]</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.check_formated_position">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">check_formated_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.check_formated_position" title="Link to this definition"></a></dt>
+<dd><p>check whether the format of position is valid.
+:param position: formated position. if type of coordinate is ‘Direct’,  you can not specify</p>
+<blockquote>
+<div><dl class="simple">
+<dt>the type. But, for ‘Cartesian’, must be given. the valid formation:</dt><dd><p>[0.1, 0.0, 0.0, ‘Direct’]
+[0.1, 0.0, 0.0]
+[5.234, 0.0, 0.0, ‘Cartesian’]</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.check_formated_position_only_cartesian">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">check_formated_position_only_cartesian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.check_formated_position_only_cartesian" title="Link to this definition"></a></dt>
+<dd><p>check whether the format of position is valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>position</strong> – <p>formated position. The type of coordinate is only ‘Cartesian’,  you must specify
+the type. The valid formation:</p>
+<blockquote>
+<div><p>[5.234, 0.0, 0.0, ‘Cartesian’]</p>
+</div></blockquote>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.check_formated_position_only_direct">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">check_formated_position_only_direct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.check_formated_position_only_direct" title="Link to this definition"></a></dt>
+<dd><p>check whether the format of position is valid.
+:param position: formated position. The type of coordinate is only ‘Direct’,  you can not specify</p>
+<blockquote>
+<div><dl class="simple">
+<dt>the type. The valid formation:</dt><dd><p>[0.1, 0.0, 0.0, ‘Direct’]
+[0.1, 0.0, 0.0]</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.check_species">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">check_species</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_of_species</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.check_species" title="Link to this definition"></a></dt>
+<dd><p>check the validity of given spceies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name_of_species</strong> – name of species. i.e. ‘Na+’, ‘Fe3+’</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.check_symbol">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">check_symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_of_element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.check_symbol" title="Link to this definition"></a></dt>
+<dd><p>check the validity of given symbol.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>symbol_of_element</strong> – symbol of element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.isOverlap">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">isOverlap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.isOverlap" title="Link to this definition"></a></dt>
+<dd><p>check whether the structure contains overlapping atoms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>structure</strong> – structural object.</p></li>
+<li><p><strong>kwargs</strong> – <dl class="simple">
+<dt>isNormalizingCoordinate (default=True): whether to remove the periodic boundary condition,</dt><dd><p>ensure the value of atomic coordinate is between 0 and 1 (i.e. 1.3 -&gt; 0.3).</p>
+</dd>
+<dt>precision (default=1e-3): used to determine whether the component of position is very close to 1.</dt><dd><p>from other atoms.</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.is_all_in_collection">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">is_all_in_collection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.is_all_in_collection" title="Link to this definition"></a></dt>
+<dd><p>check whether all element in given list array are in collection</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.is_inside">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">is_inside</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selective_range</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.is_inside" title="Link to this definition"></a></dt>
+<dd><p>chenck whether or not the given position is inside the selectirve range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position</strong></p></li>
+<li><p><strong>selective_range</strong> – selective range. The valid format is [start, end, direction(0/1/2)]. i.e. [0.24980, 0.31235, 2] or [[0.1, 0.2],
+[0.1, 0.2],
+[0.1, 0.2]]</p></li>
+<li><p><strong>kwargs</strong> – <p>tolerance (default=1e-3): tolerance for unit to exclude the right atoms near boundary (unit: Angstrom).</p>
+<p>lattice: lattice parameter of structure. i.e.
+[[x1,y1,z1],</p>
+<blockquote>
+<div><p>[x2,y2,z2],
+[x3,y3,z3]]</p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.is_int_or_float">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">is_int_or_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.is_int_or_float" title="Link to this definition"></a></dt>
+<dd><p>check the type of given variable.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.is_overlap_of_positions">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">is_overlap_of_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formated_atom1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formated_atom2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lattice</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Direct'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.is_overlap_of_positions" title="Link to this definition"></a></dt>
+<dd><p>check whether two given position is overlap.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>formated_atom1</strong></p></li>
+<li><p><strong>formated_atom2</strong> – <p>formated atom. Note that type of coordinate is ‘Direct’,  you can not specify
+the type. The valid formation:</p>
+<blockquote>
+<div><p>[‘Na’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na’, 0.1, 0.0, 0.0] # Direct-type
+[‘Na’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+<p>contain species information:
+[‘Na1+’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na1+’, 0.1, 0.0, 0.0]
+[‘Na1+’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+<p>Also, it is support the following format (Ignore element’s symbol).
+[0.1, 0.0, 0.0, ‘Direct’]
+[0.1, 0.0, 0.0] # Direct-type
+[5.234, 0.0, 0.0, ‘Cartesian’]</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>lattice</strong> – <p>lattice parameter of structure. i.e.
+[[x1,y1,z1],</p>
+<blockquote>
+<div><p>[x2,y2,z2],
+[x3,y3,z3]]</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>dtype</strong> (<em>default='Direct'</em>) – type of formated positon after convertion. ‘Direct’ or ‘Cartesian’</p></li>
+<li><p><strong>kwargs</strong> – <dl class="simple">
+<dt>isNormalizingCoordinate (default=True): whether to remove the periodic boundary condition,</dt><dd><p>ensure the value of atomic coordinate is between 0 and 1 (i.e. 1.3 -&gt; 0.3).</p>
+</dd>
+<dt>precision (default=1e-3): used to determine whether the component of position is very close to 1.</dt><dd><p>from other atoms.</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.is_overlap_of_positions_for_molecule">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">is_overlap_of_positions_for_molecule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formated_atom1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formated_atom2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.is_overlap_of_positions_for_molecule" title="Link to this definition"></a></dt>
+<dd><p>check whether two given position is overlap.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>formated_atom1</strong></p></li>
+<li><p><strong>formated_atom2</strong> – <p>formated atom. The valid formation:
+[‘Na’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+<p>contain species information:
+[‘Na1+’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+<p>Also, it is support the following format (Ignore element’s symbol).
+[5.234, 0.0, 0.0, ‘Cartesian’]</p>
+</p></li>
+<li><p><strong>kwargs</strong> – <dl class="simple">
+<dt>precision (default=1e-3): used to determine whether the component of position is very close to 1.</dt><dd><p>from other atoms.</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.check.is_same">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.check.</span></span><span class="sig-name descname"><span class="pre">is_same</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.check.is_same" title="Link to this definition"></a></dt>
+<dd><p>check whether two given list arrays are same.</p>
+</dd></dl>
+
+</section>
+<section id="module-jamip.db.utils.convert">
+<span id="jamip-db-utils-convert-module"></span><h2>jamip.db.utils.convert module<a class="headerlink" href="#module-jamip.db.utils.convert" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.any2cartesian">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">any2cartesian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lattice</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.any2cartesian" title="Link to this definition"></a></dt>
+<dd><p>convert it to Cartesian if type of position is Direct. do not anything if that is Cartesian.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lattice</strong> – <p>lattice parameter of structure. i.e.
+[[x1,y1,z1],</p>
+<blockquote>
+<div><p>[x2,y2,z2],
+[x3,y3,z3]]</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>position</strong> – atomic position. The valid format is:
+[0.1, 0, 0, ‘Direct’]
+[0.1, 0, 0] (for Direct, can not be specify)
+[5.234, 0, 0, ‘Cartesian’] (for Cartesian, must be given)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Cartesian). i.e. [5.234, 0, 0, ‘Cartesian’]</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>atomic position (type</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.any2degree">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">any2degree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.any2degree" title="Link to this definition"></a></dt>
+<dd><p>convert to degree.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.any2direct">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">any2direct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lattice</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.any2direct" title="Link to this definition"></a></dt>
+<dd><p>convert it to Direct if type of position is Cartesian. do not anything if that is Direct.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lattice</strong> – <p>lattice parameter of structure. i.e.
+[[x1,y1,z1],</p>
+<blockquote>
+<div><p>[x2,y2,z2],
+[x3,y3,z3]]</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>position</strong> – atomic position. The valid format is :
+[0.1, 0, 0, ‘Direct’]
+[0.1, 0, 0] (for Direct, can not be specify)
+[5.234, 0, 0, ‘Cartesian’] (for Cartesian, must be given)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Direct). i.e. [0.1, 0, 0, ‘Direct’]</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>atomic position (type</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.any2radian">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">any2radian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.any2radian" title="Link to this definition"></a></dt>
+<dd><p>convert to radian.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.cartesian2direct">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">cartesian2direct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lattice</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.cartesian2direct" title="Link to this definition"></a></dt>
+<dd><p>convert Cartesian to Direct.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lattice</strong> – <p>lattice parameter of structure. i.e.
+[[x1,y1,z1],</p>
+<blockquote>
+<div><p>[x2,y2,z2],
+[x3,y3,z3]]</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>position</strong> – atomic position (type: Cartesian). i.e. [5.234, 0, 0, ‘Cartesian’]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Direct). i.e. [0.1, 0, 0, ‘Direct’]</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>atomic position (type</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.cell2poscar">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">cell2poscar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.cell2poscar" title="Link to this definition"></a></dt>
+<dd><p>convert cell to poscar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cell</strong> – <p>cell-typed structure. The valid format is:
+{‘lattice’:lattice,</p>
+<blockquote>
+<div><p>’positions’:positions,
+‘numbers’:numbers,
+‘magmoms’:magmoms(optional)}</p>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>{‘lattice’: lattice,</dt><dd><p>’elements’: elements,
+‘numbers’: numbers,
+‘type’: ‘Direct’,
+‘positions’: positions}</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>poscar-typed structure. The valid format is</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.degree2radian">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">degree2radian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.degree2radian" title="Link to this definition"></a></dt>
+<dd><p>convert degree to radian.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.direct2cartesian">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">direct2cartesian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lattice</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.direct2cartesian" title="Link to this definition"></a></dt>
+<dd><p>convert Direct to Cartesian.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lattice</strong> – <p>lattice parameter of structure. i.e.
+[[x1,y1,z1],</p>
+<blockquote>
+<div><p>[x2,y2,z2],
+[x3,y3,z3]]</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>position</strong> – atomic position (type: Direct). The valid format is :
+[0.1, 0, 0, ‘Direct’]
+[0.1, 0, 0] (for Direct, can not be specify)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Cartesian). i.e. [5.234, 0, 0, ‘Cartesian’]</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>atomic position (type</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.enum2dict">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">enum2dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enum</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.enum2dict" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.formatting_position">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">formatting_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formated_atom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Direct'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.formatting_position" title="Link to this definition"></a></dt>
+<dd><p>convert the position of given formated_atom to formated position.</p>
+<dl>
+<dt>Argurments:</dt><dd><dl>
+<dt>formated_atom: formated atom. Note that type of coordinate is ‘Direct’,  you can not specify</dt><dd><dl>
+<dt>the type. The valid formation:</dt><dd><p>[‘Na’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na’, 0.1, 0.0, 0.0] # Direct-type
+[‘Na’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+<p>contain species information:
+[‘Na1+’, 0.1, 0.0, 0.0, ‘Direct’]
+[‘Na1+’, 0.1, 0.0, 0.0]
+[‘Na1+’, 5.234, 0.0, 0.0, ‘Cartesian’]</p>
+<p>Also, it is support the following format (Ignore element’s symbol).
+[0.1, 0.0, 0.0, ‘Direct’]
+[0.1, 0.0, 0.0] # Direct-type
+[5.234, 0.0, 0.0, ‘Cartesian’]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>dtype (default=’Direct’): type of formated positon after convertion. ‘Direct’ or ‘Cartesian’</p>
+<dl class="simple">
+<dt>kwargs:</dt><dd><dl class="simple">
+<dt>for “Cartesian”-type position:</dt><dd><dl class="simple">
+<dt>lattice: lattice parameter of structure. i.e.</dt><dd><dl class="simple">
+<dt>[[x1,y1,z1],</dt><dd><p>[x2,y2,z2],
+[x3,y3,z3]]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>isNormalizingCoordinate (default=True): whether to remove the periodic boundary condition,</dt><dd><p>ensure the value of atomic coordinate is between 0 and 1 (i.e. 1.3 -&gt; 0.3).</p>
+</dd>
+<dt>precision (default=1e-3): used to determine whether the component of position is very close to 1.</dt><dd><p>from other atoms.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.formatting_species">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">formatting_species</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_of_species</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.formatting_species" title="Link to this definition"></a></dt>
+<dd><p>convert this to formated species. like, ‘Na+’ -&gt; ‘Na1+’.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.mp2jamip">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">mp2jamip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">struct</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mp_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isPersist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.mp2jamip" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.normalize_position">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">normalize_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.normalize_position" title="Link to this definition"></a></dt>
+<dd><p>remove the translation periodicty of atomic position, ensure coordinate’s values are between 0 and 1.
+i.e. for Direct type, [1.1, 0, 0] -&gt; [0.1, 0, 0]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position</strong> – atomic position. the valid format:
+[0.1, 0.0, 0.0, ‘Direct’]
+[0.1, 0.0, 0.0]
+[5.234, 0.0, 0.0, ‘Cartesian’]</p></li>
+<li><p><strong>dtype</strong> – type of coordinate after translating (‘Direct’ or ‘Cartesian’).</p></li>
+<li><p><strong>kwargs</strong> – <dl class="simple">
+<dt>lattice: lattice parameter of structure. need to be given when dtype is Cartesian. i.e.</dt><dd><dl class="simple">
+<dt>[[x1,y1,z1],</dt><dd><p>[x2,y2,z2],
+[x3,y3,z3]]</p>
+</dd>
+</dl>
+</dd>
+<dt>precision (default=1e-5): used to determine whether the component of position is very close to 1.</dt><dd><p>from other atoms.</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>converted positionincluded the type (list). i.e. [0.1, 0, 0, ‘Direct’], [5.234, 0.0, 0.0, ‘Cartesian’]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.poscar2cell">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">poscar2cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">poscar</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.poscar2cell" title="Link to this definition"></a></dt>
+<dd><p>convert poscar to cell.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>poscar</strong> – <p>poscar-typed structure. The valid format is:
+{‘lattice’: lattice,</p>
+<blockquote>
+<div><p>’elements’: elements,
+‘numbers’: numbers,
+‘type’: ‘Direct’,
+‘positions’: positions}</p>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>{‘lattice’:lattice,</dt><dd><p>’positions’:positions,
+‘numbers’:numbers,
+‘magmoms’:magmoms(optional)}</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>cell-typed structure. The valid format is</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.radian2degree">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">radian2degree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.radian2degree" title="Link to this definition"></a></dt>
+<dd><p>convert radian to degree.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.raw2std_position">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">raw2std_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformation_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin_shift</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.raw2std_position" title="Link to this definition"></a></dt>
+<dd><p>convert non-conventional position (raw position from input structure in IO stream) to standardized position.</p>
+<p>position_std=transformation_matrix*position_input+origin_shif (mod 1).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position</strong> – input position of atom [1x3].</p></li>
+<li><p><strong>transformation_matrix</strong> – array-like [3x3].</p></li>
+<li><p><strong>origin_shift</strong> – array-like [1x3].</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>standardized position.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.rotation">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">rotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.rotation" title="Link to this definition"></a></dt>
+<dd><p>rotation position. if giving origin, rotation axis will not through the coordinate origin [0,0,0]. given origin is start point of axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position</strong> – atomic position. The valid format:
+[0.1, 0.0, 0.0, ‘Direct’]
+[0.1, 0.0, 0.0]
+[5.234, 0.0, 0.0, ‘Cartesian’]</p></li>
+<li><p><strong>axis</strong> – rotation axis. The valid format:
+[0.1, 0.0, 0.0, ‘Direct’]
+[0.1, 0.0, 0.0]
+[5.234, 0.0, 0.0, ‘Cartesian’]</p></li>
+<li><p><strong>theta</strong> – rotation angle. The valid format:
+[30, ‘Degree’]
+[0.2, ‘Radian’]</p></li>
+<li><p><strong>kwargs</strong> – <dl class="simple">
+<dt>origin: rotation origin. Noth that it is the origin of the axis of rotation, not a point on the axis of rotation.</dt><dd><p>The valid format:
+[0.1, 0.0, 0.0, ‘Direct’]
+[0.1, 0.0, 0.0]
+[5.234, 0.0, 0.0, ‘Cartesian’]</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>new position.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.to_poscar5x">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">to_poscar5x</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_of_poscar4x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_of_poscar5x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.to_poscar5x" title="Link to this definition"></a></dt>
+<dd><p>convert poscar4.x to poscar5.x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path_of_poscar4x</strong> – path of poscar4x.</p></li>
+<li><p><strong>path_of_poscar5x</strong> – path of converted poscar5.x.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>output new poscar5.x file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.convert.translation">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.convert.</span></span><span class="sig-name descname"><span class="pre">translation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.convert.translation" title="Link to this definition"></a></dt>
+<dd><p>rotation position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position</strong> – atomic position. The valid format:
+[0.1, 0.0, 0.0, ‘Direct’]
+[0.1, 0.0, 0.0]
+[5.234, 0.0, 0.0, ‘Cartesian’]</p></li>
+<li><p><strong>direction</strong> – direction vector to add the vacuum along lattice vector(a/b/c). The valid format is :
+[0.1, 0, 0, ‘Direct’]
+[0.1, 0, 0] (for Direct, can not be specify)
+[5.234, 0, 0, ‘Cartesian’] (for Cartesian, must be given)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>new position.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-jamip.db.utils.customField">
+<span id="jamip-db-utils-customfield-module"></span><h2>jamip.db.utils.customField module<a class="headerlink" href="#module-jamip.db.utils.customField" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedDictField">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.utils.customField.</span></span><span class="sig-name descname"><span class="pre">CompressedDictField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedDictField" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TextField</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedDictField.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Stores</span> <span class="pre">a</span> <span class="pre">python</span> <span class="pre">dictionary</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">compressed</span> <span class="pre">format</span> <span class="pre">(bz2</span> <span class="pre">by</span> <span class="pre">default)'</span></em><a class="headerlink" href="#jamip.db.utils.customField.CompressedDictField.description" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedDictField.from_db_value">
+<span class="sig-name descname"><span class="pre">from_db_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedDictField.from_db_value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedDictField.get_prep_value">
+<span class="sig-name descname"><span class="pre">get_prep_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedDictField.get_prep_value" title="Link to this definition"></a></dt>
+<dd><p>Perform preliminary non-db specific value checks and conversions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedDictField.to_python">
+<span class="sig-name descname"><span class="pre">to_python</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedDictField.to_python" title="Link to this definition"></a></dt>
+<dd><p>Convert the input value into the expected Python data type, raising
+django.core.exceptions.ValidationError if the data can’t be converted.
+Return the converted value. Subclasses should override this.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedDictField.value_to_string">
+<span class="sig-name descname"><span class="pre">value_to_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedDictField.value_to_string" title="Link to this definition"></a></dt>
+<dd><p>Return a string value of this field from the passed obj.
+This is used by the serialization framework.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedListField">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.utils.customField.</span></span><span class="sig-name descname"><span class="pre">CompressedListField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedListField" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TextField</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedListField.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Stores</span> <span class="pre">a</span> <span class="pre">python</span> <span class="pre">list</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">compressed</span> <span class="pre">format</span> <span class="pre">(bz2</span> <span class="pre">by</span> <span class="pre">default)'</span></em><a class="headerlink" href="#jamip.db.utils.customField.CompressedListField.description" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedListField.from_db_value">
+<span class="sig-name descname"><span class="pre">from_db_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedListField.from_db_value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedListField.get_prep_value">
+<span class="sig-name descname"><span class="pre">get_prep_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedListField.get_prep_value" title="Link to this definition"></a></dt>
+<dd><p>Perform preliminary non-db specific value checks and conversions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedListField.to_python">
+<span class="sig-name descname"><span class="pre">to_python</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedListField.to_python" title="Link to this definition"></a></dt>
+<dd><p>Convert the input value into the expected Python data type, raising
+django.core.exceptions.ValidationError if the data can’t be converted.
+Return the converted value. Subclasses should override this.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedListField.value_to_string">
+<span class="sig-name descname"><span class="pre">value_to_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedListField.value_to_string" title="Link to this definition"></a></dt>
+<dd><p>Return a string value of this field from the passed obj.
+This is used by the serialization framework.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedNumpyArrayField">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.utils.customField.</span></span><span class="sig-name descname"><span class="pre">CompressedNumpyArrayField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedNumpyArrayField" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TextField</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedNumpyArrayField.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Stores</span> <span class="pre">a</span> <span class="pre">numpy</span> <span class="pre">ndarray</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">compressed</span> <span class="pre">format</span> <span class="pre">(bz2</span> <span class="pre">by</span> <span class="pre">default)'</span></em><a class="headerlink" href="#jamip.db.utils.customField.CompressedNumpyArrayField.description" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedNumpyArrayField.from_db_value">
+<span class="sig-name descname"><span class="pre">from_db_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedNumpyArrayField.from_db_value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedNumpyArrayField.get_prep_value">
+<span class="sig-name descname"><span class="pre">get_prep_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedNumpyArrayField.get_prep_value" title="Link to this definition"></a></dt>
+<dd><p>Perform preliminary non-db specific value checks and conversions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedNumpyArrayField.to_python">
+<span class="sig-name descname"><span class="pre">to_python</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedNumpyArrayField.to_python" title="Link to this definition"></a></dt>
+<dd><p>Convert the input value into the expected Python data type, raising
+django.core.exceptions.ValidationError if the data can’t be converted.
+Return the converted value. Subclasses should override this.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedNumpyArrayField.value_to_string">
+<span class="sig-name descname"><span class="pre">value_to_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedNumpyArrayField.value_to_string" title="Link to this definition"></a></dt>
+<dd><p>Return a string value of this field from the passed obj.
+This is used by the serialization framework.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedTextField">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.utils.customField.</span></span><span class="sig-name descname"><span class="pre">CompressedTextField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedTextField" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TextField</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedTextField.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Stores</span> <span class="pre">a</span> <span class="pre">string</span> <span class="pre">text</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">compressed</span> <span class="pre">format</span> <span class="pre">(bz2</span> <span class="pre">by</span> <span class="pre">default)'</span></em><a class="headerlink" href="#jamip.db.utils.customField.CompressedTextField.description" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedTextField.from_db_value">
+<span class="sig-name descname"><span class="pre">from_db_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedTextField.from_db_value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedTextField.get_prep_value">
+<span class="sig-name descname"><span class="pre">get_prep_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedTextField.get_prep_value" title="Link to this definition"></a></dt>
+<dd><p>Perform preliminary non-db specific value checks and conversions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.CompressedTextField.to_python">
+<span class="sig-name descname"><span class="pre">to_python</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.CompressedTextField.to_python" title="Link to this definition"></a></dt>
+<dd><p>Convert the input value into the expected Python data type, raising
+django.core.exceptions.ValidationError if the data can’t be converted.
+Return the converted value. Subclasses should override this.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.DictField">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.utils.customField.</span></span><span class="sig-name descname"><span class="pre">DictField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.DictField" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TextField</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.DictField.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Stores</span> <span class="pre">a</span> <span class="pre">python</span> <span class="pre">dictionary'</span></em><a class="headerlink" href="#jamip.db.utils.customField.DictField.description" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.DictField.from_db_value">
+<span class="sig-name descname"><span class="pre">from_db_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.DictField.from_db_value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.DictField.get_prep_value">
+<span class="sig-name descname"><span class="pre">get_prep_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.DictField.get_prep_value" title="Link to this definition"></a></dt>
+<dd><p>Perform preliminary non-db specific value checks and conversions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.DictField.to_python">
+<span class="sig-name descname"><span class="pre">to_python</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.DictField.to_python" title="Link to this definition"></a></dt>
+<dd><p>Convert the input value into the expected Python data type, raising
+django.core.exceptions.ValidationError if the data can’t be converted.
+Return the converted value. Subclasses should override this.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.ListField">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.utils.customField.</span></span><span class="sig-name descname"><span class="pre">ListField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.ListField" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TextField</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.ListField.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Stores</span> <span class="pre">a</span> <span class="pre">python</span> <span class="pre">list'</span></em><a class="headerlink" href="#jamip.db.utils.customField.ListField.description" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.ListField.from_db_value">
+<span class="sig-name descname"><span class="pre">from_db_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.ListField.from_db_value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.ListField.get_prep_value">
+<span class="sig-name descname"><span class="pre">get_prep_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.ListField.get_prep_value" title="Link to this definition"></a></dt>
+<dd><p>Perform preliminary non-db specific value checks and conversions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.ListField.to_python">
+<span class="sig-name descname"><span class="pre">to_python</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.ListField.to_python" title="Link to this definition"></a></dt>
+<dd><p>Convert the input value into the expected Python data type, raising
+django.core.exceptions.ValidationError if the data can’t be converted.
+Return the converted value. Subclasses should override this.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.NumpyArrayField">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.utils.customField.</span></span><span class="sig-name descname"><span class="pre">NumpyArrayField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.NumpyArrayField" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TextField</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.NumpyArrayField.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Stores</span> <span class="pre">a</span> <span class="pre">numpy</span> <span class="pre">ndarray'</span></em><a class="headerlink" href="#jamip.db.utils.customField.NumpyArrayField.description" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.NumpyArrayField.from_db_value">
+<span class="sig-name descname"><span class="pre">from_db_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.NumpyArrayField.from_db_value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.NumpyArrayField.get_prep_value">
+<span class="sig-name descname"><span class="pre">get_prep_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.NumpyArrayField.get_prep_value" title="Link to this definition"></a></dt>
+<dd><p>Perform preliminary non-db specific value checks and conversions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.utils.customField.NumpyArrayField.to_python">
+<span class="sig-name descname"><span class="pre">to_python</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.customField.NumpyArrayField.to_python" title="Link to this definition"></a></dt>
+<dd><p>Convert the input value into the expected Python data type, raising
+django.core.exceptions.ValidationError if the data can’t be converted.
+Return the converted value. Subclasses should override this.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.db.utils.fetch">
+<span id="jamip-db-utils-fetch-module"></span><h2>jamip.db.utils.fetch module<a class="headerlink" href="#module-jamip.db.utils.fetch" title="Link to this heading"></a></h2>
+<p>Created on Dec 11, 2017</p>
+<p>&#64;author: Yuhao Fu</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.fetch.get_atoms_from_cell">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.fetch.</span></span><span class="sig-name descname"><span class="pre">get_atoms_from_cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.fetch.get_atoms_from_cell" title="Link to this definition"></a></dt>
+<dd><p>fetch atoms from cell-type structure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cell</strong> – <p>cell-type structure. The valid format is:
+{‘lattice’:lattice,</p>
+<blockquote>
+<div><p>’positions’:positions,
+‘numbers’:numbers,
+‘magmoms’:magmoms(optional)}</p>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>collection of atoms.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.fetch.get_group_by_symbol">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.fetch.</span></span><span class="sig-name descname"><span class="pre">get_group_by_symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.fetch.get_group_by_symbol" title="Link to this definition"></a></dt>
+<dd><p>get group by element’s symbol.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>symbol</strong> – element’s symbol. i.e. Na</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>group if exist. Conversely, None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.fetch.get_index_from_positions">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.fetch.</span></span><span class="sig-name descname"><span class="pre">get_index_from_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collection_of_positions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.fetch.get_index_from_positions" title="Link to this definition"></a></dt>
+<dd><p>get the index of given poistion from the collection (used for addressing the dataset of spglib).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collection_of</strong> – collection of positions. Note that the type is ‘Direct’.</p></li>
+<li><p><strong>position</strong> – entity’s index or object.</p></li>
+<li><p><strong>kwargs</strong> – <dl class="simple">
+<dt>precision (default=1e-3): used to determine whether the two atoms are overlapped. Note that,</dt><dd><p>to determine whether this atom is in collection by comparing its distance
+from other atoms.</p>
+</dd>
+<dt>for “Cartesian”-type position:</dt><dd><dl class="simple">
+<dt>lattice: lattice parameter of structure. i.e.</dt><dd><dl class="simple">
+<dt>[[x1,y1,z1],</dt><dd><p>[x2,y2,z2],
+[x3,y3,z3]]</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>index if exist. Conversely, False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.fetch.get_mass_by_symbol">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.fetch.</span></span><span class="sig-name descname"><span class="pre">get_mass_by_symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.fetch.get_mass_by_symbol" title="Link to this definition"></a></dt>
+<dd><p>get atomic mass by element’s symbol.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>symbol</strong> – element’s symbol. i.e. Na</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>atomic mass if exist. Conversely, None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.fetch.get_name_by_symbol">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.fetch.</span></span><span class="sig-name descname"><span class="pre">get_name_by_symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.fetch.get_name_by_symbol" title="Link to this definition"></a></dt>
+<dd><p>get name by element’s symbol.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>symbol</strong> – element’s symbol. i.e. Na</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>name if exist. Conversely, None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.fetch.get_oxidation_state_from_species">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.fetch.</span></span><span class="sig-name descname"><span class="pre">get_oxidation_state_from_species</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_of_species</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.fetch.get_oxidation_state_from_species" title="Link to this definition"></a></dt>
+<dd><p>get element’s oxidation state from species.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name_of_species</strong> – name of species. i.e. ‘Na+’, ‘Fe3+’</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>element’s oxidation state.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.fetch.get_period_by_symbol">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.fetch.</span></span><span class="sig-name descname"><span class="pre">get_period_by_symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.fetch.get_period_by_symbol" title="Link to this definition"></a></dt>
+<dd><p>get period by element’s symbol.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>symbol</strong> – element’s symbol. i.e. Na</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>period if exist. Conversely, None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.fetch.get_symbol_by_z">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.fetch.</span></span><span class="sig-name descname"><span class="pre">get_symbol_by_z</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.fetch.get_symbol_by_z" title="Link to this definition"></a></dt>
+<dd><p>get element’s symbol by given atomic number (z).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>z</strong> – atomic number.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>element’s symbol if exist. Conversely, None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.fetch.get_symbol_from_species">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.fetch.</span></span><span class="sig-name descname"><span class="pre">get_symbol_from_species</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_of_species</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.fetch.get_symbol_from_species" title="Link to this definition"></a></dt>
+<dd><p>get element’s symbol from species.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name_of_species</strong> – name of species. i.e. ‘Na+’, ‘Fe3+’</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>element’s symbol.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.fetch.get_time">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.fetch.</span></span><span class="sig-name descname"><span class="pre">get_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.fetch.get_time" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>current time.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.db.utils.fetch.get_z_by_symbol">
+<span class="sig-prename descclassname"><span class="pre">jamip.db.utils.fetch.</span></span><span class="sig-name descname"><span class="pre">get_z_by_symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.fetch.get_z_by_symbol" title="Link to this definition"></a></dt>
+<dd><p>get atomic number (z) by element’s symbol.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>symbol</strong> – element’s symbol. i.e. Na</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>atomic number if exist. Conversely, None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-jamip.db.utils.variables">
+<span id="jamip-db-utils-variables-module"></span><h2>jamip.db.utils.variables module<a class="headerlink" href="#module-jamip.db.utils.variables" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.default_constants">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.utils.variables.</span></span><span class="sig-name descname"><span class="pre">default_constants</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.variables.default_constants" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.default_constants.angle_tolerance">
+<span class="sig-name descname"><span class="pre">angle_tolerance</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1.0</span></em><a class="headerlink" href="#jamip.db.utils.variables.default_constants.angle_tolerance" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.default_constants.hall_number">
+<span class="sig-name descname"><span class="pre">hall_number</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#jamip.db.utils.variables.default_constants.hall_number" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.default_constants.isContainedConstraints">
+<span class="sig-name descname"><span class="pre">isContainedConstraints</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#jamip.db.utils.variables.default_constants.isContainedConstraints" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.default_constants.isContainedVelocities">
+<span class="sig-name descname"><span class="pre">isContainedVelocities</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#jamip.db.utils.variables.default_constants.isContainedVelocities" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.default_constants.isNormalizingCoordinate">
+<span class="sig-name descname"><span class="pre">isNormalizingCoordinate</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#jamip.db.utils.variables.default_constants.isNormalizingCoordinate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.default_constants.precision">
+<span class="sig-name descname"><span class="pre">precision</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.001</span></em><a class="headerlink" href="#jamip.db.utils.variables.default_constants.precision" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.default_constants.symprec">
+<span class="sig-name descname"><span class="pre">symprec</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1e-05</span></em><a class="headerlink" href="#jamip.db.utils.variables.default_constants.symprec" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.environment_variables">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.utils.variables.</span></span><span class="sig-name descname"><span class="pre">environment_variables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.variables.environment_variables" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.environment_variables.engine_of_database">
+<span class="sig-name descname"><span class="pre">engine_of_database</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.backends.mysql'</span></em><a class="headerlink" href="#jamip.db.utils.variables.environment_variables.engine_of_database" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.environment_variables.host_of_database">
+<span class="sig-name descname"><span class="pre">host_of_database</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'localhost'</span></em><a class="headerlink" href="#jamip.db.utils.variables.environment_variables.host_of_database" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.environment_variables.name_of_database">
+<span class="sig-name descname"><span class="pre">name_of_database</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'jamipdb'</span></em><a class="headerlink" href="#jamip.db.utils.variables.environment_variables.name_of_database" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.environment_variables.password_of_database">
+<span class="sig-name descname"><span class="pre">password_of_database</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'123456'</span></em><a class="headerlink" href="#jamip.db.utils.variables.environment_variables.password_of_database" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.environment_variables.port_of_database">
+<span class="sig-name descname"><span class="pre">port_of_database</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'3366'</span></em><a class="headerlink" href="#jamip.db.utils.variables.environment_variables.port_of_database" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.environment_variables.pseudopotential_of_VASP">
+<span class="sig-name descname"><span class="pre">pseudopotential_of_VASP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/home/fu/software/pot5.4'</span></em><a class="headerlink" href="#jamip.db.utils.variables.environment_variables.pseudopotential_of_VASP" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.environment_variables.user_of_database">
+<span class="sig-name descname"><span class="pre">user_of_database</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'root'</span></em><a class="headerlink" href="#jamip.db.utils.variables.environment_variables.user_of_database" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.state_of_calculation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.utils.variables.</span></span><span class="sig-name descname"><span class="pre">state_of_calculation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.utils.variables.state_of_calculation" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.state_of_calculation.calculating">
+<span class="sig-name descname"><span class="pre">calculating</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'calculating'</span></em><a class="headerlink" href="#jamip.db.utils.variables.state_of_calculation.calculating" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.state_of_calculation.error">
+<span class="sig-name descname"><span class="pre">error</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'error'</span></em><a class="headerlink" href="#jamip.db.utils.variables.state_of_calculation.error" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.state_of_calculation.finished">
+<span class="sig-name descname"><span class="pre">finished</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'finished'</span></em><a class="headerlink" href="#jamip.db.utils.variables.state_of_calculation.finished" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.state_of_calculation.prepare">
+<span class="sig-name descname"><span class="pre">prepare</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'prepare'</span></em><a class="headerlink" href="#jamip.db.utils.variables.state_of_calculation.prepare" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.utils.variables.state_of_calculation.unknown">
+<span class="sig-name descname"><span class="pre">unknown</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unknown'</span></em><a class="headerlink" href="#jamip.db.utils.variables.state_of_calculation.unknown" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.db.utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jamip.db.utils" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

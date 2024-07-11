@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamip.structure package &mdash; JAMIP 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jamip.structure package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-jamip.structure.atom">jamip.structure.atom module</a><ul>
+<li><a class="reference internal" href="#jamip.structure.atom.Cell"><code class="docutils literal notranslate"><span class="pre">Cell</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.structure.atom.Cell.a"><code class="docutils literal notranslate"><span class="pre">Cell.a</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.atom.Cell.alpha"><code class="docutils literal notranslate"><span class="pre">Cell.alpha</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.atom.Cell.b"><code class="docutils literal notranslate"><span class="pre">Cell.b</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.atom.Cell.beta"><code class="docutils literal notranslate"><span class="pre">Cell.beta</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.atom.Cell.c"><code class="docutils literal notranslate"><span class="pre">Cell.c</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.atom.Cell.from_parameters"><code class="docutils literal notranslate"><span class="pre">Cell.from_parameters()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.atom.Cell.gamma"><code class="docutils literal notranslate"><span class="pre">Cell.gamma</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.atom.Cell.get_spacegroup"><code class="docutils literal notranslate"><span class="pre">Cell.get_spacegroup()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.atom.Cell.parameters"><code class="docutils literal notranslate"><span class="pre">Cell.parameters</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.atom.Cell.reciprocal"><code class="docutils literal notranslate"><span class="pre">Cell.reciprocal</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.atom.Cell.scale"><code class="docutils literal notranslate"><span class="pre">Cell.scale</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.atom.Cell.vectors"><code class="docutils literal notranslate"><span class="pre">Cell.vectors</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.atom.Cell.volume"><code class="docutils literal notranslate"><span class="pre">Cell.volume</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.structure.atom.SelectDynamic"><code class="docutils literal notranslate"><span class="pre">SelectDynamic</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.structure.atom.SelectDynamic.x"><code class="docutils literal notranslate"><span class="pre">SelectDynamic.x</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.atom.SelectDynamic.xyz"><code class="docutils literal notranslate"><span class="pre">SelectDynamic.xyz</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.atom.SelectDynamic.y"><code class="docutils literal notranslate"><span class="pre">SelectDynamic.y</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.atom.SelectDynamic.z"><code class="docutils literal notranslate"><span class="pre">SelectDynamic.z</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.structure.atomic_number">jamip.structure.atomic_number module</a><ul>
+<li><a class="reference internal" href="#jamip.structure.atomic_number.number"><code class="docutils literal notranslate"><span class="pre">number</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.structure.bonding">jamip.structure.bonding module</a><ul>
+<li><a class="reference internal" href="#jamip.structure.bonding.Atom"><code class="docutils literal notranslate"><span class="pre">Atom</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.structure.bonding.Atom.coord"><code class="docutils literal notranslate"><span class="pre">Atom.coord</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.Atom.element"><code class="docutils literal notranslate"><span class="pre">Atom.element</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.Atom.unid"><code class="docutils literal notranslate"><span class="pre">Atom.unid</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.structure.bonding.BaseBond"><code class="docutils literal notranslate"><span class="pre">BaseBond</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.structure.bonding.BaseBond.a1"><code class="docutils literal notranslate"><span class="pre">BaseBond.a1</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.BaseBond.a2"><code class="docutils literal notranslate"><span class="pre">BaseBond.a2</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.BaseBond.distance"><code class="docutils literal notranslate"><span class="pre">BaseBond.distance</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.BaseBond.vector"><code class="docutils literal notranslate"><span class="pre">BaseBond.vector</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.structure.bonding.BondCore"><code class="docutils literal notranslate"><span class="pre">BondCore</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.structure.bonding.BondCore.classify"><code class="docutils literal notranslate"><span class="pre">BondCore.classify()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.BondCore.full_repr"><code class="docutils literal notranslate"><span class="pre">BondCore.full_repr()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.BondCore.get_coordination_matrix"><code class="docutils literal notranslate"><span class="pre">BondCore.get_coordination_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.BondCore.get_covalent_matrix"><code class="docutils literal notranslate"><span class="pre">BondCore.get_covalent_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.BondCore.get_vectors"><code class="docutils literal notranslate"><span class="pre">BondCore.get_vectors()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.BondCore.section"><code class="docutils literal notranslate"><span class="pre">BondCore.section()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.BondCore.to_angle_matrix"><code class="docutils literal notranslate"><span class="pre">BondCore.to_angle_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.BondCore.to_list"><code class="docutils literal notranslate"><span class="pre">BondCore.to_list()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.BondCore.to_matrix"><code class="docutils literal notranslate"><span class="pre">BondCore.to_matrix()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.structure.bonding.Bonding"><code class="docutils literal notranslate"><span class="pre">Bonding</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.structure.bonding.Bonding.compute_shifts"><code class="docutils literal notranslate"><span class="pre">Bonding.compute_shifts()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.Bonding.get_adjacency_matrix"><code class="docutils literal notranslate"><span class="pre">Bonding.get_adjacency_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.Bonding.get_angle_by_atom"><code class="docutils literal notranslate"><span class="pre">Bonding.get_angle_by_atom()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.Bonding.get_angle_by_pair"><code class="docutils literal notranslate"><span class="pre">Bonding.get_angle_by_pair()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.Bonding.get_atom_indices"><code class="docutils literal notranslate"><span class="pre">Bonding.get_atom_indices()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.Bonding.get_bond_by_atom"><code class="docutils literal notranslate"><span class="pre">Bonding.get_bond_by_atom()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.Bonding.get_bond_by_pair"><code class="docutils literal notranslate"><span class="pre">Bonding.get_bond_by_pair()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.Bonding.get_bond_by_pair_and_orient"><code class="docutils literal notranslate"><span class="pre">Bonding.get_bond_by_pair_and_orient()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.Bonding.get_bond_by_voronoi"><code class="docutils literal notranslate"><span class="pre">Bonding.get_bond_by_voronoi()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.Bonding.get_covalent_matrix"><code class="docutils literal notranslate"><span class="pre">Bonding.get_covalent_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.Bonding.get_neighbors"><code class="docutils literal notranslate"><span class="pre">Bonding.get_neighbors()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.Bonding.get_voronoi"><code class="docutils literal notranslate"><span class="pre">Bonding.get_voronoi()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.Bonding.radius"><code class="docutils literal notranslate"><span class="pre">Bonding.radius</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.structure.bonding.VoroBond"><code class="docutils literal notranslate"><span class="pre">VoroBond</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.structure.bonding.VoroBond.a1"><code class="docutils literal notranslate"><span class="pre">VoroBond.a1</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.VoroBond.a2"><code class="docutils literal notranslate"><span class="pre">VoroBond.a2</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.VoroBond.area"><code class="docutils literal notranslate"><span class="pre">VoroBond.area</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.VoroBond.distance"><code class="docutils literal notranslate"><span class="pre">VoroBond.distance</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.VoroBond.solid_angle"><code class="docutils literal notranslate"><span class="pre">VoroBond.solid_angle</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.VoroBond.vector"><code class="docutils literal notranslate"><span class="pre">VoroBond.vector</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.VoroBond.volume"><code class="docutils literal notranslate"><span class="pre">VoroBond.volume</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.structure.bonding.get_matern"><code class="docutils literal notranslate"><span class="pre">get_matern()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.bonding.solid_angle"><code class="docutils literal notranslate"><span class="pre">solid_angle()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.structure.convert">jamip.structure.convert module</a><ul>
+<li><a class="reference internal" href="#jamip.structure.convert.ase2jamip"><code class="docutils literal notranslate"><span class="pre">ase2jamip()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.convert.jamip2ase"><code class="docutils literal notranslate"><span class="pre">jamip2ase()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.convert.jamip2db"><code class="docutils literal notranslate"><span class="pre">jamip2db()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.convert.jamip2mp"><code class="docutils literal notranslate"><span class="pre">jamip2mp()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.convert.jamip2phonopy"><code class="docutils literal notranslate"><span class="pre">jamip2phonopy()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.convert.mp2jamip"><code class="docutils literal notranslate"><span class="pre">mp2jamip()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.convert.phonopy2jamip"><code class="docutils literal notranslate"><span class="pre">phonopy2jamip()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.convert.read_structure_from_atat"><code class="docutils literal notranslate"><span class="pre">read_structure_from_atat()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.convert.read_structure_from_hdf5"><code class="docutils literal notranslate"><span class="pre">read_structure_from_hdf5()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.structure.crystal">jamip.structure.crystal module</a><ul>
+<li><a class="reference internal" href="#jamip.structure.crystal.Read"><code class="docutils literal notranslate"><span class="pre">Read</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.structure.crystal.Read.getStructure"><code class="docutils literal notranslate"><span class="pre">Read.getStructure()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.structure.crystal.SpacegroupError"><code class="docutils literal notranslate"><span class="pre">SpacegroupError</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.crystal.SpacegroupNotFoundError"><code class="docutils literal notranslate"><span class="pre">SpacegroupNotFoundError</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.crystal.SpacegroupValueError"><code class="docutils literal notranslate"><span class="pre">SpacegroupValueError</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.crystal.convert_value"><code class="docutils literal notranslate"><span class="pre">convert_value()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.crystal.equival_pos"><code class="docutils literal notranslate"><span class="pre">equival_pos()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.crystal.format_symbol"><code class="docutils literal notranslate"><span class="pre">format_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.crystal.lattice_vector"><code class="docutils literal notranslate"><span class="pre">lattice_vector()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.crystal.numbers_cal"><code class="docutils literal notranslate"><span class="pre">numbers_cal()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.crystal.parse_block"><code class="docutils literal notranslate"><span class="pre">parse_block()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.crystal.parse_cif"><code class="docutils literal notranslate"><span class="pre">parse_cif()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.crystal.parse_in"><code class="docutils literal notranslate"><span class="pre">parse_in()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.crystal.parse_items"><code class="docutils literal notranslate"><span class="pre">parse_items()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.crystal.parse_loop"><code class="docutils literal notranslate"><span class="pre">parse_loop()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.crystal.parse_multiline_string"><code class="docutils literal notranslate"><span class="pre">parse_multiline_string()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.crystal.parse_singletag"><code class="docutils literal notranslate"><span class="pre">parse_singletag()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip-structure-dimension-module">jamip.structure.dimension module</a></li>
+<li><a class="reference internal" href="#jamip-structure-dimxx-module">jamip.structure.dimxx module</a></li>
+<li><a class="reference internal" href="#module-jamip.structure.elementInfo">jamip.structure.elementInfo module</a><ul>
+<li><a class="reference internal" href="#jamip.structure.elementInfo.Element"><code class="docutils literal notranslate"><span class="pre">Element</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.structure.elementInfo.Element.X"><code class="docutils literal notranslate"><span class="pre">Element.X</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.elementInfo.Element.Z"><code class="docutils literal notranslate"><span class="pre">Element.Z</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.elementInfo.Element.atomic_radius"><code class="docutils literal notranslate"><span class="pre">Element.atomic_radius</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.elementInfo.Element.col"><code class="docutils literal notranslate"><span class="pre">Element.col</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.elementInfo.Element.covalent_radius"><code class="docutils literal notranslate"><span class="pre">Element.covalent_radius</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.elementInfo.Element.electron_affinity"><code class="docutils literal notranslate"><span class="pre">Element.electron_affinity</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.elementInfo.Element.electronegativity"><code class="docutils literal notranslate"><span class="pre">Element.electronegativity</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.elementInfo.Element.from_number"><code class="docutils literal notranslate"><span class="pre">Element.from_number()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.elementInfo.Element.from_symbol"><code class="docutils literal notranslate"><span class="pre">Element.from_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.elementInfo.Element.mass"><code class="docutils literal notranslate"><span class="pre">Element.mass</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.elementInfo.Element.name"><code class="docutils literal notranslate"><span class="pre">Element.name</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.elementInfo.Element.row"><code class="docutils literal notranslate"><span class="pre">Element.row</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.elementInfo.Element.symbol"><code class="docutils literal notranslate"><span class="pre">Element.symbol</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.structure.elementInfo.Memoize"><code class="docutils literal notranslate"><span class="pre">Memoize</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.structure.io">jamip.structure.io module</a><ul>
+<li><a class="reference internal" href="#jamip.structure.io.write_boltztrap"><code class="docutils literal notranslate"><span class="pre">write_boltztrap()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.io.write_cif"><code class="docutils literal notranslate"><span class="pre">write_cif()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.io.write_struct"><code class="docutils literal notranslate"><span class="pre">write_struct()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.io.write_xyz"><code class="docutils literal notranslate"><span class="pre">write_xyz()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.structure.molecular">jamip.structure.molecular module</a><ul>
+<li><a class="reference internal" href="#jamip.structure.molecular.Atom"><code class="docutils literal notranslate"><span class="pre">Atom</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.structure.molecular.Atom.coord"><code class="docutils literal notranslate"><span class="pre">Atom.coord</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Atom.specie"><code class="docutils literal notranslate"><span class="pre">Atom.specie</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular"><code class="docutils literal notranslate"><span class="pre">Molecular</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.species_of_elements"><code class="docutils literal notranslate"><span class="pre">Molecular.species_of_elements</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.number_of_atoms"><code class="docutils literal notranslate"><span class="pre">Molecular.number_of_atoms</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.atomic_positions"><code class="docutils literal notranslate"><span class="pre">Molecular.atomic_positions</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.comment_line"><code class="docutils literal notranslate"><span class="pre">Molecular.comment_line</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.scale_factor"><code class="docutils literal notranslate"><span class="pre">Molecular.scale_factor</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.lattice"><code class="docutils literal notranslate"><span class="pre">Molecular.lattice</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">Molecular.atomic_positions</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">Molecular.comment_line</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.connections"><code class="docutils literal notranslate"><span class="pre">Molecular.connections</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.elements2species"><code class="docutils literal notranslate"><span class="pre">Molecular.elements2species()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.from_cell"><code class="docutils literal notranslate"><span class="pre">Molecular.from_cell()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.get_all_distances"><code class="docutils literal notranslate"><span class="pre">Molecular.get_all_distances()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.get_connections"><code class="docutils literal notranslate"><span class="pre">Molecular.get_connections()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.get_elements"><code class="docutils literal notranslate"><span class="pre">Molecular.get_elements()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.get_formula"><code class="docutils literal notranslate"><span class="pre">Molecular.get_formula()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.get_positions"><code class="docutils literal notranslate"><span class="pre">Molecular.get_positions()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.get_structure"><code class="docutils literal notranslate"><span class="pre">Molecular.get_structure()</span></code></a></li>
+<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">Molecular.lattice</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.magnetic"><code class="docutils literal notranslate"><span class="pre">Molecular.magnetic</span></code></a></li>
+<li><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">Molecular.number_of_atoms</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.positions"><code class="docutils literal notranslate"><span class="pre">Molecular.positions</span></code></a></li>
+<li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">Molecular.species_of_elements</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.molecular.Molecular.to_cell"><code class="docutils literal notranslate"><span class="pre">Molecular.to_cell()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.structure.structure">jamip.structure.structure module</a><ul>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure"><code class="docutils literal notranslate"><span class="pre">Structure</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.species_of_elements"><code class="docutils literal notranslate"><span class="pre">Structure.species_of_elements</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.number_of_atoms"><code class="docutils literal notranslate"><span class="pre">Structure.number_of_atoms</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.atomic_positions"><code class="docutils literal notranslate"><span class="pre">Structure.atomic_positions</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.comment_line"><code class="docutils literal notranslate"><span class="pre">Structure.comment_line</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.scale_factor"><code class="docutils literal notranslate"><span class="pre">Structure.scale_factor</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.lattice"><code class="docutils literal notranslate"><span class="pre">Structure.lattice</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.select_dynamic"><code class="docutils literal notranslate"><span class="pre">Structure.select_dynamic</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.initial_velocity"><code class="docutils literal notranslate"><span class="pre">Structure.initial_velocity</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.format"><code class="docutils literal notranslate"><span class="pre">Structure.format</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.direct"><code class="docutils literal notranslate"><span class="pre">Structure.direct</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.add_atom"><code class="docutils literal notranslate"><span class="pre">Structure.add_atom()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.atomic_coord_format"><code class="docutils literal notranslate"><span class="pre">Structure.atomic_coord_format</span></code></a></li>
+<li><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">Structure.atomic_positions</span></code></a></li>
+<li><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">Structure.comment_line</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.del_atom"><code class="docutils literal notranslate"><span class="pre">Structure.del_atom()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.density"><code class="docutils literal notranslate"><span class="pre">Structure.density</span></code></a></li>
+<li><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">Structure.direct</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.elements2species"><code class="docutils literal notranslate"><span class="pre">Structure.elements2species()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.from_cell"><code class="docutils literal notranslate"><span class="pre">Structure.from_cell()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.get_all_distances"><code class="docutils literal notranslate"><span class="pre">Structure.get_all_distances()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.get_atom"><code class="docutils literal notranslate"><span class="pre">Structure.get_atom()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.get_elements"><code class="docutils literal notranslate"><span class="pre">Structure.get_elements()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.get_formula"><code class="docutils literal notranslate"><span class="pre">Structure.get_formula()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.get_formula_units_Z"><code class="docutils literal notranslate"><span class="pre">Structure.get_formula_units_Z()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.get_positions"><code class="docutils literal notranslate"><span class="pre">Structure.get_positions()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.get_safe_distance"><code class="docutils literal notranslate"><span class="pre">Structure.get_safe_distance()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.get_species"><code class="docutils literal notranslate"><span class="pre">Structure.get_species()</span></code></a></li>
+<li><a class="reference internal" href="#id8"><code class="docutils literal notranslate"><span class="pre">Structure.initial_velocity</span></code></a></li>
+<li><a class="reference internal" href="#id9"><code class="docutils literal notranslate"><span class="pre">Structure.lattice</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.lattice_parameters"><code class="docutils literal notranslate"><span class="pre">Structure.lattice_parameters</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.magnetic"><code class="docutils literal notranslate"><span class="pre">Structure.magnetic</span></code></a></li>
+<li><a class="reference internal" href="#id10"><code class="docutils literal notranslate"><span class="pre">Structure.number_of_atoms</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.packing_factor"><code class="docutils literal notranslate"><span class="pre">Structure.packing_factor</span></code></a></li>
+<li><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">Structure.scale_factor</span></code></a></li>
+<li><a class="reference internal" href="#id12"><code class="docutils literal notranslate"><span class="pre">Structure.select_dynamic</span></code></a></li>
+<li><a class="reference internal" href="#id13"><code class="docutils literal notranslate"><span class="pre">Structure.species_of_elements</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.substitute_atom"><code class="docutils literal notranslate"><span class="pre">Structure.substitute_atom()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.to_cell"><code class="docutils literal notranslate"><span class="pre">Structure.to_cell()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.to_dict"><code class="docutils literal notranslate"><span class="pre">Structure.to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.to_row"><code class="docutils literal notranslate"><span class="pre">Structure.to_row()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.update"><code class="docutils literal notranslate"><span class="pre">Structure.update()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.structure.Structure.volume"><code class="docutils literal notranslate"><span class="pre">Structure.volume</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip-structure-symmetry-module">jamip.structure.symmetry module</a></li>
+<li><a class="reference internal" href="#module-jamip.structure.valence">jamip.structure.valence module</a><ul>
+<li><a class="reference internal" href="#jamip.structure.valence.formula_to_list"><code class="docutils literal notranslate"><span class="pre">formula_to_list()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.valence.get_best_valence"><code class="docutils literal notranslate"><span class="pre">get_best_valence()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.valence.get_best_valence_from_formula"><code class="docutils literal notranslate"><span class="pre">get_best_valence_from_formula()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.valence.get_oxistates"><code class="docutils literal notranslate"><span class="pre">get_oxistates()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.valence.get_valences"><code class="docutils literal notranslate"><span class="pre">get_valences()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.valence.valence_test"><code class="docutils literal notranslate"><span class="pre">valence_test()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.structure">Module contents</a><ul>
+<li><a class="reference internal" href="#jamip.structure.read"><code class="docutils literal notranslate"><span class="pre">read()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.structure.write"><code class="docutils literal notranslate"><span class="pre">write()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">jamip.structure package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/jamip.structure.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jamip-structure-package">
+<h1>jamip.structure package<a class="headerlink" href="#jamip-structure-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.structure.atom">
+<span id="jamip-structure-atom-module"></span><h2>jamip.structure.atom module<a class="headerlink" href="#module-jamip.structure.atom" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.structure.atom.Cell">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.structure.atom.</span></span><span class="sig-name descname"><span class="pre">Cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.atom.Cell" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<blockquote>
+<div><p>cls Lattice aim to define the lattice vector.</p>
+<dl class="simple">
+<dt>properties:</dt><dd><p>length a, b, c;
+angle alpha, beta, gamma;
+cell volume;
+scale: scale lattice vectors;
+vectors: 3x3 numpy.array;</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>function:</dt><dd><p>get_cell: return self.vectors, i.e., 3x3 vectors;</p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.atom.Cell.a">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">a</span></span><a class="headerlink" href="#jamip.structure.atom.Cell.a" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.atom.Cell.alpha">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alpha</span></span><a class="headerlink" href="#jamip.structure.atom.Cell.alpha" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.atom.Cell.b">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">b</span></span><a class="headerlink" href="#jamip.structure.atom.Cell.b" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.atom.Cell.beta">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">beta</span></span><a class="headerlink" href="#jamip.structure.atom.Cell.beta" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.atom.Cell.c">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">c</span></span><a class="headerlink" href="#jamip.structure.atom.Cell.c" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.atom.Cell.from_parameters">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduce_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.atom.Cell.from_parameters" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.atom.Cell.gamma">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">gamma</span></span><a class="headerlink" href="#jamip.structure.atom.Cell.gamma" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.atom.Cell.get_spacegroup">
+<span class="sig-name descname"><span class="pre">get_spacegroup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symprec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.atom.Cell.get_spacegroup" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.atom.Cell.parameters">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parameters</span></span><a class="headerlink" href="#jamip.structure.atom.Cell.parameters" title="Link to this definition"></a></dt>
+<dd><p>Return:
+lattice parameters [a, b, c, alpha, beta, gamma].</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.atom.Cell.reciprocal">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reciprocal</span></span><a class="headerlink" href="#jamip.structure.atom.Cell.reciprocal" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.atom.Cell.scale">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">scale</span></span><a class="headerlink" href="#jamip.structure.atom.Cell.scale" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.atom.Cell.vectors">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vectors</span></span><a class="headerlink" href="#jamip.structure.atom.Cell.vectors" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.atom.Cell.volume">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">volume</span></span><a class="headerlink" href="#jamip.structure.atom.Cell.volume" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.structure.atom.SelectDynamic">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.structure.atom.</span></span><span class="sig-name descname"><span class="pre">SelectDynamic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.atom.SelectDynamic" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
+<dl class="simple">
+<dt>cls define the frozen of the atoms;</dt><dd><p>Default:: not fronze x, y, z;</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.atom.SelectDynamic.x">
+<span class="sig-name descname"><span class="pre">x</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#jamip.structure.atom.SelectDynamic.x" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.atom.SelectDynamic.xyz">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xyz</span></span><a class="headerlink" href="#jamip.structure.atom.SelectDynamic.xyz" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.atom.SelectDynamic.y">
+<span class="sig-name descname"><span class="pre">y</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#jamip.structure.atom.SelectDynamic.y" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.atom.SelectDynamic.z">
+<span class="sig-name descname"><span class="pre">z</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#jamip.structure.atom.SelectDynamic.z" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.structure.atomic_number">
+<span id="jamip-structure-atomic-number-module"></span><h2>jamip.structure.atomic_number module<a class="headerlink" href="#module-jamip.structure.atomic_number" title="Link to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="jamip.structure.atomic_number.number">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.atomic_number.</span></span><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Ac':</span> <span class="pre">89,</span> <span class="pre">'Ag':</span> <span class="pre">47,</span> <span class="pre">'Al':</span> <span class="pre">13,</span> <span class="pre">'Am':</span> <span class="pre">95,</span> <span class="pre">'Ar':</span> <span class="pre">18,</span> <span class="pre">'As':</span> <span class="pre">33,</span> <span class="pre">'At':</span> <span class="pre">85,</span> <span class="pre">'Au':</span> <span class="pre">79,</span> <span class="pre">'B':</span> <span class="pre">5,</span> <span class="pre">'Ba':</span> <span class="pre">56,</span> <span class="pre">'Be':</span> <span class="pre">4,</span> <span class="pre">'Bh':</span> <span class="pre">107,</span> <span class="pre">'Bi':</span> <span class="pre">83,</span> <span class="pre">'Bk':</span> <span class="pre">97,</span> <span class="pre">'Br':</span> <span class="pre">35,</span> <span class="pre">'C':</span> <span class="pre">6,</span> <span class="pre">'Ca':</span> <span class="pre">20,</span> <span class="pre">'Cd':</span> <span class="pre">48,</span> <span class="pre">'Ce':</span> <span class="pre">58,</span> <span class="pre">'Cf':</span> <span class="pre">98,</span> <span class="pre">'Cl':</span> <span class="pre">17,</span> <span class="pre">'Cm':</span> <span class="pre">96,</span> <span class="pre">'Cn':</span> <span class="pre">112,</span> <span class="pre">'Co':</span> <span class="pre">27,</span> <span class="pre">'Cr':</span> <span class="pre">24,</span> <span class="pre">'Cs':</span> <span class="pre">55,</span> <span class="pre">'Cu':</span> <span class="pre">29,</span> <span class="pre">'D':</span> <span class="pre">1,</span> <span class="pre">'Db':</span> <span class="pre">105,</span> <span class="pre">'Ds':</span> <span class="pre">110,</span> <span class="pre">'Dy':</span> <span class="pre">66,</span> <span class="pre">'Er':</span> <span class="pre">68,</span> <span class="pre">'Es':</span> <span class="pre">99,</span> <span class="pre">'Eu':</span> <span class="pre">63,</span> <span class="pre">'F':</span> <span class="pre">9,</span> <span class="pre">'Fe':</span> <span class="pre">26,</span> <span class="pre">'Fl':</span> <span class="pre">114,</span> <span class="pre">'Fm':</span> <span class="pre">100,</span> <span class="pre">'Fr':</span> <span class="pre">87,</span> <span class="pre">'Ga':</span> <span class="pre">31,</span> <span class="pre">'Gd':</span> <span class="pre">64,</span> <span class="pre">'Ge':</span> <span class="pre">32,</span> <span class="pre">'H':</span> <span class="pre">1,</span> <span class="pre">'He':</span> <span class="pre">2,</span> <span class="pre">'Hf':</span> <span class="pre">72,</span> <span class="pre">'Hg':</span> <span class="pre">80,</span> <span class="pre">'Ho':</span> <span class="pre">67,</span> <span class="pre">'Hs':</span> <span class="pre">108,</span> <span class="pre">'I':</span> <span class="pre">53,</span> <span class="pre">'In':</span> <span class="pre">49,</span> <span class="pre">'Ir':</span> <span class="pre">77,</span> <span class="pre">'K':</span> <span class="pre">19,</span> <span class="pre">'Kr':</span> <span class="pre">36,</span> <span class="pre">'La':</span> <span class="pre">57,</span> <span class="pre">'Li':</span> <span class="pre">3,</span> <span class="pre">'Lr':</span> <span class="pre">103,</span> <span class="pre">'Lu':</span> <span class="pre">71,</span> <span class="pre">'Lv':</span> <span class="pre">116,</span> <span class="pre">'Mc':</span> <span class="pre">115,</span> <span class="pre">'Md':</span> <span class="pre">101,</span> <span class="pre">'Mg':</span> <span class="pre">12,</span> <span class="pre">'Mn':</span> <span class="pre">25,</span> <span class="pre">'Mo':</span> <span class="pre">42,</span> <span class="pre">'Mt':</span> <span class="pre">109,</span> <span class="pre">'N':</span> <span class="pre">7,</span> <span class="pre">'Na':</span> <span class="pre">11,</span> <span class="pre">'Nb':</span> <span class="pre">41,</span> <span class="pre">'Nd':</span> <span class="pre">60,</span> <span class="pre">'Ne':</span> <span class="pre">10,</span> <span class="pre">'Nh':</span> <span class="pre">113,</span> <span class="pre">'Ni':</span> <span class="pre">28,</span> <span class="pre">'No':</span> <span class="pre">102,</span> <span class="pre">'Np':</span> <span class="pre">93,</span> <span class="pre">'O':</span> <span class="pre">8,</span> <span class="pre">'Og':</span> <span class="pre">118,</span> <span class="pre">'Os':</span> <span class="pre">76,</span> <span class="pre">'P':</span> <span class="pre">15,</span> <span class="pre">'Pa':</span> <span class="pre">91,</span> <span class="pre">'Pb':</span> <span class="pre">82,</span> <span class="pre">'Pd':</span> <span class="pre">46,</span> <span class="pre">'Pm':</span> <span class="pre">61,</span> <span class="pre">'Po':</span> <span class="pre">84,</span> <span class="pre">'Pr':</span> <span class="pre">59,</span> <span class="pre">'Pt':</span> <span class="pre">78,</span> <span class="pre">'Pu':</span> <span class="pre">94,</span> <span class="pre">'Ra':</span> <span class="pre">88,</span> <span class="pre">'Rb':</span> <span class="pre">37,</span> <span class="pre">'Re':</span> <span class="pre">75,</span> <span class="pre">'Rf':</span> <span class="pre">104,</span> <span class="pre">'Rg':</span> <span class="pre">111,</span> <span class="pre">'Rh':</span> <span class="pre">45,</span> <span class="pre">'Rn':</span> <span class="pre">86,</span> <span class="pre">'Ru':</span> <span class="pre">44,</span> <span class="pre">'S':</span> <span class="pre">16,</span> <span class="pre">'Sb':</span> <span class="pre">51,</span> <span class="pre">'Sc':</span> <span class="pre">21,</span> <span class="pre">'Se':</span> <span class="pre">34,</span> <span class="pre">'Sg':</span> <span class="pre">106,</span> <span class="pre">'Si':</span> <span class="pre">14,</span> <span class="pre">'Sm':</span> <span class="pre">62,</span> <span class="pre">'Sn':</span> <span class="pre">50,</span> <span class="pre">'Sr':</span> <span class="pre">38,</span> <span class="pre">'T':</span> <span class="pre">1,</span> <span class="pre">'Ta':</span> <span class="pre">73,</span> <span class="pre">'Tb':</span> <span class="pre">65,</span> <span class="pre">'Tc':</span> <span class="pre">43,</span> <span class="pre">'Te':</span> <span class="pre">52,</span> <span class="pre">'Th':</span> <span class="pre">90,</span> <span class="pre">'Ti':</span> <span class="pre">22,</span> <span class="pre">'Tl':</span> <span class="pre">81,</span> <span class="pre">'Tm':</span> <span class="pre">69,</span> <span class="pre">'Ts':</span> <span class="pre">117,</span> <span class="pre">'U':</span> <span class="pre">92,</span> <span class="pre">'V':</span> <span class="pre">23,</span> <span class="pre">'W':</span> <span class="pre">74,</span> <span class="pre">'Xe':</span> <span class="pre">54,</span> <span class="pre">'Y':</span> <span class="pre">39,</span> <span class="pre">'Yb':</span> <span class="pre">70,</span> <span class="pre">'Zn':</span> <span class="pre">30,</span> <span class="pre">'Zr':</span> <span class="pre">40}</span></em><a class="headerlink" href="#jamip.structure.atomic_number.number" title="Link to this definition"></a></dt>
+<dd><dl>
+<dt>0.28,</dt><dd><p>‘Li’: 1.28, ‘Be’: 0.96, ‘B’ : 0.84, ‘C’ : 0.76, ‘N’: 0.71,  ‘O’ : 0.66, ‘F’: 0.57,  ‘Ne’: 0.58,
+‘Na’: 1.66, ‘Mg’: 1.41, ‘Al’: 1.21, ‘Si’: 1.11, ‘P’: 1.07,  ‘S’ : 1.05, ‘Cl’: 1.02, ‘Ar’: 1.06,
+‘K’ : 2.03, ‘Ca’: 1.76, ‘Sc’: 1.7,  ‘Ti’: 1.6,  ‘V’: 1.53,  ‘Cr’: 1.39, ‘Mn’: 1.39, ‘Fe’: 1.32, ‘Co’: 1.26,
+‘Ni’: 1.24, ‘Cu’: 1.32, ‘Zn’: 1.22, ‘Ga’: 1.22, ‘Ge’: 1.2,  ‘As’: 1.19, ‘Se’: 1.2,  ‘Br’: 1.2,  ‘Kr’: 1.16,
+‘Rb’: 2.2,  ‘Sr’: 1.95, ‘Y’ : 1.9,  ‘Zr’: 1.75, ‘Nb’: 1.64, ‘Mo’: 1.54, ‘Tc’: 1.47, ‘Ru’: 1.46, ‘Rh’: 1.42,
+‘Pd’: 1.39, ‘Ag’: 1.45, ‘Cd’: 1.44, ‘In’: 1.42, ‘Sn’: 1.39, ‘Sb’: 1.39, ‘Te’: 1.38, ‘I’ : 1.39, ‘Xe’: 1.4,
+‘Cs’: 2.44, ‘Ba’: 2.15, ‘Lu’: 1.87, ‘Hf’: 1.75, ‘Ta’: 1.7,  ‘W’ : 1.62, ‘Re’: 1.51, ‘Os’: 1.44, ‘Ir’: 1.41,
+‘Pt’: 1.36, ‘Au’: 1.36, ‘Hg’: 1.32, ‘Tl’: 1.45, ‘Pb’: 1.46, ‘Bi’: 1.48, ‘Po’: 1.4,  ‘At’: 1.5,  ‘Rn’: 1.5,
+‘Fr’: 2.6,  ‘Ra’: 2.21,
+‘La’: 2.07, ‘Ce’: 2.04, ‘Pr’: 2.03, ‘Nd’: 2.01, ‘Pm’: 1.99, ‘Sm’: 1.98, ‘Eu’: 1.98, ‘Gd’: 1.96,
+‘Tb’: 1.94, ‘Dy’: 1.92, ‘Ho’: 1.92, ‘Er’: 1.89, ‘Tm’: 1.9,  ‘Yb’: 1.87,
+‘Ac’: 2.15, ‘Th’: 2.06, ‘Pa’: 2.0,  ‘U’ : 1.96, ‘Np’: 1.9,  ‘Pu’: 1.87, ‘Am’: 1.8, ‘Cm’: 1.69, }</p>
+</dd>
+<dt>oxistates = {‘H’: 1, ‘He’: 0,</dt><dd><p>‘Li’: 1, ‘Be’: 2,  ‘B’: 3, ‘C’: 4,  ‘N’: -3, ‘O’: -2, ‘F’: -1, ‘Ne’: 0,
+‘Na’: 1, ‘Mg’: 2, ‘Al’: 3, ‘Si’: 4, ‘P’: -3, ‘S’: -2, ‘Cl’:-1, ‘Ar’: 0,</p>
+<blockquote>
+<div><p>‘K’: 1, ‘Ca’: 2, ‘Sc’: 3, ‘Ti’: 2, ‘V’:  2, ‘Cr’: 2, ‘Mn’: 2, ‘Fe’: 2, ‘Co’: 2,</p>
+</div></blockquote>
+<p>‘Ni’: 2, ‘Cu’: 1, ‘Zn’: 2, ‘Ga’: 3, ‘Ge’: 2, ‘As’:-3, ‘Se’:-2, ‘Br’:-1, ‘Kr’: 0,
+‘Rb’: 1, ‘Sr’: 2,  ‘Y’: 3, ‘Zr’: 4, ‘Nb’: 3, ‘Mo’: 2, ‘Tc’: 4, ‘Ru’: 2, ‘Rh’: 1, ‘Pd’: 2,
+‘Ag’: 1, ‘Cd’: 2, ‘In’: 3, ‘Sn’: 2, ‘Sb’:-3, ‘Te’:-2, ‘I’: -1, ‘Xe’: 0,
+‘Cs’: 1, ‘Ba’: 2, ‘La’: 3, ‘Ce’: 3, ‘Pr’: 3, ‘Nd’: 3, ‘Pm’: 3, ‘Sm’: 2, ‘Eu’: 2, ‘Gd’: 3, ‘Tb’: 3,
+‘Dy’: 3, ‘Ho’: 3, ‘Er’: 3, ‘Tm’: 2, ‘Yb’: 2, ‘Lu’: 3, ‘Hf’: 4, ‘Ta’: 5, ‘W’: 0,  ‘Re’: 0, ‘Os’: 0,
+‘Ir’: 0, ‘Pt’: 0, ‘Au’: 1, ‘Hg’: 1, ‘Tl’: 1, ‘Pb’: 2, ‘Bi’: 3, ‘Po’: 2, ‘At’: 0, ‘Rn’: 0,
+‘Fr’: 2, ‘Ra’: 2, ‘Ac’: 3, ‘Th’: 4, ‘Pa’: 4,  ‘U’: 3, ‘Np’: 3, ‘Pu’: 3, ‘Am’: 3, ‘Cm’: 3, ‘Bk’: 3,
+‘Cf’: 3, ‘Es’: 3, ‘Fm’: 3, ‘Md’: 3, ‘No’: 2, ‘Lr’: 3}</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>covalent_radius = {‘H’</p>
+</dd>
+<dt class="field-even">Type<span class="colon">:</span></dt>
+<dd class="field-even"><p>0.31, ‘He’</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-jamip.structure.bonding">
+<span id="jamip-structure-bonding-module"></span><h2>jamip.structure.bonding module<a class="headerlink" href="#module-jamip.structure.bonding" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Atom">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.structure.bonding.</span></span><span class="sig-name descname"><span class="pre">Atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.Atom" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Atom.coord">
+<span class="sig-name descname"><span class="pre">coord</span></span><a class="headerlink" href="#jamip.structure.bonding.Atom.coord" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Atom.element">
+<span class="sig-name descname"><span class="pre">element</span></span><a class="headerlink" href="#jamip.structure.bonding.Atom.element" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Atom.unid">
+<span class="sig-name descname"><span class="pre">unid</span></span><a class="headerlink" href="#jamip.structure.bonding.Atom.unid" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.structure.bonding.BaseBond">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.structure.bonding.</span></span><span class="sig-name descname"><span class="pre">BaseBond</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.BaseBond" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.bonding.BaseBond.a1">
+<span class="sig-name descname"><span class="pre">a1</span></span><a class="headerlink" href="#jamip.structure.bonding.BaseBond.a1" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.bonding.BaseBond.a2">
+<span class="sig-name descname"><span class="pre">a2</span></span><a class="headerlink" href="#jamip.structure.bonding.BaseBond.a2" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.bonding.BaseBond.distance">
+<span class="sig-name descname"><span class="pre">distance</span></span><a class="headerlink" href="#jamip.structure.bonding.BaseBond.distance" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.bonding.BaseBond.vector">
+<span class="sig-name descname"><span class="pre">vector</span></span><a class="headerlink" href="#jamip.structure.bonding.BaseBond.vector" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.structure.bonding.BondCore">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.structure.bonding.</span></span><span class="sig-name descname"><span class="pre">BondCore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distances</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pair_indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shifts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius_maps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.BondCore" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.BondCore.classify">
+<span class="sig-name descname"><span class="pre">classify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.BondCore.classify" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.BondCore.full_repr">
+<span class="sig-name descname"><span class="pre">full_repr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.BondCore.full_repr" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.BondCore.get_coordination_matrix">
+<span class="sig-name descname"><span class="pre">get_coordination_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.BondCore.get_coordination_matrix" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.BondCore.get_covalent_matrix">
+<span class="sig-name descname"><span class="pre">get_covalent_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gaussian_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.BondCore.get_covalent_matrix" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.BondCore.get_vectors">
+<span class="sig-name descname"><span class="pre">get_vectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.BondCore.get_vectors" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.BondCore.section">
+<span class="sig-name descname"><span class="pre">section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.BondCore.section" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.BondCore.to_angle_matrix">
+<span class="sig-name descname"><span class="pre">to_angle_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.BondCore.to_angle_matrix" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.BondCore.to_list">
+<span class="sig-name descname"><span class="pre">to_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.BondCore.to_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.BondCore.to_matrix">
+<span class="sig-name descname"><span class="pre">to_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.BondCore.to_matrix" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Bonding">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.structure.bonding.</span></span><span class="sig-name descname"><span class="pre">Bonding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pbc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[True,</span> <span class="pre">True,</span> <span class="pre">True]</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.Bonding" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Bonding.compute_shifts">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compute_shifts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lattice</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pbc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.Bonding.compute_shifts" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Bonding.get_adjacency_matrix">
+<span class="sig-name descname"><span class="pre">get_adjacency_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.Bonding.get_adjacency_matrix" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Bonding.get_angle_by_atom">
+<span class="sig-name descname"><span class="pre">get_angle_by_atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.Bonding.get_angle_by_atom" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Bonding.get_angle_by_pair">
+<span class="sig-name descname"><span class="pre">get_angle_by_pair</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pairs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.Bonding.get_angle_by_pair" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Bonding.get_atom_indices">
+<span class="sig-name descname"><span class="pre">get_atom_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.Bonding.get_atom_indices" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Bonding.get_bond_by_atom">
+<span class="sig-name descname"><span class="pre">get_bond_by_atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.Bonding.get_bond_by_atom" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Bonding.get_bond_by_pair">
+<span class="sig-name descname"><span class="pre">get_bond_by_pair</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pairs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.Bonding.get_bond_by_pair" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Bonding.get_bond_by_pair_and_orient">
+<span class="sig-name descname"><span class="pre">get_bond_by_pair_and_orient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pairs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orient</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.Bonding.get_bond_by_pair_and_orient" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Bonding.get_bond_by_voronoi">
+<span class="sig-name descname"><span class="pre">get_bond_by_voronoi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.Bonding.get_bond_by_voronoi" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Bonding.get_covalent_matrix">
+<span class="sig-name descname"><span class="pre">get_covalent_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.Bonding.get_covalent_matrix" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Bonding.get_neighbors">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_neighbors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shifts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rdf'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.Bonding.get_neighbors" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Bonding.get_voronoi">
+<span class="sig-name descname"><span class="pre">get_voronoi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom_indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.Bonding.get_voronoi" title="Link to this definition"></a></dt>
+<dd><p>from pymatgen</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.bonding.Bonding.radius">
+<span class="sig-name descname"><span class="pre">radius</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Ac':</span> <span class="pre">2.15,</span> <span class="pre">'Ag':</span> <span class="pre">1.45,</span> <span class="pre">'Al':</span> <span class="pre">1.21,</span> <span class="pre">'Am':</span> <span class="pre">1.8,</span> <span class="pre">'Ar':</span> <span class="pre">1.06,</span> <span class="pre">'As':</span> <span class="pre">1.19,</span> <span class="pre">'At':</span> <span class="pre">1.5,</span> <span class="pre">'Au':</span> <span class="pre">1.36,</span> <span class="pre">'B':</span> <span class="pre">0.84,</span> <span class="pre">'Ba':</span> <span class="pre">2.15,</span> <span class="pre">'Be':</span> <span class="pre">0.96,</span> <span class="pre">'Bh':</span> <span class="pre">nan,</span> <span class="pre">'Bi':</span> <span class="pre">1.48,</span> <span class="pre">'Bk':</span> <span class="pre">nan,</span> <span class="pre">'Br':</span> <span class="pre">1.2,</span> <span class="pre">'C':</span> <span class="pre">0.76,</span> <span class="pre">'Ca':</span> <span class="pre">1.76,</span> <span class="pre">'Cd':</span> <span class="pre">1.44,</span> <span class="pre">'Ce':</span> <span class="pre">2.04,</span> <span class="pre">'Cf':</span> <span class="pre">nan,</span> <span class="pre">'Cl':</span> <span class="pre">1.02,</span> <span class="pre">'Cm':</span> <span class="pre">1.69,</span> <span class="pre">'Cn':</span> <span class="pre">nan,</span> <span class="pre">'Co':</span> <span class="pre">1.26,</span> <span class="pre">'Cr':</span> <span class="pre">1.39,</span> <span class="pre">'Cs':</span> <span class="pre">2.44,</span> <span class="pre">'Cu':</span> <span class="pre">1.32,</span> <span class="pre">'Db':</span> <span class="pre">nan,</span> <span class="pre">'Ds':</span> <span class="pre">nan,</span> <span class="pre">'Dy':</span> <span class="pre">1.92,</span> <span class="pre">'Er':</span> <span class="pre">1.89,</span> <span class="pre">'Es':</span> <span class="pre">nan,</span> <span class="pre">'Eu':</span> <span class="pre">1.98,</span> <span class="pre">'F':</span> <span class="pre">0.57,</span> <span class="pre">'Fe':</span> <span class="pre">1.32,</span> <span class="pre">'Fl':</span> <span class="pre">nan,</span> <span class="pre">'Fm':</span> <span class="pre">nan,</span> <span class="pre">'Fr':</span> <span class="pre">2.6,</span> <span class="pre">'Ga':</span> <span class="pre">1.22,</span> <span class="pre">'Gd':</span> <span class="pre">1.96,</span> <span class="pre">'Ge':</span> <span class="pre">1.2,</span> <span class="pre">'H':</span> <span class="pre">0.31,</span> <span class="pre">'He':</span> <span class="pre">0.28,</span> <span class="pre">'Hf':</span> <span class="pre">1.75,</span> <span class="pre">'Hg':</span> <span class="pre">1.32,</span> <span class="pre">'Ho':</span> <span class="pre">1.92,</span> <span class="pre">'Hs':</span> <span class="pre">nan,</span> <span class="pre">'I':</span> <span class="pre">1.39,</span> <span class="pre">'In':</span> <span class="pre">1.42,</span> <span class="pre">'Ir':</span> <span class="pre">1.41,</span> <span class="pre">'K':</span> <span class="pre">2.03,</span> <span class="pre">'Kr':</span> <span class="pre">1.16,</span> <span class="pre">'La':</span> <span class="pre">2.07,</span> <span class="pre">'Li':</span> <span class="pre">1.28,</span> <span class="pre">'Lr':</span> <span class="pre">nan,</span> <span class="pre">'Lu':</span> <span class="pre">1.87,</span> <span class="pre">'Lv':</span> <span class="pre">nan,</span> <span class="pre">'Mc':</span> <span class="pre">nan,</span> <span class="pre">'Md':</span> <span class="pre">nan,</span> <span class="pre">'Mg':</span> <span class="pre">1.41,</span> <span class="pre">'Mn':</span> <span class="pre">1.39,</span> <span class="pre">'Mo':</span> <span class="pre">1.54,</span> <span class="pre">'Mt':</span> <span class="pre">nan,</span> <span class="pre">'N':</span> <span class="pre">0.71,</span> <span class="pre">'Na':</span> <span class="pre">1.66,</span> <span class="pre">'Nb':</span> <span class="pre">1.64,</span> <span class="pre">'Nd':</span> <span class="pre">2.01,</span> <span class="pre">'Ne':</span> <span class="pre">0.58,</span> <span class="pre">'Nh':</span> <span class="pre">nan,</span> <span class="pre">'Ni':</span> <span class="pre">1.24,</span> <span class="pre">'No':</span> <span class="pre">nan,</span> <span class="pre">'Np':</span> <span class="pre">1.9,</span> <span class="pre">'O':</span> <span class="pre">0.66,</span> <span class="pre">'Og':</span> <span class="pre">nan,</span> <span class="pre">'Os':</span> <span class="pre">1.44,</span> <span class="pre">'P':</span> <span class="pre">1.07,</span> <span class="pre">'Pa':</span> <span class="pre">2.0,</span> <span class="pre">'Pb':</span> <span class="pre">1.46,</span> <span class="pre">'Pd':</span> <span class="pre">1.39,</span> <span class="pre">'Pm':</span> <span class="pre">1.99,</span> <span class="pre">'Po':</span> <span class="pre">1.4,</span> <span class="pre">'Pr':</span> <span class="pre">2.03,</span> <span class="pre">'Pt':</span> <span class="pre">1.36,</span> <span class="pre">'Pu':</span> <span class="pre">1.87,</span> <span class="pre">'Ra':</span> <span class="pre">2.21,</span> <span class="pre">'Rb':</span> <span class="pre">2.2,</span> <span class="pre">'Re':</span> <span class="pre">1.51,</span> <span class="pre">'Rf':</span> <span class="pre">nan,</span> <span class="pre">'Rg':</span> <span class="pre">nan,</span> <span class="pre">'Rh':</span> <span class="pre">1.42,</span> <span class="pre">'Rn':</span> <span class="pre">1.5,</span> <span class="pre">'Ru':</span> <span class="pre">1.46,</span> <span class="pre">'S':</span> <span class="pre">1.05,</span> <span class="pre">'Sb':</span> <span class="pre">1.39,</span> <span class="pre">'Sc':</span> <span class="pre">1.7,</span> <span class="pre">'Se':</span> <span class="pre">1.2,</span> <span class="pre">'Sg':</span> <span class="pre">nan,</span> <span class="pre">'Si':</span> <span class="pre">1.11,</span> <span class="pre">'Sm':</span> <span class="pre">1.98,</span> <span class="pre">'Sn':</span> <span class="pre">1.39,</span> <span class="pre">'Sr':</span> <span class="pre">1.95,</span> <span class="pre">'Ta':</span> <span class="pre">1.7,</span> <span class="pre">'Tb':</span> <span class="pre">1.94,</span> <span class="pre">'Tc':</span> <span class="pre">1.47,</span> <span class="pre">'Te':</span> <span class="pre">1.38,</span> <span class="pre">'Th':</span> <span class="pre">2.06,</span> <span class="pre">'Ti':</span> <span class="pre">1.6,</span> <span class="pre">'Tl':</span> <span class="pre">1.45,</span> <span class="pre">'Tm':</span> <span class="pre">1.9,</span> <span class="pre">'Ts':</span> <span class="pre">nan,</span> <span class="pre">'U':</span> <span class="pre">1.96,</span> <span class="pre">'V':</span> <span class="pre">1.53,</span> <span class="pre">'W':</span> <span class="pre">1.62,</span> <span class="pre">'Xe':</span> <span class="pre">1.4,</span> <span class="pre">'Y':</span> <span class="pre">1.9,</span> <span class="pre">'Yb':</span> <span class="pre">1.87,</span> <span class="pre">'Zn':</span> <span class="pre">1.22,</span> <span class="pre">'Zr':</span> <span class="pre">1.75}</span></em><a class="headerlink" href="#jamip.structure.bonding.Bonding.radius" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.structure.bonding.VoroBond">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.structure.bonding.</span></span><span class="sig-name descname"><span class="pre">VoroBond</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solid_angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.VoroBond" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.bonding.VoroBond.a1">
+<span class="sig-name descname"><span class="pre">a1</span></span><a class="headerlink" href="#jamip.structure.bonding.VoroBond.a1" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.bonding.VoroBond.a2">
+<span class="sig-name descname"><span class="pre">a2</span></span><a class="headerlink" href="#jamip.structure.bonding.VoroBond.a2" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.bonding.VoroBond.area">
+<span class="sig-name descname"><span class="pre">area</span></span><a class="headerlink" href="#jamip.structure.bonding.VoroBond.area" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 6</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.bonding.VoroBond.distance">
+<span class="sig-name descname"><span class="pre">distance</span></span><a class="headerlink" href="#jamip.structure.bonding.VoroBond.distance" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.bonding.VoroBond.solid_angle">
+<span class="sig-name descname"><span class="pre">solid_angle</span></span><a class="headerlink" href="#jamip.structure.bonding.VoroBond.solid_angle" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.bonding.VoroBond.vector">
+<span class="sig-name descname"><span class="pre">vector</span></span><a class="headerlink" href="#jamip.structure.bonding.VoroBond.vector" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.bonding.VoroBond.volume">
+<span class="sig-name descname"><span class="pre">volume</span></span><a class="headerlink" href="#jamip.structure.bonding.VoroBond.volume" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 5</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.bonding.get_matern">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.bonding.</span></span><span class="sig-name descname"><span class="pre">get_matern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.get_matern" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.bonding.solid_angle">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.bonding.</span></span><span class="sig-name descname"><span class="pre">solid_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.bonding.solid_angle" title="Link to this definition"></a></dt>
+<dd><p>Helper method to calculate the solid angle of a set of coords from the
+center.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>center</strong> (<em>3x1 array</em>) – Center to measure solid angle from.</p></li>
+<li><p><strong>coords</strong> (<em>Nx3 array</em>) – List of coords to determine solid angle.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The solid angle.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-jamip.structure.convert">
+<span id="jamip-structure-convert-module"></span><h2>jamip.structure.convert module<a class="headerlink" href="#module-jamip.structure.convert" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.convert.ase2jamip">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.convert.</span></span><span class="sig-name descname"><span class="pre">ase2jamip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.convert.ase2jamip" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.convert.jamip2ase">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.convert.</span></span><span class="sig-name descname"><span class="pre">jamip2ase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.convert.jamip2ase" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.convert.jamip2db">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.convert.</span></span><span class="sig-name descname"><span class="pre">jamip2db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.convert.jamip2db" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.convert.jamip2mp">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.convert.</span></span><span class="sig-name descname"><span class="pre">jamip2mp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.convert.jamip2mp" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.convert.jamip2phonopy">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.convert.</span></span><span class="sig-name descname"><span class="pre">jamip2phonopy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.convert.jamip2phonopy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.convert.mp2jamip">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.convert.</span></span><span class="sig-name descname"><span class="pre">mp2jamip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.convert.mp2jamip" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.convert.phonopy2jamip">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.convert.</span></span><span class="sig-name descname"><span class="pre">phonopy2jamip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unitcell</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.convert.phonopy2jamip" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.convert.read_structure_from_atat">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.convert.</span></span><span class="sig-name descname"><span class="pre">read_structure_from_atat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.convert.read_structure_from_atat" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.convert.read_structure_from_hdf5">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.convert.</span></span><span class="sig-name descname"><span class="pre">read_structure_from_hdf5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.convert.read_structure_from_hdf5" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-jamip.structure.crystal">
+<span id="jamip-structure-crystal-module"></span><h2>jamip.structure.crystal module<a class="headerlink" href="#module-jamip.structure.crystal" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.structure.crystal.Read">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.structure.crystal.</span></span><span class="sig-name descname"><span class="pre">Read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ftype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.crystal.Read" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>reading structure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file</strong> – path of structure. i.e. /home/xx/xx/POSCAR, POSCAR</p></li>
+<li><p><strong>type</strong> – type of structure file. i.e. crystal: cif, poscar; molecule: xyz, mol….</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.crystal.Read.getStructure">
+<span class="sig-name descname"><span class="pre">getStructure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.crystal.Read.getStructure" title="Link to this definition"></a></dt>
+<dd><p>read structure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>json’s object of a structure</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="jamip.structure.crystal.SpacegroupError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.structure.crystal.</span></span><span class="sig-name descname"><span class="pre">SpacegroupError</span></span><a class="headerlink" href="#jamip.structure.crystal.SpacegroupError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Base exception for the spacegroup module.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="jamip.structure.crystal.SpacegroupNotFoundError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.structure.crystal.</span></span><span class="sig-name descname"><span class="pre">SpacegroupNotFoundError</span></span><a class="headerlink" href="#jamip.structure.crystal.SpacegroupNotFoundError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jamip.structure.crystal.SpacegroupError" title="jamip.structure.crystal.SpacegroupError"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpacegroupError</span></code></a></p>
+<p>Raised when given space group cannot be found in data base.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="jamip.structure.crystal.SpacegroupValueError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.structure.crystal.</span></span><span class="sig-name descname"><span class="pre">SpacegroupValueError</span></span><a class="headerlink" href="#jamip.structure.crystal.SpacegroupValueError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jamip.structure.crystal.SpacegroupError" title="jamip.structure.crystal.SpacegroupError"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpacegroupError</span></code></a></p>
+<p>Raised when arguments have invalid value.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.crystal.convert_value">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.crystal.</span></span><span class="sig-name descname"><span class="pre">convert_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.crystal.convert_value" title="Link to this definition"></a></dt>
+<dd><p>Convert CIF value string to corresponding python type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – A number string which needs to be translated to float value.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Object of a float value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.crystal.equival_pos">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.crystal.</span></span><span class="sig-name descname"><span class="pre">equival_pos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equival</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ci</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.crystal.equival_pos" title="Link to this definition"></a></dt>
+<dd><p>Translate the initial position coordinates to
+symmetry equivalent position coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>equival</strong> – The tag (no, symbolHM or  sitesym)corresponding to</p></li>
+<li><p><strong>operations.</strong> (<em>symmetry</em>)</p></li>
+<li><p><strong>ci</strong> – The cif file resource.</p></li>
+<li><p><strong>sum_pos</strong> – The total number of atoms in crystal.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list contains the equivalent position coordinates.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>symXYZ</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.crystal.format_symbol">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.crystal.</span></span><span class="sig-name descname"><span class="pre">format_symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.crystal.format_symbol" title="Link to this definition"></a></dt>
+<dd><p>Returns well formatted Hermann-Mauguin symbol as extected by
+the database, by correcting the case and adding missing or
+removing duplicated spaces.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.crystal.lattice_vector">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.crystal.</span></span><span class="sig-name descname"><span class="pre">lattice_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.crystal.lattice_vector" title="Link to this definition"></a></dt>
+<dd><p>Translate lattice parameters to lattice vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – The module of lattice parameter a.</p></li>
+<li><p><strong>b</strong> – The module of lattice parameter b.</p></li>
+<li><p><strong>c</strong> – The module of lattice parameter c.</p></li>
+<li><p><strong>alpha</strong> – The included angle between vector b and c.</p></li>
+<li><p><strong>beta</strong> – The included angle between vector a and c.</p></li>
+<li><p><strong>gamma</strong> – The included angle between vector a and b.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list about lattice vector expressed by direct coordinate.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>latticeV</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.crystal.numbers_cal">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.crystal.</span></span><span class="sig-name descname"><span class="pre">numbers_cal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equival</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ci</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.crystal.numbers_cal" title="Link to this definition"></a></dt>
+<dd><p>Calculate the number of atoms of each type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>equival</strong> – The tag (no, symbolHM or  sitesym)corresponding to</p></li>
+<li><p><strong>operations.</strong> (<em>symmetry</em>)</p></li>
+<li><p><strong>ci</strong> – The cif file resource.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of atoms of each type.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numbers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.crystal.parse_block">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.crystal.</span></span><span class="sig-name descname"><span class="pre">parse_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.crystal.parse_block" title="Link to this definition"></a></dt>
+<dd><p>Parse a CIF data block and return a tuple with the block name
+and a dict with all tags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lines</strong> – The all lines in cif file.</p></li>
+<li><p><strong>line</strong> – A single line which will be a single tag.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The name of a block which starts with ‘<a href="#id14"><span class="problematic" id="id15">data_</span></a>’.
+tags: The all tags.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>blockname</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.crystal.parse_cif">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.crystal.</span></span><span class="sig-name descname"><span class="pre">parse_cif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fileobj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.crystal.parse_cif" title="Link to this definition"></a></dt>
+<dd><p>Parse a CIF file. Returns a list of blockname and tag pairs.
+All tag names are converted to lower case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fileobj</strong> – The cif file name.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The all blocks obtained from parse_block. (The number
+of the blocks is usually 2)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>blocks</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.crystal.parse_in">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.crystal.</span></span><span class="sig-name descname"><span class="pre">parse_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fileobj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.crystal.parse_in" title="Link to this definition"></a></dt>
+<dd><p>Parse a QE input file. Returns a list of blockname and tag pairs.
+All tag names are converted to lower case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fileobj</strong> – The qe input file name.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.crystal.parse_items">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.crystal.</span></span><span class="sig-name descname"><span class="pre">parse_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.crystal.parse_items" title="Link to this definition"></a></dt>
+<dd><p>Parse a CIF data items and return a dict with all tags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lines</strong> – The all lines in cif file.</p></li>
+<li><p><strong>line</strong> – A single line which will be translated to a key-value pair</p></li>
+<li><p><strong>tag.</strong> (<em>or just be a single</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The all key-value pairs obtained from parse_singletag
+and parse_loop.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tags</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.crystal.parse_loop">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.crystal.</span></span><span class="sig-name descname"><span class="pre">parse_loop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.crystal.parse_loop" title="Link to this definition"></a></dt>
+<dd><p>Parse a CIF loop. Returns a dict with column tag names as keys
+and a lists of the column content as values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lines</strong> – The all lines in cif file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A column based dictionary about the tags and
+corresponding values in a loop.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>column</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.crystal.parse_multiline_string">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.crystal.</span></span><span class="sig-name descname"><span class="pre">parse_multiline_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.crystal.parse_multiline_string" title="Link to this definition"></a></dt>
+<dd><p>Parse semicolon-enclosed multiline string and return it.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.crystal.parse_singletag">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.crystal.</span></span><span class="sig-name descname"><span class="pre">parse_singletag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.crystal.parse_singletag" title="Link to this definition"></a></dt>
+<dd><p>Parse a CIF tag(entries starting with underscore). Returns
+a key-value pair.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lines</strong> – All lines.</p></li>
+<li><p><strong>line</strong> – A single line starts with ‘_’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The single tag(entries starting with underscore) as key.
+convert_value(value): The single value corresponded to the tag.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>key</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>The string ‘_symmetry_Int_Tables_number       62’ will
+be translated to a key-value pair: {‘_symmetry_Int_Tables_number’: 62}.</p>
+</dd></dl>
+
+</section>
+<section id="jamip-structure-dimension-module">
+<h2>jamip.structure.dimension module<a class="headerlink" href="#jamip-structure-dimension-module" title="Link to this heading"></a></h2>
+</section>
+<section id="jamip-structure-dimxx-module">
+<h2>jamip.structure.dimxx module<a class="headerlink" href="#jamip-structure-dimxx-module" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.structure.elementInfo">
+<span id="jamip-structure-elementinfo-module"></span><h2>jamip.structure.elementInfo module<a class="headerlink" href="#module-jamip.structure.elementInfo" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.structure.elementInfo.Element">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.structure.elementInfo.</span></span><span class="sig-name descname"><span class="pre">Element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mass</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atomic_radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">covalent_radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">electron_affinity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.elementInfo.Element" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.elementInfo.Element.X">
+<span class="sig-name descname"><span class="pre">X</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#jamip.structure.elementInfo.Element.X" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 7</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.elementInfo.Element.Z">
+<span class="sig-name descname"><span class="pre">Z</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#jamip.structure.elementInfo.Element.Z" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.elementInfo.Element.atomic_radius">
+<span class="sig-name descname"><span class="pre">atomic_radius</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#jamip.structure.elementInfo.Element.atomic_radius" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 6</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.elementInfo.Element.col">
+<span class="sig-name descname"><span class="pre">col</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#jamip.structure.elementInfo.Element.col" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.elementInfo.Element.covalent_radius">
+<span class="sig-name descname"><span class="pre">covalent_radius</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#jamip.structure.elementInfo.Element.covalent_radius" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 8</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.elementInfo.Element.electron_affinity">
+<span class="sig-name descname"><span class="pre">electron_affinity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#jamip.structure.elementInfo.Element.electron_affinity" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 9</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.elementInfo.Element.electronegativity">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">electronegativity</span></span><a class="headerlink" href="#jamip.structure.elementInfo.Element.electronegativity" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.elementInfo.Element.from_number">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.elementInfo.Element.from_number" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.elementInfo.Element.from_symbol">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.elementInfo.Element.from_symbol" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.elementInfo.Element.mass">
+<span class="sig-name descname"><span class="pre">mass</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#jamip.structure.elementInfo.Element.mass" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 5</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.elementInfo.Element.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#jamip.structure.elementInfo.Element.name" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.elementInfo.Element.row">
+<span class="sig-name descname"><span class="pre">row</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#jamip.structure.elementInfo.Element.row" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.elementInfo.Element.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#jamip.structure.elementInfo.Element.symbol" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.structure.elementInfo.Memoize">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.structure.elementInfo.</span></span><span class="sig-name descname"><span class="pre">Memoize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.elementInfo.Memoize" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+</section>
+<section id="module-jamip.structure.io">
+<span id="jamip-structure-io-module"></span><h2>jamip.structure.io module<a class="headerlink" href="#module-jamip.structure.io" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.io.write_boltztrap">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.io.</span></span><span class="sig-name descname"><span class="pre">write_boltztrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symprec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.io.write_boltztrap" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.io.write_cif">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.io.</span></span><span class="sig-name descname"><span class="pre">write_cif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.io.write_cif" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.io.write_struct">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.io.</span></span><span class="sig-name descname"><span class="pre">write_struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symprec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lattice</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'P'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.io.write_struct" title="Link to this definition"></a></dt>
+<dd><p>for wien2k</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.io.write_xyz">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.io.</span></span><span class="sig-name descname"><span class="pre">write_xyz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.io.write_xyz" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-jamip.structure.molecular">
+<span id="jamip-structure-molecular-module"></span><h2>jamip.structure.molecular module<a class="headerlink" href="#module-jamip.structure.molecular" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Atom">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.structure.molecular.</span></span><span class="sig-name descname"><span class="pre">Atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specie</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.molecular.Atom" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Atom.coord">
+<span class="sig-name descname"><span class="pre">coord</span></span><a class="headerlink" href="#jamip.structure.molecular.Atom.coord" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Atom.specie">
+<span class="sig-name descname"><span class="pre">specie</span></span><a class="headerlink" href="#jamip.structure.molecular.Atom.specie" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.structure.molecular.</span></span><span class="sig-name descname"><span class="pre">Molecular</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.molecular.Molecular" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>define a crystal structure or molecule, including,</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.species_of_elements">
+<span class="sig-name descname"><span class="pre">species_of_elements</span></span><a class="headerlink" href="#jamip.structure.molecular.Molecular.species_of_elements" title="Link to this definition"></a></dt>
+<dd><p>list, sepcies of elements;</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.number_of_atoms">
+<span class="sig-name descname"><span class="pre">number_of_atoms</span></span><a class="headerlink" href="#jamip.structure.molecular.Molecular.number_of_atoms" title="Link to this definition"></a></dt>
+<dd><p>list, numbers of species;</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.atomic_positions">
+<span class="sig-name descname"><span class="pre">atomic_positions</span></span><a class="headerlink" href="#jamip.structure.molecular.Molecular.atomic_positions" title="Link to this definition"></a></dt>
+<dd><p>list, atomic position defined by Atom Object;</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.comment_line">
+<span class="sig-name descname"><span class="pre">comment_line</span></span><a class="headerlink" href="#jamip.structure.molecular.Molecular.comment_line" title="Link to this definition"></a></dt>
+<dd><p>string, introduction of structure;</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.scale_factor">
+<span class="sig-name descname"><span class="pre">scale_factor</span></span><a class="headerlink" href="#jamip.structure.molecular.Molecular.scale_factor" title="Link to this definition"></a></dt>
+<dd><p>float, default, 1.0;</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.lattice">
+<span class="sig-name descname"><span class="pre">lattice</span></span><a class="headerlink" href="#jamip.structure.molecular.Molecular.lattice" title="Link to this definition"></a></dt>
+<dd><p>numpy.array(3x3), default, None;</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">atomic_positions</span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">comment_line</span></span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.connections">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connections</span></span><a class="headerlink" href="#jamip.structure.molecular.Molecular.connections" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.elements2species">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elements2species</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_inverse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.molecular.Molecular.elements2species" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.from_cell">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jamip'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.molecular.Molecular.from_cell" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.get_all_distances">
+<span class="sig-name descname"><span class="pre">get_all_distances</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.molecular.Molecular.get_all_distances" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.get_connections">
+<span class="sig-name descname"><span class="pre">get_connections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gaussian'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.molecular.Molecular.get_connections" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.get_elements">
+<span class="sig-name descname"><span class="pre">get_elements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'number'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.molecular.Molecular.get_elements" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.get_formula">
+<span class="sig-name descname"><span class="pre">get_formula</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">divisor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.molecular.Molecular.get_formula" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.get_positions">
+<span class="sig-name descname"><span class="pre">get_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cartesian'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.molecular.Molecular.get_positions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.get_structure">
+<span class="sig-name descname"><span class="pre">get_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vaccum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.molecular.Molecular.get_structure" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lattice</span></span><a class="headerlink" href="#id2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.magnetic">
+<span class="sig-name descname"><span class="pre">magnetic</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#jamip.structure.molecular.Molecular.magnetic" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id3">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number_of_atoms</span></span><a class="headerlink" href="#id3" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.positions">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">positions</span></span><a class="headerlink" href="#jamip.structure.molecular.Molecular.positions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id4">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">species_of_elements</span></span><a class="headerlink" href="#id4" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.molecular.Molecular.to_cell">
+<span class="sig-name descname"><span class="pre">to_cell</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.molecular.Molecular.to_cell" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.structure.structure">
+<span id="jamip-structure-structure-module"></span><h2>jamip.structure.structure module<a class="headerlink" href="#module-jamip.structure.structure" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.structure.structure.</span></span><span class="sig-name descname"><span class="pre">Structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>define a crystal structure or molecule, including,</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.species_of_elements">
+<span class="sig-name descname"><span class="pre">species_of_elements</span></span><a class="headerlink" href="#jamip.structure.structure.Structure.species_of_elements" title="Link to this definition"></a></dt>
+<dd><p>list, sepcies of elements;</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.number_of_atoms">
+<span class="sig-name descname"><span class="pre">number_of_atoms</span></span><a class="headerlink" href="#jamip.structure.structure.Structure.number_of_atoms" title="Link to this definition"></a></dt>
+<dd><p>list, numbers of species;</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.atomic_positions">
+<span class="sig-name descname"><span class="pre">atomic_positions</span></span><a class="headerlink" href="#jamip.structure.structure.Structure.atomic_positions" title="Link to this definition"></a></dt>
+<dd><p>list, atomic position defined by Atom Object;</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.comment_line">
+<span class="sig-name descname"><span class="pre">comment_line</span></span><a class="headerlink" href="#jamip.structure.structure.Structure.comment_line" title="Link to this definition"></a></dt>
+<dd><p>string, introduction of structure;</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.scale_factor">
+<span class="sig-name descname"><span class="pre">scale_factor</span></span><a class="headerlink" href="#jamip.structure.structure.Structure.scale_factor" title="Link to this definition"></a></dt>
+<dd><p>float, default, 1.0;</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.lattice">
+<span class="sig-name descname"><span class="pre">lattice</span></span><a class="headerlink" href="#jamip.structure.structure.Structure.lattice" title="Link to this definition"></a></dt>
+<dd><p>numpy.array(3x3), default, None;</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.select_dynamic">
+<span class="sig-name descname"><span class="pre">select_dynamic</span></span><a class="headerlink" href="#jamip.structure.structure.Structure.select_dynamic" title="Link to this definition"></a></dt>
+<dd><p>bool, default, False;</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.initial_velocity">
+<span class="sig-name descname"><span class="pre">initial_velocity</span></span><a class="headerlink" href="#jamip.structure.structure.Structure.initial_velocity" title="Link to this definition"></a></dt>
+<dd><p>bool, default, False;</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.format">
+<span class="sig-name descname"><span class="pre">format</span></span><a class="headerlink" href="#jamip.structure.structure.Structure.format" title="Link to this definition"></a></dt>
+<dd><p>string, direct or cartesian</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.direct">
+<span class="sig-name descname"><span class="pre">direct</span></span><a class="headerlink" href="#jamip.structure.structure.Structure.direct" title="Link to this definition"></a></dt>
+<dd><p>bool, default, True;</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.add_atom">
+<span class="sig-name descname"><span class="pre">add_atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.add_atom" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.atomic_coord_format">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">atomic_coord_format</span></span><a class="headerlink" href="#jamip.structure.structure.Structure.atomic_coord_format" title="Link to this definition"></a></dt>
+<dd><p>default atomic coord format</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id5">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">atomic_positions</span></span><a class="headerlink" href="#id5" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id6">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">comment_line</span></span><a class="headerlink" href="#id6" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.del_atom">
+<span class="sig-name descname"><span class="pre">del_atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specie</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.del_atom" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.density">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">density</span></span><a class="headerlink" href="#jamip.structure.structure.Structure.density" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id7">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">direct</span></span><a class="headerlink" href="#id7" title="Link to this definition"></a></dt>
+<dd><p>default atomic coord format</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.elements2species">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elements2species</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_inverse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.elements2species" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.from_cell">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jamip'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.from_cell" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.get_all_distances">
+<span class="sig-name descname"><span class="pre">get_all_distances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pbc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.get_all_distances" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.get_atom">
+<span class="sig-name descname"><span class="pre">get_atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specie</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.get_atom" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.get_elements">
+<span class="sig-name descname"><span class="pre">get_elements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'number'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.get_elements" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.get_formula">
+<span class="sig-name descname"><span class="pre">get_formula</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">divisor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.get_formula" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.get_formula_units_Z">
+<span class="sig-name descname"><span class="pre">get_formula_units_Z</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.get_formula_units_Z" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.get_positions">
+<span class="sig-name descname"><span class="pre">get_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'direct'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.get_positions" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.get_safe_distance">
+<span class="sig-name descname"><span class="pre">get_safe_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.get_safe_distance" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.get_species">
+<span class="sig-name descname"><span class="pre">get_species</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.get_species" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id8">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initial_velocity</span></span><a class="headerlink" href="#id8" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id9">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lattice</span></span><a class="headerlink" href="#id9" title="Link to this definition"></a></dt>
+<dd><p>Return:
+lattice parameters [[x1,x2,x3],[y1,y2,y3],[z1,z2,z3]].</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.lattice_parameters">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lattice_parameters</span></span><a class="headerlink" href="#jamip.structure.structure.Structure.lattice_parameters" title="Link to this definition"></a></dt>
+<dd><p>Return:
+lattice parameters [a, b, c, alpha, beta, gamma].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.magnetic">
+<span class="sig-name descname"><span class="pre">magnetic</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#jamip.structure.structure.Structure.magnetic" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id10">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number_of_atoms</span></span><a class="headerlink" href="#id10" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.packing_factor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">packing_factor</span></span><a class="headerlink" href="#jamip.structure.structure.Structure.packing_factor" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id11">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">scale_factor</span></span><a class="headerlink" href="#id11" title="Link to this definition"></a></dt>
+<dd><p>The simple setting parameters for VASP structure files, do not apply to cell.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id12">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">select_dynamic</span></span><a class="headerlink" href="#id12" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id13">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">species_of_elements</span></span><a class="headerlink" href="#id13" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.substitute_atom">
+<span class="sig-name descname"><span class="pre">substitute_atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specie</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.substitute_atom" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.to_cell">
+<span class="sig-name descname"><span class="pre">to_cell</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.to_cell" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.to_dict" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.to_row">
+<span class="sig-name descname"><span class="pre">to_row</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.to_row" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.structure.Structure.update" title="Link to this definition"></a></dt>
+<dd><p>reset species_of_elements/number_of_atoms/atomic_positions from atomic_positions</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.structure.structure.Structure.volume">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">volume</span></span><a class="headerlink" href="#jamip.structure.structure.Structure.volume" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="jamip-structure-symmetry-module">
+<h2>jamip.structure.symmetry module<a class="headerlink" href="#jamip-structure-symmetry-module" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.structure.valence">
+<span id="jamip-structure-valence-module"></span><h2>jamip.structure.valence module<a class="headerlink" href="#module-jamip.structure.valence" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.valence.formula_to_list">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.valence.</span></span><span class="sig-name descname"><span class="pre">formula_to_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formula</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.valence.formula_to_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.valence.get_best_valence">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.valence.</span></span><span class="sig-name descname"><span class="pre">get_best_valence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">species</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numbers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.valence.get_best_valence" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.valence.get_best_valence_from_formula">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.valence.</span></span><span class="sig-name descname"><span class="pre">get_best_valence_from_formula</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formula</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.valence.get_best_valence_from_formula" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.valence.get_oxistates">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.valence.</span></span><span class="sig-name descname"><span class="pre">get_oxistates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.valence.get_oxistates" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.valence.get_valences">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.valence.</span></span><span class="sig-name descname"><span class="pre">get_valences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">species</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numbers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.valence.get_valences" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.valence.valence_test">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.valence.</span></span><span class="sig-name descname"><span class="pre">valence_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">species</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.valence.valence_test" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-jamip.structure">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jamip.structure" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.read">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.</span></span><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'POSCAR'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ftype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.read" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – the input structure file;</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>object of Structure;</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.structure.write">
+<span class="sig-prename descclassname"><span class="pre">jamip.structure.</span></span><span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ftype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.structure.write" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

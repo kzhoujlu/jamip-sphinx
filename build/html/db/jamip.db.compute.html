@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamip.db.compute package &mdash; JAMIP 1.3 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c55cb9cb"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jamip.db.compute package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-jamip.db.compute.check">jamip.db.compute.check module</a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.check.Check"><code class="docutils literal notranslate"><span class="pre">Check</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.check.Check.run"><code class="docutils literal notranslate"><span class="pre">Check.run()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip-db-compute-job-module">jamip.db.compute.job module</a></li>
+<li><a class="reference internal" href="#module-jamip.db.compute.task">jamip.db.compute.task module</a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.add_childTask"><code class="docutils literal notranslate"><span class="pre">Task.add_childTask()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.builder"><code class="docutils literal notranslate"><span class="pre">Task.builder</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.childTasks"><code class="docutils literal notranslate"><span class="pre">Task.childTasks</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.deregister"><code class="docutils literal notranslate"><span class="pre">Task.deregister()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.id"><code class="docutils literal notranslate"><span class="pre">Task.id</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.isContainedChildtask"><code class="docutils literal notranslate"><span class="pre">Task.isContainedChildtask</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.job"><code class="docutils literal notranslate"><span class="pre">Task.job</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.listener"><code class="docutils literal notranslate"><span class="pre">Task.listener</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.name"><code class="docutils literal notranslate"><span class="pre">Task.name</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.next"><code class="docutils literal notranslate"><span class="pre">Task.next</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.notify_listener"><code class="docutils literal notranslate"><span class="pre">Task.notify_listener()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.parentTask"><code class="docutils literal notranslate"><span class="pre">Task.parentTask</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.path"><code class="docutils literal notranslate"><span class="pre">Task.path</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.prev"><code class="docutils literal notranslate"><span class="pre">Task.prev</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.register"><code class="docutils literal notranslate"><span class="pre">Task.register()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.remove_childTask"><code class="docutils literal notranslate"><span class="pre">Task.remove_childTask()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.remove_doublyLink"><code class="docutils literal notranslate"><span class="pre">Task.remove_doublyLink()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.run"><code class="docutils literal notranslate"><span class="pre">Task.run()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.set_childTasks"><code class="docutils literal notranslate"><span class="pre">Task.set_childTasks()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.set_next"><code class="docutils literal notranslate"><span class="pre">Task.set_next()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.set_parentTask"><code class="docutils literal notranslate"><span class="pre">Task.set_parentTask()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.Task.set_prev"><code class="docutils literal notranslate"><span class="pre">Task.set_prev()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.db.compute.task.TaskBuilder"><code class="docutils literal notranslate"><span class="pre">TaskBuilder</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.task.TaskBuilder.get_result"><code class="docutils literal notranslate"><span class="pre">TaskBuilder.get_result()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.TaskBuilder.remove_doublyLink"><code class="docutils literal notranslate"><span class="pre">TaskBuilder.remove_doublyLink()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.TaskBuilder.set_childTasks"><code class="docutils literal notranslate"><span class="pre">TaskBuilder.set_childTasks()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.TaskBuilder.set_doublyLink"><code class="docutils literal notranslate"><span class="pre">TaskBuilder.set_doublyLink()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.task.TaskBuilder.set_parentTask"><code class="docutils literal notranslate"><span class="pre">TaskBuilder.set_parentTask()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.db.compute">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">jamip.db.compute package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/db/jamip.db.compute.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jamip-db-compute-package">
+<h1>jamip.db.compute package<a class="headerlink" href="#jamip-db-compute-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="jamip.db.compute.vasp.html">jamip.db.compute.vasp package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jamip.db.compute.vasp.advance.html">jamip.db.compute.vasp.advance package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.advance.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.advance.html#jamip-db-compute-vasp-advance-phonontask-module">jamip.db.compute.vasp.advance.phononTask module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.advance.html#module-jamip.db.compute.vasp.advance">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jamip.db.compute.vasp.basic.html">jamip.db.compute.vasp.basic package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.basic.html#module-jamip.db.compute.vasp.basic">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip-db-compute-vasp-calculateexception-module">jamip.db.compute.vasp.calculateException module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip-db-compute-vasp-calculatetask-module">jamip.db.compute.vasp.calculateTask module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip-db-compute-vasp-check4vasp-module">jamip.db.compute.vasp.check4vasp module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.html#module-jamip.db.compute.vasp.incar">jamip.db.compute.vasp.incar module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.incar.INCAR"><code class="docutils literal notranslate"><span class="pre">INCAR</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.incar.INCAR.add_parameters"><code class="docutils literal notranslate"><span class="pre">INCAR.add_parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.incar.INCAR.output"><code class="docutils literal notranslate"><span class="pre">INCAR.output()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.incar.INCAR.remove_parameters"><code class="docutils literal notranslate"><span class="pre">INCAR.remove_parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.incar.INCAR.set_parameters"><code class="docutils literal notranslate"><span class="pre">INCAR.set_parameters()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.html#module-jamip.db.compute.vasp.kpoints">jamip.db.compute.vasp.kpoints module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.kpoints.KPOINTS"><code class="docutils literal notranslate"><span class="pre">KPOINTS</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.kpoints.KPOINTS.output"><code class="docutils literal notranslate"><span class="pre">KPOINTS.output()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.html#module-jamip.db.compute.vasp.optcell">jamip.db.compute.vasp.optcell module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.optcell.OPTCELL"><code class="docutils literal notranslate"><span class="pre">OPTCELL</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.optcell.OPTCELL.output"><code class="docutils literal notranslate"><span class="pre">OPTCELL.output()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.optcell.OPTCELL.set_optcell"><code class="docutils literal notranslate"><span class="pre">OPTCELL.set_optcell()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.html#module-jamip.db.compute.vasp.poscar">jamip.db.compute.vasp.poscar module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.poscar.POSCAR"><code class="docutils literal notranslate"><span class="pre">POSCAR</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.poscar.POSCAR.output"><code class="docutils literal notranslate"><span class="pre">POSCAR.output()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.poscar.POSCAR.set_structure"><code class="docutils literal notranslate"><span class="pre">POSCAR.set_structure()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip-db-compute-vasp-potcar-module">jamip.db.compute.vasp.potcar module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.html#module-jamip.db.compute.vasp.submitScript">jamip.db.compute.vasp.submitScript module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.submitScript.SubmitScript"><code class="docutils literal notranslate"><span class="pre">SubmitScript</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.submitScript.SubmitScript.output"><code class="docutils literal notranslate"><span class="pre">SubmitScript.output()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.submitScript.SubmitScript.set_submitScript"><code class="docutils literal notranslate"><span class="pre">SubmitScript.set_submitScript()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.html#module-jamip.db.compute.vasp.taskListener">jamip.db.compute.vasp.taskListener module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.taskListener.TaskListener"><code class="docutils literal notranslate"><span class="pre">TaskListener</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.taskListener.TaskListener.notify"><code class="docutils literal notranslate"><span class="pre">TaskListener.notify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="jamip.db.compute.vasp.html#jamip.db.compute.vasp.taskListener.TaskListener.tasks"><code class="docutils literal notranslate"><span class="pre">TaskListener.tasks</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.html#module-jamip.db.compute.vasp">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.db.compute.check">
+<span id="jamip-db-compute-check-module"></span><h2>jamip.db.compute.check module<a class="headerlink" href="#module-jamip.db.compute.check" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.compute.check.Check">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.compute.check.</span></span><span class="sig-name descname"><span class="pre">Check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.check.Check" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>check the result od task. If finished with error, return error massage.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.check.Check.run">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.check.Check.run" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="jamip-db-compute-job-module">
+<h2>jamip.db.compute.job module<a class="headerlink" href="#jamip-db-compute-job-module" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.db.compute.task">
+<span id="jamip-db-compute-task-module"></span><h2>jamip.db.compute.task module<a class="headerlink" href="#module-jamip.db.compute.task" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.compute.task.</span></span><span class="sig-name descname"><span class="pre">Task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.Task" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.add_childTask">
+<span class="sig-name descname"><span class="pre">add_childTask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.Task.add_childTask" title="Link to this definition"></a></dt>
+<dd><p>add a child task and update the link information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>task</strong> – child task’s object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>task’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.builder">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">builder</span></span><a class="headerlink" href="#jamip.db.compute.task.Task.builder" title="Link to this definition"></a></dt>
+<dd><p>task builder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>taskBuilder’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.childTasks">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">childTasks</span></span><a class="headerlink" href="#jamip.db.compute.task.Task.childTasks" title="Link to this definition"></a></dt>
+<dd><p>child tasks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>child tasks’ object collection.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.deregister">
+<span class="sig-name descname"><span class="pre">deregister</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.Task.deregister" title="Link to this definition"></a></dt>
+<dd><p>deregister a task from this listener.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>task’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#jamip.db.compute.task.Task.id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.isContainedChildtask">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isContainedChildtask</span></span><a class="headerlink" href="#jamip.db.compute.task.Task.isContainedChildtask" title="Link to this definition"></a></dt>
+<dd><p>whehter contain childtask.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>boolean value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.job">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">job</span></span><a class="headerlink" href="#jamip.db.compute.task.Task.job" title="Link to this definition"></a></dt>
+<dd><p><a href="#id1"><span class="problematic" id="id2">|</span></a>–task</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>job’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.listener">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">listener</span></span><a class="headerlink" href="#jamip.db.compute.task.Task.listener" title="Link to this definition"></a></dt>
+<dd><p>Return:
+listener’s object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#jamip.db.compute.task.Task.name" title="Link to this definition"></a></dt>
+<dd><p>Task name.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.next">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">next</span></span><a class="headerlink" href="#jamip.db.compute.task.Task.next" title="Link to this definition"></a></dt>
+<dd><p>next task.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>next task’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.notify_listener">
+<span class="sig-name descname"><span class="pre">notify_listener</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.Task.notify_listener" title="Link to this definition"></a></dt>
+<dd><p>notify this listener.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> – notification information.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>task’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.parentTask">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parentTask</span></span><a class="headerlink" href="#jamip.db.compute.task.Task.parentTask" title="Link to this definition"></a></dt>
+<dd><p>parent task.</p>
+<dl class="simple">
+<dt>Return</dt><dd><p>parent task’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.path">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">path</span></span><a class="headerlink" href="#jamip.db.compute.task.Task.path" title="Link to this definition"></a></dt>
+<dd><p>Task path.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.prev">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prev</span></span><a class="headerlink" href="#jamip.db.compute.task.Task.prev" title="Link to this definition"></a></dt>
+<dd><p>previous task.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>previous task’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">listener</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.Task.register" title="Link to this definition"></a></dt>
+<dd><p>register this task to pool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>listener</strong> – listener’s object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>task’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.remove_childTask">
+<span class="sig-name descname"><span class="pre">remove_childTask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.Task.remove_childTask" title="Link to this definition"></a></dt>
+<dd><p>remove a child task.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>task</strong> – child task’s object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>task’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.remove_doublyLink">
+<span class="sig-name descname"><span class="pre">remove_doublyLink</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.Task.remove_doublyLink" title="Link to this definition"></a></dt>
+<dd><p>remove from the doubly link.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>task’s ojbect.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.run">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.Task.run" title="Link to this definition"></a></dt>
+<dd><p>run this task.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.set_childTasks">
+<span class="sig-name descname"><span class="pre">set_childTasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tasks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.Task.set_childTasks" title="Link to this definition"></a></dt>
+<dd><p>set child tasks and update the link information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tasks</strong> – child tasks’ object collection (list-type).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>task’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.set_next">
+<span class="sig-name descname"><span class="pre">set_next</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.Task.set_next" title="Link to this definition"></a></dt>
+<dd><p>set next task.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>task</strong> – next task.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>task’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.set_parentTask">
+<span class="sig-name descname"><span class="pre">set_parentTask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.Task.set_parentTask" title="Link to this definition"></a></dt>
+<dd><p>set parent task and update the link information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>task</strong> – parent task’s object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>task’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.task.Task.set_prev">
+<span class="sig-name descname"><span class="pre">set_prev</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.Task.set_prev" title="Link to this definition"></a></dt>
+<dd><p>set previous task.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>task</strong> – previous task</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>task’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.compute.task.TaskBuilder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.compute.task.</span></span><span class="sig-name descname"><span class="pre">TaskBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.TaskBuilder" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.task.TaskBuilder.get_result">
+<span class="sig-name descname"><span class="pre">get_result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.TaskBuilder.get_result" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>return task’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.task.TaskBuilder.remove_doublyLink">
+<span class="sig-name descname"><span class="pre">remove_doublyLink</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.TaskBuilder.remove_doublyLink" title="Link to this definition"></a></dt>
+<dd><p>remove doubly link relationship.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>builder’s object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.task.TaskBuilder.set_childTasks">
+<span class="sig-name descname"><span class="pre">set_childTasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tasks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.TaskBuilder.set_childTasks" title="Link to this definition"></a></dt>
+<dd><p>set child tasks.</p>
+<dl class="simple">
+<dt>Arguemnts:</dt><dd><p>tasks: child tasks’ object collection.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>builder’s object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.task.TaskBuilder.set_doublyLink">
+<span class="sig-name descname"><span class="pre">set_doublyLink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.TaskBuilder.set_doublyLink" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>set doubly link relationship.</p>
+<dl class="simple">
+<dt>Arguments:</dt><dd><dl class="simple">
+<dt>kwargs:</dt><dd><p>prev_task: previous task’s object.
+next_task: next task’s object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<p>#                peer_tasks: peer tasks’s object array.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Return:</dt><dd><p>builder’s object</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.task.TaskBuilder.set_parentTask">
+<span class="sig-name descname"><span class="pre">set_parentTask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.task.TaskBuilder.set_parentTask" title="Link to this definition"></a></dt>
+<dd><p>set parent task.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>task</strong> – parent task’s object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>builder’s object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.db.compute">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jamip.db.compute" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

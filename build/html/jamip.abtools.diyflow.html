@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamip.abtools.diyflow package &mdash; JAMIP 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jamip.abtools.diyflow package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-jamip.abtools.diyflow.amset">jamip.abtools.diyflow.amset module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.amset.Amset"><code class="docutils literal notranslate"><span class="pre">Amset</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.amset.Amset.check"><code class="docutils literal notranslate"><span class="pre">Amset.check()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.amset.Amset.deformation_calculator"><code class="docutils literal notranslate"><span class="pre">Amset.deformation_calculator()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.amset.Amset.diy_calculator"><code class="docutils literal notranslate"><span class="pre">Amset.diy_calculator()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.amset.Amset.other_calculator"><code class="docutils literal notranslate"><span class="pre">Amset.other_calculator()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.amset.Amset.requires"><code class="docutils literal notranslate"><span class="pre">Amset.requires</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.amset.Amset.settings"><code class="docutils literal notranslate"><span class="pre">Amset.settings</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.amset.Amset_Settings"><code class="docutils literal notranslate"><span class="pre">Amset_Settings</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.amset.Amset_Settings.distance"><code class="docutils literal notranslate"><span class="pre">Amset_Settings.distance</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.diyflow.bader">jamip.abtools.diyflow.bader module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.bader.Bader"><code class="docutils literal notranslate"><span class="pre">Bader</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.bader.Bader.check"><code class="docutils literal notranslate"><span class="pre">Bader.check()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.bader.Bader.diy_calculator"><code class="docutils literal notranslate"><span class="pre">Bader.diy_calculator()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.diyflow.boltztrap">jamip.abtools.diyflow.boltztrap module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.boltztrap.Boltztrap"><code class="docutils literal notranslate"><span class="pre">Boltztrap</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.boltztrap.Boltztrap.check"><code class="docutils literal notranslate"><span class="pre">Boltztrap.check()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.boltztrap.Boltztrap.diy_calculator"><code class="docutils literal notranslate"><span class="pre">Boltztrap.diy_calculator()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.boltztrap.Boltztrap.settings"><code class="docutils literal notranslate"><span class="pre">Boltztrap.settings</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.boltztrap.Boltztrap_Settings"><code class="docutils literal notranslate"><span class="pre">Boltztrap_Settings</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.boltztrap.Boltztrap_Settings.dos_type"><code class="docutils literal notranslate"><span class="pre">Boltztrap_Settings.dos_type</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.boltztrap.Boltztrap_Settings.energy_grid"><code class="docutils literal notranslate"><span class="pre">Boltztrap_Settings.energy_grid</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.boltztrap.Boltztrap_Settings.lpfac"><code class="docutils literal notranslate"><span class="pre">Boltztrap_Settings.lpfac</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.boltztrap.Boltztrap_Settings.nelec"><code class="docutils literal notranslate"><span class="pre">Boltztrap_Settings.nelec</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.boltztrap.Boltztrap_Settings.run_type"><code class="docutils literal notranslate"><span class="pre">Boltztrap_Settings.run_type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.diyflow.cohp">jamip.abtools.diyflow.cohp module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.cohp.Cohp"><code class="docutils literal notranslate"><span class="pre">Cohp</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.cohp.Cohp.check"><code class="docutils literal notranslate"><span class="pre">Cohp.check()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.cohp.Cohp.diy_calculator"><code class="docutils literal notranslate"><span class="pre">Cohp.diy_calculator()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.cohp.Cohp.get_basis_function_from_potcar"><code class="docutils literal notranslate"><span class="pre">Cohp.get_basis_function_from_potcar()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.diyflow.mobility">jamip.abtools.diyflow.mobility module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.mobility.Mobility"><code class="docutils literal notranslate"><span class="pre">Mobility</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.mobility.Mobility.calculator_without_run"><code class="docutils literal notranslate"><span class="pre">Mobility.calculator_without_run()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.mobility.Mobility.create"><code class="docutils literal notranslate"><span class="pre">Mobility.create()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.mobility.Mobility.diy_calculator"><code class="docutils literal notranslate"><span class="pre">Mobility.diy_calculator()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.mobility.Mobility.mobility_calculation"><code class="docutils literal notranslate"><span class="pre">Mobility.mobility_calculation()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.mobility.Mobility.yaml"><code class="docutils literal notranslate"><span class="pre">Mobility.yaml</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.diyflow.unfolding">jamip.abtools.diyflow.unfolding module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.unfolding.Unfolding"><code class="docutils literal notranslate"><span class="pre">Unfolding</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.unfolding.Unfolding.diy_calculator"><code class="docutils literal notranslate"><span class="pre">Unfolding.diy_calculator()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.unfolding.Unfolding.encut_enough"><code class="docutils literal notranslate"><span class="pre">Unfolding.encut_enough()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.unfolding.Unfolding.get_unfolding_kpath"><code class="docutils literal notranslate"><span class="pre">Unfolding.get_unfolding_kpath()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.unfolding.Unfolding.plot"><code class="docutils literal notranslate"><span class="pre">Unfolding.plot()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.diyflow">Module contents</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.get_diy_modules"><code class="docutils literal notranslate"><span class="pre">get_diy_modules()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.get_requires"><code class="docutils literal notranslate"><span class="pre">get_requires()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.diyflow.import_diy_module"><code class="docutils literal notranslate"><span class="pre">import_diy_module()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">jamip.abtools.diyflow package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/jamip.abtools.diyflow.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jamip-abtools-diyflow-package">
+<h1>jamip.abtools.diyflow package<a class="headerlink" href="#jamip-abtools-diyflow-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.abtools.diyflow.amset">
+<span id="jamip-abtools-diyflow-amset-module"></span><h2>jamip.abtools.diyflow.amset module<a class="headerlink" href="#module-jamip.abtools.diyflow.amset" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.amset.Amset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.diyflow.amset.</span></span><span class="sig-name descname"><span class="pre">Amset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">builder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.amset.Amset" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.amset.Amset.check">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.amset.Amset.check" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.amset.Amset.deformation_calculator">
+<span class="sig-name descname"><span class="pre">deformation_calculator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stdin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.amset.Amset.deformation_calculator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.amset.Amset.diy_calculator">
+<span class="sig-name descname"><span class="pre">diy_calculator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.amset.Amset.diy_calculator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.amset.Amset.other_calculator">
+<span class="sig-name descname"><span class="pre">other_calculator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.amset.Amset.other_calculator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.amset.Amset.requires">
+<span class="sig-name descname"><span class="pre">requires</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['deformation',</span> <span class="pre">'elastic',</span> <span class="pre">'dielectric']</span></em><a class="headerlink" href="#jamip.abtools.diyflow.amset.Amset.requires" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.amset.Amset.settings">
+<span class="sig-name descname"><span class="pre">settings</span></span><a class="headerlink" href="#jamip.abtools.diyflow.amset.Amset.settings" title="Link to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#jamip.abtools.diyflow.amset.Amset_Settings" title="jamip.abtools.diyflow.amset.Amset_Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Amset_Settings</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.amset.Amset_Settings">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.diyflow.amset.</span></span><span class="sig-name descname"><span class="pre">Amset_Settings</span></span><a class="headerlink" href="#jamip.abtools.diyflow.amset.Amset_Settings" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.amset.Amset_Settings.distance">
+<span class="sig-name descname"><span class="pre">distance</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.005</span></em><a class="headerlink" href="#jamip.abtools.diyflow.amset.Amset_Settings.distance" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.diyflow.bader">
+<span id="jamip-abtools-diyflow-bader-module"></span><h2>jamip.abtools.diyflow.bader module<a class="headerlink" href="#module-jamip.abtools.diyflow.bader" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.bader.Bader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.diyflow.bader.</span></span><span class="sig-name descname"><span class="pre">Bader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">builder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.bader.Bader" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.bader.Bader.check">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.bader.Bader.check" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.bader.Bader.diy_calculator">
+<span class="sig-name descname"><span class="pre">diy_calculator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.bader.Bader.diy_calculator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.diyflow.boltztrap">
+<span id="jamip-abtools-diyflow-boltztrap-module"></span><h2>jamip.abtools.diyflow.boltztrap module<a class="headerlink" href="#module-jamip.abtools.diyflow.boltztrap" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.boltztrap.Boltztrap">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.diyflow.boltztrap.</span></span><span class="sig-name descname"><span class="pre">Boltztrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">builder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.boltztrap.Boltztrap" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.boltztrap.Boltztrap.check">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.boltztrap.Boltztrap.check" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.boltztrap.Boltztrap.diy_calculator">
+<span class="sig-name descname"><span class="pre">diy_calculator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.boltztrap.Boltztrap.diy_calculator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.boltztrap.Boltztrap.settings">
+<span class="sig-name descname"><span class="pre">settings</span></span><a class="headerlink" href="#jamip.abtools.diyflow.boltztrap.Boltztrap.settings" title="Link to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#jamip.abtools.diyflow.boltztrap.Boltztrap_Settings" title="jamip.abtools.diyflow.boltztrap.Boltztrap_Settings"><code class="xref py py-class docutils literal notranslate"><span class="pre">Boltztrap_Settings</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.boltztrap.Boltztrap_Settings">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.diyflow.boltztrap.</span></span><span class="sig-name descname"><span class="pre">Boltztrap_Settings</span></span><a class="headerlink" href="#jamip.abtools.diyflow.boltztrap.Boltztrap_Settings" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.boltztrap.Boltztrap_Settings.dos_type">
+<span class="sig-name descname"><span class="pre">dos_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('HTSTO',)</span></em><a class="headerlink" href="#jamip.abtools.diyflow.boltztrap.Boltztrap_Settings.dos_type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.boltztrap.Boltztrap_Settings.energy_grid">
+<span class="sig-name descname"><span class="pre">energy_grid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(0.005,)</span></em><a class="headerlink" href="#jamip.abtools.diyflow.boltztrap.Boltztrap_Settings.energy_grid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.boltztrap.Boltztrap_Settings.lpfac">
+<span class="sig-name descname"><span class="pre">lpfac</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#jamip.abtools.diyflow.boltztrap.Boltztrap_Settings.lpfac" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.boltztrap.Boltztrap_Settings.nelec">
+<span class="sig-name descname"><span class="pre">nelec</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#jamip.abtools.diyflow.boltztrap.Boltztrap_Settings.nelec" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.boltztrap.Boltztrap_Settings.run_type">
+<span class="sig-name descname"><span class="pre">run_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'BOLTZ'</span></em><a class="headerlink" href="#jamip.abtools.diyflow.boltztrap.Boltztrap_Settings.run_type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.diyflow.cohp">
+<span id="jamip-abtools-diyflow-cohp-module"></span><h2>jamip.abtools.diyflow.cohp module<a class="headerlink" href="#module-jamip.abtools.diyflow.cohp" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.cohp.Cohp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.diyflow.cohp.</span></span><span class="sig-name descname"><span class="pre">Cohp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">builder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.cohp.Cohp" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>default cohp parameters
+COHPstartEnergy  -20
+COHPendEnergy     10
+basisfunctions S  3s 3p
+basisfunctions Mo 4p 4d 5s
+cohpGenerator from 1.4 to 1.5 type Ga type Sr
+cohpGenerator from 2.5 to 4.0 orbitalwise
+cohpbetween atom 1 and atom 2</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.cohp.Cohp.check">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.cohp.Cohp.check" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.cohp.Cohp.diy_calculator">
+<span class="sig-name descname"><span class="pre">diy_calculator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.cohp.Cohp.diy_calculator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.cohp.Cohp.get_basis_function_from_potcar">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_basis_function_from_potcar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.cohp.Cohp.get_basis_function_from_potcar" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.diyflow.mobility">
+<span id="jamip-abtools-diyflow-mobility-module"></span><h2>jamip.abtools.diyflow.mobility module<a class="headerlink" href="#module-jamip.abtools.diyflow.mobility" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.mobility.Mobility">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.diyflow.mobility.</span></span><span class="sig-name descname"><span class="pre">Mobility</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rootdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.mobility.Mobility" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.mobility.Mobility.calculator_without_run">
+<span class="sig-name descname"><span class="pre">calculator_without_run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vasp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">incar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.mobility.Mobility.calculator_without_run" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.mobility.Mobility.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.mobility.Mobility.create" title="Link to this definition"></a></dt>
+<dd><p>scale = ‘0.98 0.99 1.00 1.01 1.02’
+axis = ‘x y z’
+band_insert = 50</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.mobility.Mobility.diy_calculator">
+<span class="sig-name descname"><span class="pre">diy_calculator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.mobility.Mobility.diy_calculator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.mobility.Mobility.mobility_calculation">
+<span class="sig-name descname"><span class="pre">mobility_calculation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vasp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.mobility.Mobility.mobility_calculation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.mobility.Mobility.yaml">
+<span class="sig-name descname"><span class="pre">yaml</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'axis':</span> <span class="pre">'x</span> <span class="pre">y</span> <span class="pre">z',</span> <span class="pre">'parallel':</span> <span class="pre">4,</span> <span class="pre">'scale':</span> <span class="pre">'0.98</span> <span class="pre">0.99</span> <span class="pre">1.00</span> <span class="pre">1.01</span> <span class="pre">1.02'}</span></em><a class="headerlink" href="#jamip.abtools.diyflow.mobility.Mobility.yaml" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.diyflow.unfolding">
+<span id="jamip-abtools-diyflow-unfolding-module"></span><h2>jamip.abtools.diyflow.unfolding module<a class="headerlink" href="#module-jamip.abtools.diyflow.unfolding" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.unfolding.Unfolding">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.diyflow.unfolding.</span></span><span class="sig-name descname"><span class="pre">Unfolding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">builder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.unfolding.Unfolding" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.unfolding.Unfolding.diy_calculator">
+<span class="sig-name descname"><span class="pre">diy_calculator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.unfolding.Unfolding.diy_calculator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.unfolding.Unfolding.encut_enough">
+<span class="sig-name descname"><span class="pre">encut_enough</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stdin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.unfolding.Unfolding.encut_enough" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.unfolding.Unfolding.get_unfolding_kpath">
+<span class="sig-name descname"><span class="pre">get_unfolding_kpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.unfolding.Unfolding.get_unfolding_kpath" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.unfolding.Unfolding.plot">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primcell</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.unfolding.Unfolding.plot" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.diyflow">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jamip.abtools.diyflow" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.get_diy_modules">
+<span class="sig-prename descclassname"><span class="pre">jamip.abtools.diyflow.</span></span><span class="sig-name descname"><span class="pre">get_diy_modules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.get_diy_modules" title="Link to this definition"></a></dt>
+<dd><p>Get diy_module in the current directory.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.get_requires">
+<span class="sig-prename descclassname"><span class="pre">jamip.abtools.diyflow.</span></span><span class="sig-name descname"><span class="pre">get_requires</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tasks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.get_requires" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.abtools.diyflow.import_diy_module">
+<span class="sig-prename descclassname"><span class="pre">jamip.abtools.diyflow.</span></span><span class="sig-name descname"><span class="pre">import_diy_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.diyflow.import_diy_module" title="Link to this definition"></a></dt>
+<dd><p>Calls the corresponding module from the current
+directory based on the module name</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

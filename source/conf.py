@@ -9,19 +9,32 @@
 project = 'JAMIP'
 copyright = '2024, Kun Zhou'
 author = 'Kun Zhou'
-release = '1.3'
+release = '1.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 #extensions = []
-extensions = ['recommonmark']
 source_suffix = ['.rst', '.md']
 
 templates_path = ['_templates']
 exclude_patterns = []
 
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinx.ext.coverage',
+    'sphinx.ext.mathjax',
+    'recommonmark',
+    'sphinx_markdown_tables',
+]
 
+exclude_patterns = [
+   'src/jamip.db.*'
+]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

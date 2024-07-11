@@ -1,0 +1,227 @@
+# 7. 命令行工具
+
+在shell环境下，JAMIP通过jp命令与用户进行交互，执行任务提交、任务检查、数据提取和绘图等各项功能。
+在终端下，执行 jp -h 或 jp --help ，获得jp命令的支持信息
+直接执行jp，获得jamip程序的安装路径。
+
+### 7.1 任务提交
+
+***jp -i --input \[soft]***
+生成任务的提交脚本副本
+
+*   **可选参数**： vasp, qe, win2k, abinit, pwscf, gaussian, plot
+*   **代码链接**： jamip/cui/create.py
+*   **使用示例**：
+    `jp -i vasp` 生成vasp计算的提交脚本
+    `jp -i plot` 生成绘图脚本
+
+***jp -r --run \[command]***
+任务提交命令
+
+*   **可选参数**： prepare, qsub, single
+*   **代码链接**： jamip/compute/launch.py
+*   **使用示例**：
+    `jp -r prepare`  调用`input.py`，生成任务池文件
+    `jp -r qsub -f [pool]` 将任务池中的任务提交至集群
+    `jp -r single -f [pool]` 使用本地机串行计算任务池中的任务
+
+***jp -f --file \[file]***
+指定当前命令使用的任务池或输入目录
+
+***jp --\[cluster]***
+集群参数设置命令，参数信息会保存在集群配置文件 .cluster 内
+
+*   **可选参数**：
+    **jp --cores [int]** 设置单节点使用核数
+    **jp --queue [string]** 设置使用的集群队列
+    **jp --num [int]** 设置最大提交任务数
+    **jp --nodes [int]** 设置单任务使用节点数
+*   **使用示例**：
+    `jp -r qsub -f [pool] --queue=host3 --num=5`
+
+### 7.2 任务检查
+***jp -c --check [command]***
+- **可选参数：** show, status, prepare, qstat, bjobs. squeue
+- **使用示例：**
+    **jp -c qstat** 查询当前用户队列中运行的计算目录
+    **jp -c qstat -f [jobid]** 打印任务号为jobid的任务的计算目录
+    **jp -c show -f [pool]** 以表格形式输出任务池完成状态
+    **jp -c prepare -f [pool]** 调用程序的续算检查功能，更新任务池的任务完成状态 (基于`.status`文件)
+    **jp -c status -f [pool]** 重新生成`.status`状态文件，并更新任务池的任务完成状态 (基于计算目录)
+- **补充说明：**
+任务池的状态更新流程为: `W > R > C` , 即如果计算任务在提交后中断，其状态将停留在 `R` 。
+`jp -c prepare` 适用于任务池中完成了部分任务的计算，需要更新任务池并再次提交的情况。
+`jp -c status` 适用于.status文件错误或缺失，需要重新生成的情况。(例如用户手动更改了计算目录)
+
+### 7.3 数据处理
+
+***jp -o --output  [输出格式] [输出性质+] -f [计算目录/任务池文件]***
+JAMIP的数据检索工具，支持对计算目录中的性质进行批量查询，并以表格/排序/csv等多种格式输出
+
+*   **可选参数**： csv, sort, form, hdf5, plot （当未指定时，默认使用form格式）
+*   **代码链接**： jamip/cui/output.py
+*   **使用示例**：
+    *`jp -o csv bandgap free_energy`* 批量提取自由能和带隙数据，并保存在CSV文件中
+    *`jp -o hdf5 -f [hdf5]`* 查看HDF5文件内保存的数据
+*  **支持输出性质**
+  
+| **计算性质** | **数据输出**                                                                    |
+| ---------- | -------------------------------------------------------------------------------- |
+| formula     | 化学式(formula)                                                                   |
+| bandgap    | 间接带隙(indirect)，直接带隙(direct)，是否为金属(ismetal)                          |
+| dielectric | 电子部分的介电常数(dielectric)，离子部分的介电常数(dielectric-ion)               |
+| cbvb       | 间接带隙(bandgap)，价带顶(vbm-kpoint)，导带顶(cbm-kpoint)                            |
+| emass      | 空穴有效质量(H-mass)，电子有效质量(e-mass)（注：有效质量为取几何平均获得平均值） |
+| boltztrap  | 空穴有效质量(H-mass)，电子有效质量(e-mass)（注：提取boltztrap程序的计算结果）    |
+| deformation  | 空穴形变势(vbm-dp)，电子形变势(cbm-dp)     |
+| work_function | 功函数(work_function)  |
+
+*  **支持输出计算参数和简单性质**
+
+| **数据类型**  | **计算参数**                                                  |
+| ----- | -------------------------------------------------------------------- |
+| int   | nkdim, nedos, nbands, nkpts, istart, icharg, ispin, nelm, nsw, nfree |
+|       | lmaxmix ,ibrion, isif, isym, pstress, nelect, ismear, ialgo, lorbit  |
+| float | encut, ediff, ediffg, cshift, potim, emin, emax, sigma,volume        |
+|       | free_energy, energy_without_entropy, fermi_energy, eentro |
+|       | external_pressure, pullay_stress,         |
+| str   | prec, gga, point_group, date, datetime,vasp_version               |
+| bool  | lsorbit, lwave, lcharg, lvtot, lelf          
+*   **详细信息**：
+```
+1. 路径查询
+JAMIP通过`.status(针对JAMIP)`和`OUTCAR(一般VASP计算)`判断输入路径是否为计算目录
+如果输入目录不是计算目录，将对其子目录进行查询(至多一层)
+如果未给程序指定任何目录，将当前目录作为输入值
+对于JAMIP计算的目录，数据提取均使用固定的目录，即能带使用'electric/band'， 总能来自'scf'
+如果用户需要从其他目录提取数据，可以在源码中添加自己的提交函数
+
+2. 输出格式
+=== csv 格式 ===
+指定为csv格式时，JAMIP会将数据提取结果保存到以提交文件命名的csv文件中，例如
+$ jp -o csv free_energy -f TEST
+$ cat TEST.csv
+    
+path,free_energy
+Si2.vasp,-43.40082825
+Si.vasp,-43.40082825
+
+=== form 格式 ===
+默认格式，以表格形式将数据提取结果打印到屏幕上
+$ jp -o emass -f TEST  
++----------+ ---------+ ---------+ 
+|   path   |  e-mass  |  H-mass  | 
++----------+ ---------+ ---------+ 
+| POSCAR2  |  0.287   |  1.005   | 
+|  POSCAR  |  0.224   |  1.145   | 
++----------+ ---------+ ---------+ 
+
+=== sort 格式 ===
+以排序的形式列出计算结果(从小到大)，例如检查优化结果
+$ jp -o sort free_energy -f relax
+
++-----------------------+
+| Property: free_energy |
++-----------------------+
+ relax/S3, -33.56501524
+ relax/S2, -33.56141982
+ relax/S1, -33.55055661
+ 
+ === plot 格式 ===
+ TODO： 针对特定的任务，以图的方式对数据进行分析
+ 例如提取有效质量、泊松比时，绘制拟合曲线图
+```
+    
+    
+***jp -v --vasp [command] -f \[files]***
+
+*   **输入参数**： 操作命令与文件路径
+*   **命令简介**： JAMIP的对vasp的支持程序
+*   **代码链接**： jamip/cui/vasptools.py
+*   **使用示例**：
+    *`jp -v clean -f [pool]`* 清理计算目录内的文件(删除前有提示，用户可修改范围)
+    *`jp -v bond -f [files]`* 分析结构的成键环境
+    *`jp -v potcar -f [files]`* 批量生成赝势文件(首次执行需要输入路径，用户可以为元素指定赝势)
+    *`jp -v kpath -f [files]`* 分析结构的高对称路径
+    *`jp -v standard -f [pool]`* 读取结构文件，保存在cifs目录，可以用于批量转化文件或提取结构优化结果
+
+***jp --phonon [command] -f [file]***
+从JAMIP的计算结果创建声子相关计算的输入输出文件
+
+*   **输入参数**： 操作命令与文件路径
+*   **命令简介**： JAMIP的对phonopy、phono3py、Phonopy-Spectroscopy的支持程序
+*   **代码链接**： jamip/cui/phonon.py
+*   **使用示例**：
+    *`jp --phonon build -f [pool]`* 重建phonopy的输入输出目录
+    *`jp --phonon build3 -f [pool]`* 重建phono3py的输入输出目录
+    *`jp --phonon raman -f [pool]`* 重建raman计算的输入输出目录
+    *`jp --phonon gruneisen -f [pool]`* 提取并计算gruneisen常数
+*   **详细信息**：
+    JAMIP主要通过计算目录下的info.hdf5获取计算时的phonopy输入信息，
+    生成的yaml文件已包含力常数信息，可直接用于绘制声子谱、gruneisen常数等
+    对于phonopy，尝试生成`BORN`, `FORCE_SETS`, `phonopy_disp.yaml`
+    对于phono3py，尝试生成`FORCES_FC3`, `phono3py_disp.yaml`
+    对于Raman计算，尝试生成`Raman.yaml`
+    对于gruneisen计算，尝试生成 `gruneisen` (需要在执行命令后输入mesh矩阵)
+
+
+***jp --db [command]***
+
+*   **可选参数**： structure, entry, history
+*   **命令简介**： 将指定的计算数据存入数据库，或查看存入数据库的历史数据
+*   **代码链接**： jamip/db/connect.py
+```
+# history命令使用实例
+$ jp --db history
+ name format natoms SG
+0 Si.vasp Si8 8 216
+([fileds]/all/none):bandgap
+ name format natoms SG indirect direct
+0 Si.vasp Si8 8 216 0.6829 0.7021
+([fileds]/all/none):energy
+ name format natoms SG indirect direct energy
+0 Si.vasp Si8 8 216 0.6829 0.7021 -43.381044
+([fileds]/all/none):all
+['structure_id', 'name', 'calculated_parameters', 'path', 'energy', 'energy_per_formula', 
+'energy_per_atom', 'bandgap', 'bandgap_img', 'corrected_bandgap', 'effective_mass_of_bandside', 
+'optical_bandgap', 'dielectric_constant', 'born_effective_charge', 'exciton_binding_energy', 
+'pressure', 'stress_tensor', 'elastic_constants', 'bulk_modulus', 'Raman_frequencies', 
+'IR_frequencies']
+([fileds]/all/none):
+```
+### 7.4 辅助工具
+***jp --version***
+查看JAMIP程序版本号
+
+***jp --mysql [command]***
+- **可选参数：** `initialize, start, shutdown`
+- **命令简介：** 自动化完成mysql的初始化，启动和关闭
+- **代码链接：** `jamip/cui/softmanage.py`
+- **使用示例：**
+`jp --mysql initialize` MySQL初始化 (需要按提示，手动登陆并修改密码)
+`jp --mysql start` 启动MySQL程序
+`jp --mysql shutdown` 关闭MySQL程序
+
+***jp --django [command]***
+自动化完成Django的配置和数据库迁移
+- **代码链接：** `jamip/cui/softmanage.py`
+- **使用示例：**
+`jp --django mysql` 配置MySQL参数，交互式输入数据库名称、登陆等信息
+`jp --django sqlite` 配置Sqlite3参数
+`jp --django makemigrations` 根据数据库结构生成迁移文件
+`jp --django migrate` 根据迁移文件将数据库结构导入数据库
+`jp --django dumpdata` 数据库导出，生成jamip.json文件
+`jp --django loaddata` 数据库导入，将选择的json文件导入数据库
+
+
+**使用说明**：
+使用数据库相关功能必须先完成数据库初始化，用户根据自身使用的数据库，执行以下命令：
+1. 执行 `jp --django mysql` 或 `jp --django sqlite` 生成数据库连接文件( `$HOME/env/django.json` )
+2. 执行 `jp --django makemigrations` 生成数据库迁移文件
+3. 执行 `jp --django migrate` 生成数据库结构，Sqlite数据库保存位置为( `$HOME/bin/jamipdb` )
+完成数据库配置后，可执行 `jp --db history` ，显示以下信息表示数据库初始化正常：
+```
+Query failed in table entry. Exit!
+```
+如果用户希望使用其他数据库，可根据Django语法修改数据库连接文件
+

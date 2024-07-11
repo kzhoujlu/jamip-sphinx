@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamip.abtools.vasp package &mdash; JAMIP 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jamip.abtools.vasp package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-jamip.abtools.vasp.check">jamip.abtools.vasp.check module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.check.CheckStatus"><code class="docutils literal notranslate"><span class="pre">CheckStatus</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.check.CheckStatus.electrons_check"><code class="docutils literal notranslate"><span class="pre">CheckStatus.electrons_check()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.check.CheckStatus.finish_check"><code class="docutils literal notranslate"><span class="pre">CheckStatus.finish_check()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.check.CheckStatus.get_batch"><code class="docutils literal notranslate"><span class="pre">CheckStatus.get_batch()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.check.CheckStatus.get_batch_status"><code class="docutils literal notranslate"><span class="pre">CheckStatus.get_batch_status()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.check.CheckStatus.get_status"><code class="docutils literal notranslate"><span class="pre">CheckStatus.get_status()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.check.CheckStatus.ions_check"><code class="docutils literal notranslate"><span class="pre">CheckStatus.ions_check()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.check.CheckStatus.is_converge"><code class="docutils literal notranslate"><span class="pre">CheckStatus.is_converge()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.check.CheckStatus.load_relax_status"><code class="docutils literal notranslate"><span class="pre">CheckStatus.load_relax_status()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.check.CheckStatus.load_status"><code class="docutils literal notranslate"><span class="pre">CheckStatus.load_status()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.check.CheckStatus.rebuild"><code class="docutils literal notranslate"><span class="pre">CheckStatus.rebuild()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.check.CheckStatus.success"><code class="docutils literal notranslate"><span class="pre">CheckStatus.success()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.check.CheckStatus.threshold"><code class="docutils literal notranslate"><span class="pre">CheckStatus.threshold</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.check.CheckStatus.update_tasks"><code class="docutils literal notranslate"><span class="pre">CheckStatus.update_tasks()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.check.get_max_cell_force"><code class="docutils literal notranslate"><span class="pre">get_max_cell_force()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.vasp.monitor">jamip.abtools.vasp.monitor module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.monitor.Monitor"><code class="docutils literal notranslate"><span class="pre">Monitor()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.monitor.VASP_Thread"><code class="docutils literal notranslate"><span class="pre">VASP_Thread</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.monitor.VASP_Thread.debug"><code class="docutils literal notranslate"><span class="pre">VASP_Thread.debug()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.monitor.VASP_Thread.find_logs"><code class="docutils literal notranslate"><span class="pre">VASP_Thread.find_logs()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.monitor.VASP_Thread.get_result"><code class="docutils literal notranslate"><span class="pre">VASP_Thread.get_result()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.monitor.VASP_Thread.read_logs"><code class="docutils literal notranslate"><span class="pre">VASP_Thread.read_logs()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.monitor.VASP_Thread.run"><code class="docutils literal notranslate"><span class="pre">VASP_Thread.run()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.monitor.find_mpirun_process"><code class="docutils literal notranslate"><span class="pre">find_mpirun_process()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.vasp.setvasp">jamip.abtools.vasp.setvasp module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.Potential"><code class="docutils literal notranslate"><span class="pre">Potential</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.Potential.enmax"><code class="docutils literal notranslate"><span class="pre">Potential.enmax</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.Potential.enmin"><code class="docutils literal notranslate"><span class="pre">Potential.enmin</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.Potential.files"><code class="docutils literal notranslate"><span class="pre">Potential.files</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.Potential.formula"><code class="docutils literal notranslate"><span class="pre">Potential.formula</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.Potential.nelect"><code class="docutils literal notranslate"><span class="pre">Potential.nelect</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp"><code class="docutils literal notranslate"><span class="pre">SetVasp</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.accelerate"><code class="docutils literal notranslate"><span class="pre">SetVasp.accelerate</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.base_tasks"><code class="docutils literal notranslate"><span class="pre">SetVasp.base_tasks</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.cutoff"><code class="docutils literal notranslate"><span class="pre">SetVasp.cutoff</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.energy"><code class="docutils literal notranslate"><span class="pre">SetVasp.energy</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.external_files"><code class="docutils literal notranslate"><span class="pre">SetVasp.external_files</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.force"><code class="docutils literal notranslate"><span class="pre">SetVasp.force</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.get_all_tasks"><code class="docutils literal notranslate"><span class="pre">SetVasp.get_all_tasks()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.get_ldau"><code class="docutils literal notranslate"><span class="pre">SetVasp.get_ldau()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.get_magmom"><code class="docutils literal notranslate"><span class="pre">SetVasp.get_magmom()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.get_potcar_library"><code class="docutils literal notranslate"><span class="pre">SetVasp.get_potcar_library()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.get_potential"><code class="docutils literal notranslate"><span class="pre">SetVasp.get_potential()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.get_potential_files"><code class="docutils literal notranslate"><span class="pre">SetVasp.get_potential_files()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.get_vdW"><code class="docutils literal notranslate"><span class="pre">SetVasp.get_vdW()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.kpoints"><code class="docutils literal notranslate"><span class="pre">SetVasp.kpoints</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.ldau"><code class="docutils literal notranslate"><span class="pre">SetVasp.ldau</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.links"><code class="docutils literal notranslate"><span class="pre">SetVasp.links</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.magmom"><code class="docutils literal notranslate"><span class="pre">SetVasp.magmom</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.nbands"><code class="docutils literal notranslate"><span class="pre">SetVasp.nbands</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.optcell"><code class="docutils literal notranslate"><span class="pre">SetVasp.optcell</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.optics_nbands"><code class="docutils literal notranslate"><span class="pre">SetVasp.optics_nbands</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.overwrite"><code class="docutils literal notranslate"><span class="pre">SetVasp.overwrite</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.potential"><code class="docutils literal notranslate"><span class="pre">SetVasp.potential</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.program"><code class="docutils literal notranslate"><span class="pre">SetVasp.program</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.soft"><code class="docutils literal notranslate"><span class="pre">SetVasp.soft</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.suggest_potcar"><code class="docutils literal notranslate"><span class="pre">SetVasp.suggest_potcar</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.tasks"><code class="docutils literal notranslate"><span class="pre">SetVasp.tasks</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.setvasp.SetVasp.xc_func"><code class="docutils literal notranslate"><span class="pre">SetVasp.xc_func</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.vasp.utils">jamip.abtools.vasp.utils module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.utils.KeyWords"><code class="docutils literal notranslate"><span class="pre">KeyWords</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.utils.LinearPhase"><code class="docutils literal notranslate"><span class="pre">LinearPhase</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.utils.LinearPhase.free_energy"><code class="docutils literal notranslate"><span class="pre">LinearPhase.free_energy</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.utils.LinearPhase.k"><code class="docutils literal notranslate"><span class="pre">LinearPhase.k</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.utils.LinearPhase.weight"><code class="docutils literal notranslate"><span class="pre">LinearPhase.weight</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.utils.LinearPhase.zeta"><code class="docutils literal notranslate"><span class="pre">LinearPhase.zeta()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.utils.dict_get"><code class="docutils literal notranslate"><span class="pre">dict_get()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.vasp.vaspflow">jamip.abtools.vasp.vaspflow module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.Task.get_status"><code class="docutils literal notranslate"><span class="pre">Task.get_status()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.Task.group_update"><code class="docutils literal notranslate"><span class="pre">Task.group_update()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.Task.kpoints"><code class="docutils literal notranslate"><span class="pre">Task.kpoints</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.Task.structure"><code class="docutils literal notranslate"><span class="pre">Task.structure</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.Task.xc_func"><code class="docutils literal notranslate"><span class="pre">Task.xc_func</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow"><code class="docutils literal notranslate"><span class="pre">VaspFlow</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.batch_calculator"><code class="docutils literal notranslate"><span class="pre">VaspFlow.batch_calculator()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.calculator"><code class="docutils literal notranslate"><span class="pre">VaspFlow.calculator()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.converge_test"><code class="docutils literal notranslate"><span class="pre">VaspFlow.converge_test()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.electric_property"><code class="docutils literal notranslate"><span class="pre">VaspFlow.electric_property()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.get_band_edge"><code class="docutils literal notranslate"><span class="pre">VaspFlow.get_band_edge()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.get_kpath"><code class="docutils literal notranslate"><span class="pre">VaspFlow.get_kpath()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.get_magmom"><code class="docutils literal notranslate"><span class="pre">VaspFlow.get_magmom()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.get_nbands"><code class="docutils literal notranslate"><span class="pre">VaspFlow.get_nbands()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.get_npar"><code class="docutils literal notranslate"><span class="pre">VaspFlow.get_npar()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.get_stdin"><code class="docutils literal notranslate"><span class="pre">VaspFlow.get_stdin()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.initialize_phonon"><code class="docutils literal notranslate"><span class="pre">VaspFlow.initialize_phonon()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.initialize_tasks"><code class="docutils literal notranslate"><span class="pre">VaspFlow.initialize_tasks()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.load_structure"><code class="docutils literal notranslate"><span class="pre">VaspFlow.load_structure()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.load_wavchg"><code class="docutils literal notranslate"><span class="pre">VaspFlow.load_wavchg()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.mechanic_property"><code class="docutils literal notranslate"><span class="pre">VaspFlow.mechanic_property()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.molecular_dynamics"><code class="docutils literal notranslate"><span class="pre">VaspFlow.molecular_dynamics()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.mpirun"><code class="docutils literal notranslate"><span class="pre">VaspFlow.mpirun()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.optic_property"><code class="docutils literal notranslate"><span class="pre">VaspFlow.optic_property()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.phonon_property"><code class="docutils literal notranslate"><span class="pre">VaspFlow.phonon_property()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.raw_structure"><code class="docutils literal notranslate"><span class="pre">VaspFlow.raw_structure</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.relax_cell_ions"><code class="docutils literal notranslate"><span class="pre">VaspFlow.relax_cell_ions()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.run"><code class="docutils literal notranslate"><span class="pre">VaspFlow.run()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.self_consistent_field"><code class="docutils literal notranslate"><span class="pre">VaspFlow.self_consistent_field()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.set_input"><code class="docutils literal notranslate"><span class="pre">VaspFlow.set_input()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.std_structure"><code class="docutils literal notranslate"><span class="pre">VaspFlow.std_structure</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.VaspFlow.vasp_calculator"><code class="docutils literal notranslate"><span class="pre">VaspFlow.vasp_calculator()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.WorkFlow"><code class="docutils literal notranslate"><span class="pre">WorkFlow</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.WorkFlow.Links"><code class="docutils literal notranslate"><span class="pre">WorkFlow.Links</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.WorkFlow.Links.nodes"><code class="docutils literal notranslate"><span class="pre">WorkFlow.Links.nodes</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.WorkFlow.Links.reverse"><code class="docutils literal notranslate"><span class="pre">WorkFlow.Links.reverse</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.WorkFlow.allstate"><code class="docutils literal notranslate"><span class="pre">WorkFlow.allstate</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.WorkFlow.launch"><code class="docutils literal notranslate"><span class="pre">WorkFlow.launch()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.WorkFlow.refresh"><code class="docutils literal notranslate"><span class="pre">WorkFlow.refresh()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.WorkFlow.run"><code class="docutils literal notranslate"><span class="pre">WorkFlow.run()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspflow.WorkFlow.state"><code class="docutils literal notranslate"><span class="pre">WorkFlow.state</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.vasp.vaspio">jamip.abtools.vasp.vaspio module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspio.VaspIO"><code class="docutils literal notranslate"><span class="pre">VaspIO</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspio.VaspIO.write_files"><code class="docutils literal notranslate"><span class="pre">VaspIO.write_files()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspio.VaspIO.write_incar"><code class="docutils literal notranslate"><span class="pre">VaspIO.write_incar()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspio.VaspIO.write_kpoints"><code class="docutils literal notranslate"><span class="pre">VaspIO.write_kpoints()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspio.VaspIO.write_optcell"><code class="docutils literal notranslate"><span class="pre">VaspIO.write_optcell()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspio.VaspIO.write_poscar"><code class="docutils literal notranslate"><span class="pre">VaspIO.write_poscar()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspio.VaspIO.write_potcar"><code class="docutils literal notranslate"><span class="pre">VaspIO.write_potcar()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vaspio.VaspIO.write_symmetry"><code class="docutils literal notranslate"><span class="pre">VaspIO.write_symmetry()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.vasp.vdw">jamip.abtools.vasp.vdw module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vdw.VDW"><code class="docutils literal notranslate"><span class="pre">VDW</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vdw.VDW.get_vdW_params"><code class="docutils literal notranslate"><span class="pre">VDW.get_vdW_params()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vdw.VDW.van_der_Waals"><code class="docutils literal notranslate"><span class="pre">VDW.van_der_Waals</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.vasp.vdw.VDW.vdw"><code class="docutils literal notranslate"><span class="pre">VDW.vdw</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.vasp">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">jamip.abtools.vasp package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/jamip.abtools.vasp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jamip-abtools-vasp-package">
+<h1>jamip.abtools.vasp package<a class="headerlink" href="#jamip-abtools-vasp-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.abtools.vasp.check">
+<span id="jamip-abtools-vasp-check-module"></span><h2>jamip.abtools.vasp.check module<a class="headerlink" href="#module-jamip.abtools.vasp.check" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.check.CheckStatus">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.vasp.check.</span></span><span class="sig-name descname"><span class="pre">CheckStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rootdir</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.check.CheckStatus" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="jamip.abtools.base.html#jamip.abtools.base.check.BaseStatus" title="jamip.abtools.base.check.BaseStatus"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseStatus</span></code></a></p>
+<p>cls to check the VASP</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.check.CheckStatus.electrons_check">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">electrons_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.check.CheckStatus.electrons_check" title="Link to this definition"></a></dt>
+<dd><p>step3 : electrons</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.check.CheckStatus.finish_check">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">finish_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.check.CheckStatus.finish_check" title="Link to this definition"></a></dt>
+<dd><p>step1 : finish</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.check.CheckStatus.get_batch">
+<span class="sig-name descname"><span class="pre">get_batch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.check.CheckStatus.get_batch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.check.CheckStatus.get_batch_status">
+<span class="sig-name descname"><span class="pre">get_batch_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.check.CheckStatus.get_batch_status" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.check.CheckStatus.get_status">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.check.CheckStatus.get_status" title="Link to this definition"></a></dt>
+<dd><p>check chain: finish -&gt; ion step -&gt; electric step -&gt; status</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.check.CheckStatus.ions_check">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ions_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.check.CheckStatus.ions_check" title="Link to this definition"></a></dt>
+<dd><p>step2 : ions</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.check.CheckStatus.is_converge">
+<span class="sig-name descname"><span class="pre">is_converge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.check.CheckStatus.is_converge" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.check.CheckStatus.load_relax_status">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_relax_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.check.CheckStatus.load_relax_status" title="Link to this definition"></a></dt>
+<dd><p>load converge status from .status</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.check.CheckStatus.load_status">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.check.CheckStatus.load_status" title="Link to this definition"></a></dt>
+<dd><p>load finish status from .status</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.check.CheckStatus.rebuild">
+<span class="sig-name descname"><span class="pre">rebuild</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tasks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.check.CheckStatus.rebuild" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.check.CheckStatus.success">
+<span class="sig-name descname"><span class="pre">success</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.check.CheckStatus.success" title="Link to this definition"></a></dt>
+<dd><p>check vasp task run_status base on OUTCAR</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.check.CheckStatus.threshold">
+<span class="sig-name descname"><span class="pre">threshold</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.0</span></em><a class="headerlink" href="#jamip.abtools.vasp.check.CheckStatus.threshold" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.check.CheckStatus.update_tasks">
+<span class="sig-name descname"><span class="pre">update_tasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tasks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.check.CheckStatus.update_tasks" title="Link to this definition"></a></dt>
+<dd><p>update task’s path and status from .status</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.check.get_max_cell_force">
+<span class="sig-prename descclassname"><span class="pre">jamip.abtools.vasp.check.</span></span><span class="sig-name descname"><span class="pre">get_max_cell_force</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.check.get_max_cell_force" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-jamip.abtools.vasp.monitor">
+<span id="jamip-abtools-vasp-monitor-module"></span><h2>jamip.abtools.vasp.monitor module<a class="headerlink" href="#module-jamip.abtools.vasp.monitor" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.monitor.Monitor">
+<span class="sig-prename descclassname"><span class="pre">jamip.abtools.vasp.monitor.</span></span><span class="sig-name descname"><span class="pre">Monitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.monitor.Monitor" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.monitor.VASP_Thread">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.vasp.monitor.</span></span><span class="sig-name descname"><span class="pre">VASP_Thread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.monitor.VASP_Thread" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Thread</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.monitor.VASP_Thread.debug">
+<span class="sig-name descname"><span class="pre">debug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.monitor.VASP_Thread.debug" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.monitor.VASP_Thread.find_logs">
+<span class="sig-name descname"><span class="pre">find_logs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.monitor.VASP_Thread.find_logs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.monitor.VASP_Thread.get_result">
+<span class="sig-name descname"><span class="pre">get_result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.monitor.VASP_Thread.get_result" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.monitor.VASP_Thread.read_logs">
+<span class="sig-name descname"><span class="pre">read_logs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.monitor.VASP_Thread.read_logs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.monitor.VASP_Thread.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.monitor.VASP_Thread.run" title="Link to this definition"></a></dt>
+<dd><p>Method representing the thread’s activity.</p>
+<p>You may override this method in a subclass. The standard run() method
+invokes the callable object passed to the object’s constructor as the
+target argument, if any, with sequential and keyword arguments taken
+from the args and kwargs arguments, respectively.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.monitor.find_mpirun_process">
+<span class="sig-prename descclassname"><span class="pre">jamip.abtools.vasp.monitor.</span></span><span class="sig-name descname"><span class="pre">find_mpirun_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mpirun'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.monitor.find_mpirun_process" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-jamip.abtools.vasp.setvasp">
+<span id="jamip-abtools-vasp-setvasp-module"></span><h2>jamip.abtools.vasp.setvasp module<a class="headerlink" href="#module-jamip.abtools.vasp.setvasp" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.Potential">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.vasp.setvasp.</span></span><span class="sig-name descname"><span class="pre">Potential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formula</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enmin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.Potential" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.Potential.enmax">
+<span class="sig-name descname"><span class="pre">enmax</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.Potential.enmax" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.Potential.enmin">
+<span class="sig-name descname"><span class="pre">enmin</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.Potential.enmin" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.Potential.files">
+<span class="sig-name descname"><span class="pre">files</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.Potential.files" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.Potential.formula">
+<span class="sig-name descname"><span class="pre">formula</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.Potential.formula" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.Potential.nelect">
+<span class="sig-name descname"><span class="pre">nelect</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.Potential.nelect" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.vasp.setvasp.</span></span><span class="sig-name descname"><span class="pre">SetVasp</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jamip.abtools.vasp.vdw.VDW" title="jamip.abtools.vasp.vdw.VDW"><code class="xref py py-class docutils literal notranslate"><span class="pre">VDW</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.accelerate">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">accelerate</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.accelerate" title="Link to this definition"></a></dt>
+<dd><p>Required parameters, Whether to accelerate during optimization calculations
+vasp.accelerate = {ediff: 1E-3}, {ediff: 1E-4}</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.base_tasks">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">base_tasks</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.base_tasks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.cutoff">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cutoff</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.cutoff" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.energy">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">energy</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.energy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.external_files">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">external_files</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.external_files" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.force">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">force</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.force" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.get_all_tasks">
+<span class="sig-name descname"><span class="pre">get_all_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.get_all_tasks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.get_ldau">
+<span class="sig-name descname"><span class="pre">get_ldau</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.get_ldau" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.get_magmom">
+<span class="sig-name descname"><span class="pre">get_magmom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.get_magmom" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.get_potcar_library">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_potcar_library</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.get_potcar_library" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.get_potential">
+<span class="sig-name descname"><span class="pre">get_potential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.get_potential" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.get_potential_files">
+<span class="sig-name descname"><span class="pre">get_potential_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.get_potential_files" title="Link to this definition"></a></dt>
+<dd><p>workflow function</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.get_vdW">
+<span class="sig-name descname"><span class="pre">get_vdW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.get_vdW" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.kpoints">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kpoints</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.kpoints" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.ldau">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ldau</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.ldau" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.links">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">links</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.links" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.magmom">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">magmom</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.magmom" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.nbands">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nbands</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.nbands" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.optcell">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">optcell</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.optcell" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.optics_nbands">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">optics_nbands</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.optics_nbands" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.overwrite">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">overwrite</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.overwrite" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.potential">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">potential</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.potential" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.program">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">program</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.program" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.soft">
+<span class="sig-name descname"><span class="pre">soft</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'vasp'</span></em><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.soft" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.suggest_potcar">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">suggest_potcar</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.suggest_potcar" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.tasks">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tasks</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.tasks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.setvasp.SetVasp.xc_func">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xc_func</span></span><a class="headerlink" href="#jamip.abtools.vasp.setvasp.SetVasp.xc_func" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.vasp.utils">
+<span id="jamip-abtools-vasp-utils-module"></span><h2>jamip.abtools.vasp.utils module<a class="headerlink" href="#module-jamip.abtools.vasp.utils" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.utils.KeyWords">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.vasp.utils.</span></span><span class="sig-name descname"><span class="pre">KeyWords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.utils.KeyWords" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.utils.LinearPhase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.vasp.utils.</span></span><span class="sig-name descname"><span class="pre">LinearPhase</span></span><a class="headerlink" href="#jamip.abtools.vasp.utils.LinearPhase" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.utils.LinearPhase.free_energy">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">free_energy</span></span><a class="headerlink" href="#jamip.abtools.vasp.utils.LinearPhase.free_energy" title="Link to this definition"></a></dt>
+<dd><p>weight;
+temperature: unit K;</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>omiga</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.utils.LinearPhase.k">
+<span class="sig-name descname"><span class="pre">k</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">86173332616.45</span></em><a class="headerlink" href="#jamip.abtools.vasp.utils.LinearPhase.k" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.utils.LinearPhase.weight">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">weight</span></span><a class="headerlink" href="#jamip.abtools.vasp.utils.LinearPhase.weight" title="Link to this definition"></a></dt>
+<dd><p>the multiplicity of the configuration</p>
+<p># note: this can be solve by other method?</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>w_i</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.utils.LinearPhase.zeta">
+<span class="sig-name descname"><span class="pre">zeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.utils.LinearPhase.zeta" title="Link to this definition"></a></dt>
+<dd><p>function: zeta_i
+F: array, free energy for each configuration;
+T: given temperture;</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.utils.dict_get">
+<span class="sig-prename descclassname"><span class="pre">jamip.abtools.vasp.utils.</span></span><span class="sig-name descname"><span class="pre">dict_get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.utils.dict_get" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-jamip.abtools.vasp.vaspflow">
+<span id="jamip-abtools-vasp-vaspflow-module"></span><h2>jamip.abtools.vasp.vaspflow module<a class="headerlink" href="#module-jamip.abtools.vasp.vaspflow" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.Task">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.vasp.vaspflow.</span></span><span class="sig-name descname"><span class="pre">Task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.Task" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserDict</span></code></p>
+<p>name:
+state:
+data:</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.Task.get_status">
+<span class="sig-name descname"><span class="pre">get_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.Task.get_status" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.Task.group_update">
+<span class="sig-name descname"><span class="pre">group_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.Task.group_update" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.Task.kpoints">
+<span class="sig-name descname"><span class="pre">kpoints</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.Task.kpoints" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.Task.structure">
+<span class="sig-name descname"><span class="pre">structure</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.Task.structure" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.Task.xc_func">
+<span class="sig-name descname"><span class="pre">xc_func</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.Task.xc_func" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.vasp.vaspflow.</span></span><span class="sig-name descname"><span class="pre">VaspFlow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envdir</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#jamip.abtools.vasp.vaspflow.WorkFlow" title="jamip.abtools.vasp.vaspflow.WorkFlow"><code class="xref py py-class docutils literal notranslate"><span class="pre">WorkFlow</span></code></a>, <a class="reference internal" href="#jamip.abtools.vasp.check.CheckStatus" title="jamip.abtools.vasp.check.CheckStatus"><code class="xref py py-class docutils literal notranslate"><span class="pre">CheckStatus</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.batch_calculator">
+<span class="sig-name descname"><span class="pre">batch_calculator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paths</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.batch_calculator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.calculator">
+<span class="sig-name descname"><span class="pre">calculator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.calculator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.converge_test">
+<span class="sig-name descname"><span class="pre">converge_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'converge'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.converge_test" title="Link to this definition"></a></dt>
+<dd><p>function to compare the calculation results of different parameters</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.electric_property">
+<span class="sig-name descname"><span class="pre">electric_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.electric_property" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.get_band_edge">
+<span class="sig-name descname"><span class="pre">get_band_edge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.get_band_edge" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.get_kpath">
+<span class="sig-name descname"><span class="pre">get_kpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">insert</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'suggest'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.get_kpath" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>kwargs:</dt><dd><p>task_id: get kpath type
+insert: kpath insert number
+prec: suggest or all, to decide calculate how many kpath
+structure: use input structure rather than incar structure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.get_magmom">
+<span class="sig-name descname"><span class="pre">get_magmom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.get_magmom" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.get_nbands">
+<span class="sig-name descname"><span class="pre">get_nbands</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.get_nbands" title="Link to this definition"></a></dt>
+<dd><p>job: optics,</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.get_npar">
+<span class="sig-name descname"><span class="pre">get_npar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.get_npar" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.get_stdin">
+<span class="sig-name descname"><span class="pre">get_stdin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.get_stdin" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.initialize_phonon">
+<span class="sig-name descname"><span class="pre">initialize_phonon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.initialize_phonon" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.initialize_tasks">
+<span class="sig-name descname"><span class="pre">initialize_tasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vasp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.initialize_tasks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.load_structure">
+<span class="sig-name descname"><span class="pre">load_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.load_structure" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.load_wavchg">
+<span class="sig-name descname"><span class="pre">load_wavchg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.load_wavchg" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.mechanic_property">
+<span class="sig-name descname"><span class="pre">mechanic_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.mechanic_property" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.molecular_dynamics">
+<span class="sig-name descname"><span class="pre">molecular_dynamics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'md'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.molecular_dynamics" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.mpirun">
+<span class="sig-name descname"><span class="pre">mpirun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.mpirun" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.optic_property">
+<span class="sig-name descname"><span class="pre">optic_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.optic_property" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.phonon_property">
+<span class="sig-name descname"><span class="pre">phonon_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.phonon_property" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.raw_structure">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">raw_structure</span></span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.raw_structure" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.relax_cell_ions">
+<span class="sig-name descname"><span class="pre">relax_cell_ions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relax'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.relax_cell_ions" title="Link to this definition"></a></dt>
+<dd><p>function to relax the cell shape, internal inons and volume.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.run" title="Link to this definition"></a></dt>
+<dd><p>Distributes tasks to specific execution functions</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.self_consistent_field">
+<span class="sig-name descname"><span class="pre">self_consistent_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'scf'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.self_consistent_field" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.set_input">
+<span class="sig-name descname"><span class="pre">set_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.set_input" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.std_structure">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">std_structure</span></span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.std_structure" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.VaspFlow.vasp_calculator">
+<span class="sig-name descname"><span class="pre">vasp_calculator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.VaspFlow.vasp_calculator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.WorkFlow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.vasp.vaspflow.</span></span><span class="sig-name descname"><span class="pre">WorkFlow</span></span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.WorkFlow" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.WorkFlow.Links">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.WorkFlow.Links" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserDict</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.WorkFlow.Links.nodes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nodes</span></span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.WorkFlow.Links.nodes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.WorkFlow.Links.reverse">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reverse</span></span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.WorkFlow.Links.reverse" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.WorkFlow.allstate">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">allstate</span></span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.WorkFlow.allstate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.WorkFlow.launch">
+<span class="sig-name descname"><span class="pre">launch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.WorkFlow.launch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.WorkFlow.refresh">
+<span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.WorkFlow.refresh" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.WorkFlow.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.WorkFlow.run" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspflow.WorkFlow.state">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#jamip.abtools.vasp.vaspflow.WorkFlow.state" title="Link to this definition"></a></dt>
+<dd><p>waiting
+&gt; C: completed
+&gt; H: hold
+&gt; E: error
+&gt; R: running
+&gt; S: sleep</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>&gt; W</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.vasp.vaspio">
+<span id="jamip-abtools-vasp-vaspio-module"></span><h2>jamip.abtools.vasp.vaspio module<a class="headerlink" href="#module-jamip.abtools.vasp.vaspio" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspio.VaspIO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.vasp.vaspio.</span></span><span class="sig-name descname"><span class="pre">VaspIO</span></span><a class="headerlink" href="#jamip.abtools.vasp.vaspio.VaspIO" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspio.VaspIO.write_files">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspio.VaspIO.write_files" title="Link to this definition"></a></dt>
+<dd><p>Prepare the vdw_kernel</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspio.VaspIO.write_incar">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_incar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">incar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspio.VaspIO.write_incar" title="Link to this definition"></a></dt>
+<dd><p>function: output the INCAR file with format: key = value.
+:param name: output file name, type: string
+:param parses: INCAR input parameters. type: dict
+:param args: exclude parameter.
+:param kwargs: external parameter.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspio.VaspIO.write_kpoints">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_kpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kpoints</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'KPOINTS'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspio.VaspIO.write_kpoints" title="Link to this definition"></a></dt>
+<dd><p>write out the KPOINTS files if kspacing parameter is None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kpoints</strong> – the object of the kmesh;</p></li>
+<li><p><strong>stdout</strong> – the object path;</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>kspacing values if exists.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspio.VaspIO.write_optcell">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_optcell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'OPTCELL'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspio.VaspIO.write_optcell" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspio.VaspIO.write_poscar">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_poscar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'POSCAR'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vasp5</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspio.VaspIO.write_poscar" title="Link to this definition"></a></dt>
+<dd><p>‘comment’,’constraints’,’lattice’,’elements’,’numbers’,’type’,’positions’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspio.VaspIO.write_potcar">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_potcar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'POTCAR'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspio.VaspIO.write_potcar" title="Link to this definition"></a></dt>
+<dd><p>Output the POTCAR in the given direction;</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>potcar:</strong> – a list include the element potentials;:</p></li>
+<li><p><strong>stdout:</strong> – the output direction of POTCAR;:</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vaspio.VaspIO.write_symmetry">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_symmetry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SYMMETRY'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symprec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vaspio.VaspIO.write_symmetry" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Output the SYMMETY files for calculate the carriers masses</dt><dd><p>by using Boltzmann method.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>structure:</strong> – Structure object contained the methods get_cell():</p></li>
+<li><p><strong>stdout:</strong> – the output direction of SYMMETY:</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.vasp.vdw">
+<span id="jamip-abtools-vasp-vdw-module"></span><h2>jamip.abtools.vasp.vdw module<a class="headerlink" href="#module-jamip.abtools.vasp.vdw" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vdw.VDW">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.vasp.vdw.</span></span><span class="sig-name descname"><span class="pre">VDW</span></span><a class="headerlink" href="#jamip.abtools.vasp.vdw.VDW" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="simple">
+<dt>Common Van der Waals functional implemented in VASP:</dt><dd><p>–D2:
+–optB86b:
+–optB88:
+–DF2:
+–optPBE:
+–revPBE:
+–revDF2:
+–rVV10:</p>
+</dd>
+<dt>args::</dt><dd><p>vdw:: a string to describe the vdw functional name;
+elements:: species only for D2 functional;</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A parameter dict.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vdw.VDW.get_vdW_params">
+<span class="sig-name descname"><span class="pre">get_vdW_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.vasp.vdw.VDW.get_vdW_params" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vdw.VDW.van_der_Waals">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">van_der_Waals</span></span><a class="headerlink" href="#jamip.abtools.vasp.vdw.VDW.van_der_Waals" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.vasp.vdw.VDW.vdw">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vdw</span></span><a class="headerlink" href="#jamip.abtools.vasp.vdw.VDW.vdw" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.vasp">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jamip.abtools.vasp" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

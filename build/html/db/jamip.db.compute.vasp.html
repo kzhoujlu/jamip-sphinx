@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamip.db.compute.vasp package &mdash; JAMIP 1.3 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c55cb9cb"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jamip.db.compute.vasp package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#jamip-db-compute-vasp-calculateexception-module">jamip.db.compute.vasp.calculateException module</a></li>
+<li><a class="reference internal" href="#jamip-db-compute-vasp-calculatetask-module">jamip.db.compute.vasp.calculateTask module</a></li>
+<li><a class="reference internal" href="#jamip-db-compute-vasp-check4vasp-module">jamip.db.compute.vasp.check4vasp module</a></li>
+<li><a class="reference internal" href="#module-jamip.db.compute.vasp.incar">jamip.db.compute.vasp.incar module</a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.incar.INCAR"><code class="docutils literal notranslate"><span class="pre">INCAR</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.incar.INCAR.add_parameters"><code class="docutils literal notranslate"><span class="pre">INCAR.add_parameters()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.incar.INCAR.output"><code class="docutils literal notranslate"><span class="pre">INCAR.output()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.incar.INCAR.remove_parameters"><code class="docutils literal notranslate"><span class="pre">INCAR.remove_parameters()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.incar.INCAR.set_parameters"><code class="docutils literal notranslate"><span class="pre">INCAR.set_parameters()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.db.compute.vasp.kpoints">jamip.db.compute.vasp.kpoints module</a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.kpoints.KPOINTS"><code class="docutils literal notranslate"><span class="pre">KPOINTS</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.kpoints.KPOINTS.output"><code class="docutils literal notranslate"><span class="pre">KPOINTS.output()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.db.compute.vasp.optcell">jamip.db.compute.vasp.optcell module</a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.optcell.OPTCELL"><code class="docutils literal notranslate"><span class="pre">OPTCELL</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.optcell.OPTCELL.output"><code class="docutils literal notranslate"><span class="pre">OPTCELL.output()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.optcell.OPTCELL.set_optcell"><code class="docutils literal notranslate"><span class="pre">OPTCELL.set_optcell()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.db.compute.vasp.poscar">jamip.db.compute.vasp.poscar module</a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.poscar.POSCAR"><code class="docutils literal notranslate"><span class="pre">POSCAR</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.poscar.POSCAR.output"><code class="docutils literal notranslate"><span class="pre">POSCAR.output()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.poscar.POSCAR.set_structure"><code class="docutils literal notranslate"><span class="pre">POSCAR.set_structure()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip-db-compute-vasp-potcar-module">jamip.db.compute.vasp.potcar module</a></li>
+<li><a class="reference internal" href="#module-jamip.db.compute.vasp.submitScript">jamip.db.compute.vasp.submitScript module</a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.submitScript.SubmitScript"><code class="docutils literal notranslate"><span class="pre">SubmitScript</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.submitScript.SubmitScript.output"><code class="docutils literal notranslate"><span class="pre">SubmitScript.output()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.submitScript.SubmitScript.set_submitScript"><code class="docutils literal notranslate"><span class="pre">SubmitScript.set_submitScript()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.db.compute.vasp.taskListener">jamip.db.compute.vasp.taskListener module</a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.taskListener.TaskListener"><code class="docutils literal notranslate"><span class="pre">TaskListener</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.taskListener.TaskListener.notify"><code class="docutils literal notranslate"><span class="pre">TaskListener.notify()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.db.compute.vasp.taskListener.TaskListener.tasks"><code class="docutils literal notranslate"><span class="pre">TaskListener.tasks</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.db.compute.vasp">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">jamip.db.compute.vasp package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/db/jamip.db.compute.vasp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jamip-db-compute-vasp-package">
+<h1>jamip.db.compute.vasp package<a class="headerlink" href="#jamip-db-compute-vasp-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="jamip.db.compute.vasp.advance.html">jamip.db.compute.vasp.advance package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.advance.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.advance.html#jamip-db-compute-vasp-advance-phonontask-module">jamip.db.compute.vasp.advance.phononTask module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.advance.html#module-jamip.db.compute.vasp.advance">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jamip.db.compute.vasp.basic.html">jamip.db.compute.vasp.basic package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jamip.db.compute.vasp.basic.html#module-jamip.db.compute.vasp.basic">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="jamip-db-compute-vasp-calculateexception-module">
+<h2>jamip.db.compute.vasp.calculateException module<a class="headerlink" href="#jamip-db-compute-vasp-calculateexception-module" title="Link to this heading"></a></h2>
+</section>
+<section id="jamip-db-compute-vasp-calculatetask-module">
+<h2>jamip.db.compute.vasp.calculateTask module<a class="headerlink" href="#jamip-db-compute-vasp-calculatetask-module" title="Link to this heading"></a></h2>
+</section>
+<section id="jamip-db-compute-vasp-check4vasp-module">
+<h2>jamip.db.compute.vasp.check4vasp module<a class="headerlink" href="#jamip-db-compute-vasp-check4vasp-module" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.db.compute.vasp.incar">
+<span id="jamip-db-compute-vasp-incar-module"></span><h2>jamip.db.compute.vasp.incar module<a class="headerlink" href="#module-jamip.db.compute.vasp.incar" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.incar.INCAR">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.compute.vasp.incar.</span></span><span class="sig-name descname"><span class="pre">INCAR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'INCAR'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.incar.INCAR" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.incar.INCAR.add_parameters">
+<span class="sig-name descname"><span class="pre">add_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.incar.INCAR.add_parameters" title="Link to this definition"></a></dt>
+<dd><p>add parameters of INCAR.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parameters</strong> – dictionary array. i.e. {‘EDIFF’:1e-6, ‘EDIFFG’:-1e-4, …}</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>INCAR’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.incar.INCAR.output">
+<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.incar.INCAR.output" title="Link to this definition"></a></dt>
+<dd><p>output INCAR file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>INCAR’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.incar.INCAR.remove_parameters">
+<span class="sig-name descname"><span class="pre">remove_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.incar.INCAR.remove_parameters" title="Link to this definition"></a></dt>
+<dd><p>remvoe parameters from INCAR.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parameters</strong> – list array. i.e. [‘EDIFF’, ‘EDIFFG’, …]</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>INCAR’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.incar.INCAR.set_parameters">
+<span class="sig-name descname"><span class="pre">set_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.incar.INCAR.set_parameters" title="Link to this definition"></a></dt>
+<dd><p>set parameters of INCAR. Note that it will clear all old parameters firstly before set parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parameters</strong> – dictionary array. i.e. {‘EDIFF’:1e-6, ‘EDIFFG’:-1e-4, …}</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>INCAR’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.db.compute.vasp.kpoints">
+<span id="jamip-db-compute-vasp-kpoints-module"></span><h2>jamip.db.compute.vasp.kpoints module<a class="headerlink" href="#module-jamip.db.compute.vasp.kpoints" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.kpoints.KPOINTS">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.compute.vasp.kpoints.</span></span><span class="sig-name descname"><span class="pre">KPOINTS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'KPOINTS'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.kpoints.KPOINTS" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.kpoints.KPOINTS.output">
+<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.kpoints.KPOINTS.output" title="Link to this definition"></a></dt>
+<dd><p>output POTCAR file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>KPOINTS’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.db.compute.vasp.optcell">
+<span id="jamip-db-compute-vasp-optcell-module"></span><h2>jamip.db.compute.vasp.optcell module<a class="headerlink" href="#module-jamip.db.compute.vasp.optcell" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.optcell.OPTCELL">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.compute.vasp.optcell.</span></span><span class="sig-name descname"><span class="pre">OPTCELL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'OPTCELL'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.optcell.OPTCELL" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.optcell.OPTCELL.output">
+<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.optcell.OPTCELL.output" title="Link to this definition"></a></dt>
+<dd><p>output POTCAR file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>INCAR’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.optcell.OPTCELL.set_optcell">
+<span class="sig-name descname"><span class="pre">set_optcell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optcell</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.optcell.OPTCELL.set_optcell" title="Link to this definition"></a></dt>
+<dd><p>set optcell</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>optcell</strong> – fixed information. i.e. ‘110’ -&gt; fix z; ‘011’ -&gt; fix x</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>OPTCELL’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.db.compute.vasp.poscar">
+<span id="jamip-db-compute-vasp-poscar-module"></span><h2>jamip.db.compute.vasp.poscar module<a class="headerlink" href="#module-jamip.db.compute.vasp.poscar" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.poscar.POSCAR">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.compute.vasp.poscar.</span></span><span class="sig-name descname"><span class="pre">POSCAR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'POSCAR'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.poscar.POSCAR" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.poscar.POSCAR.output">
+<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.poscar.POSCAR.output" title="Link to this definition"></a></dt>
+<dd><p>output POSCAR file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>POSCAR’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.poscar.POSCAR.set_structure">
+<span class="sig-name descname"><span class="pre">set_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.poscar.POSCAR.set_structure" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>structure</strong> – structure’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="jamip-db-compute-vasp-potcar-module">
+<h2>jamip.db.compute.vasp.potcar module<a class="headerlink" href="#jamip-db-compute-vasp-potcar-module" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.db.compute.vasp.submitScript">
+<span id="jamip-db-compute-vasp-submitscript-module"></span><h2>jamip.db.compute.vasp.submitScript module<a class="headerlink" href="#module-jamip.db.compute.vasp.submitScript" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.submitScript.SubmitScript">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.compute.vasp.submitScript.</span></span><span class="sig-name descname"><span class="pre">SubmitScript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'submit.sh'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.submitScript.SubmitScript" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.submitScript.SubmitScript.output">
+<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.submitScript.SubmitScript.output" title="Link to this definition"></a></dt>
+<dd><p>output Submit file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Submit’s object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.submitScript.SubmitScript.set_submitScript">
+<span class="sig-name descname"><span class="pre">set_submitScript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.submitScript.SubmitScript.set_submitScript" title="Link to this definition"></a></dt>
+<dd><p>set parameters of submit script.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parameters</strong></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.db.compute.vasp.taskListener">
+<span id="jamip-db-compute-vasp-tasklistener-module"></span><h2>jamip.db.compute.vasp.taskListener module<a class="headerlink" href="#module-jamip.db.compute.vasp.taskListener" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.taskListener.TaskListener">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.db.compute.vasp.taskListener.</span></span><span class="sig-name descname"><span class="pre">TaskListener</span></span><a class="headerlink" href="#jamip.db.compute.vasp.taskListener.TaskListener" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.taskListener.TaskListener.notify">
+<span class="sig-name descname"><span class="pre">notify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.db.compute.vasp.taskListener.TaskListener.notify" title="Link to this definition"></a></dt>
+<dd><p>handle the notification information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>task</strong> – task’s object.</p></li>
+<li><p><strong>event</strong> – notification information.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.db.compute.vasp.taskListener.TaskListener.tasks">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tasks</span></span><a class="headerlink" href="#jamip.db.compute.vasp.taskListener.TaskListener.tasks" title="Link to this definition"></a></dt>
+<dd><p>Return:
+tasks</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.db.compute.vasp">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jamip.db.compute.vasp" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

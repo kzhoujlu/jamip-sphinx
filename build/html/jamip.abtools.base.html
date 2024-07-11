@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jamip.abtools.base package &mdash; JAMIP 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            JAMIP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jamip.abtools.base package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-jamip.abtools.base.check">jamip.abtools.base.check module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.base.check.BaseStatus"><code class="docutils literal notranslate"><span class="pre">BaseStatus</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.base.check.BaseStatus.clear_status"><code class="docutils literal notranslate"><span class="pre">BaseStatus.clear_status()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.check.BaseStatus.error_status"><code class="docutils literal notranslate"><span class="pre">BaseStatus.error_status()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.check.BaseStatus.right_status"><code class="docutils literal notranslate"><span class="pre">BaseStatus.right_status()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.check.BaseStatus.write_status"><code class="docutils literal notranslate"><span class="pre">BaseStatus.write_status()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.base.flow">jamip.abtools.base.flow module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.base.flow.WorkFlow"><code class="docutils literal notranslate"><span class="pre">WorkFlow</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.base.flow.WorkFlow.Links"><code class="docutils literal notranslate"><span class="pre">WorkFlow.Links</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.base.flow.WorkFlow.Links.nodes"><code class="docutils literal notranslate"><span class="pre">WorkFlow.Links.nodes</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.flow.WorkFlow.Links.reverse"><code class="docutils literal notranslate"><span class="pre">WorkFlow.Links.reverse</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.abtools.base.flow.WorkFlow.allstate"><code class="docutils literal notranslate"><span class="pre">WorkFlow.allstate</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.flow.WorkFlow.info"><code class="docutils literal notranslate"><span class="pre">WorkFlow.info()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.flow.WorkFlow.launch"><code class="docutils literal notranslate"><span class="pre">WorkFlow.launch()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.flow.WorkFlow.minfo"><code class="docutils literal notranslate"><span class="pre">WorkFlow.minfo()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.flow.WorkFlow.refresh"><code class="docutils literal notranslate"><span class="pre">WorkFlow.refresh()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.flow.WorkFlow.run"><code class="docutils literal notranslate"><span class="pre">WorkFlow.run()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.flow.WorkFlow.sinfo"><code class="docutils literal notranslate"><span class="pre">WorkFlow.sinfo()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.flow.WorkFlow.state"><code class="docutils literal notranslate"><span class="pre">WorkFlow.state</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.base.kpoints">jamip.abtools.base.kpoints module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.BandPath"><code class="docutils literal notranslate"><span class="pre">BandPath</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.BandPath.from_symbols"><code class="docutils literal notranslate"><span class="pre">BandPath.from_symbols()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.BandPath.get_insert"><code class="docutils literal notranslate"><span class="pre">BandPath.get_insert()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.BandPath.masks"><code class="docutils literal notranslate"><span class="pre">BandPath.masks</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.BandPath.model"><code class="docutils literal notranslate"><span class="pre">BandPath.model</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.BandPath.num_sites"><code class="docutils literal notranslate"><span class="pre">BandPath.num_sites</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.BandPath.numbers"><code class="docutils literal notranslate"><span class="pre">BandPath.numbers</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.BandPath.qeformat"><code class="docutils literal notranslate"><span class="pre">BandPath.qeformat</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.BandPath.set_insert"><code class="docutils literal notranslate"><span class="pre">BandPath.set_insert()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.BandPath.set_mesh"><code class="docutils literal notranslate"><span class="pre">BandPath.set_mesh()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.BandPath.sites"><code class="docutils literal notranslate"><span class="pre">BandPath.sites</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.BandPath.split"><code class="docutils literal notranslate"><span class="pre">BandPath.split()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.KPT"><code class="docutils literal notranslate"><span class="pre">KPT</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.KPT.position"><code class="docutils literal notranslate"><span class="pre">KPT.position</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.KPT.symbol"><code class="docutils literal notranslate"><span class="pre">KPT.symbol</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.KPT.x"><code class="docutils literal notranslate"><span class="pre">KPT.x</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.KPT.y"><code class="docutils literal notranslate"><span class="pre">KPT.y</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.KPT.z"><code class="docutils literal notranslate"><span class="pre">KPT.z</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.Kpath"><code class="docutils literal notranslate"><span class="pre">Kpath</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.Kpoints"><code class="docutils literal notranslate"><span class="pre">Kpoints</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.Kpoints.comment"><code class="docutils literal notranslate"><span class="pre">Kpoints.comment</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.Kpoints.get_gamma_kpoints"><code class="docutils literal notranslate"><span class="pre">Kpoints.get_gamma_kpoints()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.Kpoints.get_reciprocal_kpoints"><code class="docutils literal notranslate"><span class="pre">Kpoints.get_reciprocal_kpoints()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.Kpoints.model"><code class="docutils literal notranslate"><span class="pre">Kpoints.model</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.kpoints.Kpoints.value"><code class="docutils literal notranslate"><span class="pre">Kpoints.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip-abtools-base-kpoints-copy-module">jamip.abtools.base.kpoints copy module</a></li>
+<li><a class="reference internal" href="#module-jamip.abtools.base.tasks">jamip.abtools.base.tasks module</a><ul>
+<li><a class="reference internal" href="#jamip.abtools.base.tasks.Incar"><code class="docutils literal notranslate"><span class="pre">Incar</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.base.tasks.Incar.downdate"><code class="docutils literal notranslate"><span class="pre">Incar.downdate()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.tasks.Incar.group"><code class="docutils literal notranslate"><span class="pre">Incar.group</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.tasks.Incar.name"><code class="docutils literal notranslate"><span class="pre">Incar.name</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.tasks.Incar.path"><code class="docutils literal notranslate"><span class="pre">Incar.path</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.tasks.Incar.update_params"><code class="docutils literal notranslate"><span class="pre">Incar.update_params()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jamip.abtools.base.tasks.Task"><code class="docutils literal notranslate"><span class="pre">Task</span></code></a><ul>
+<li><a class="reference internal" href="#jamip.abtools.base.tasks.Task.builder"><code class="docutils literal notranslate"><span class="pre">Task.builder</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.tasks.Task.finish"><code class="docutils literal notranslate"><span class="pre">Task.finish</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.tasks.Task.set_energy"><code class="docutils literal notranslate"><span class="pre">Task.set_energy()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.tasks.Task.set_force"><code class="docutils literal notranslate"><span class="pre">Task.set_force()</span></code></a></li>
+<li><a class="reference internal" href="#jamip.abtools.base.tasks.Task.soft"><code class="docutils literal notranslate"><span class="pre">Task.soft</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jamip.abtools.base">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">JAMIP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">jamip.abtools.base package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/jamip.abtools.base.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jamip-abtools-base-package">
+<h1>jamip.abtools.base package<a class="headerlink" href="#jamip-abtools-base-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.abtools.base.check">
+<span id="jamip-abtools-base-check-module"></span><h2>jamip.abtools.base.check module<a class="headerlink" href="#module-jamip.abtools.base.check" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.base.check.BaseStatus">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.base.check.</span></span><span class="sig-name descname"><span class="pre">BaseStatus</span></span><a class="headerlink" href="#jamip.abtools.base.check.BaseStatus" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>class of task status</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.check.BaseStatus.clear_status">
+<span class="sig-name descname"><span class="pre">clear_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tasks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.check.BaseStatus.clear_status" title="Link to this definition"></a></dt>
+<dd><p>clear tasks from Status</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.check.BaseStatus.error_status">
+<span class="sig-name descname"><span class="pre">error_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.check.BaseStatus.error_status" title="Link to this definition"></a></dt>
+<dd><p>write error task to status</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.check.BaseStatus.right_status">
+<span class="sig-name descname"><span class="pre">right_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tasks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.check.BaseStatus.right_status" title="Link to this definition"></a></dt>
+<dd><p>update tasks to right</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.check.BaseStatus.write_status">
+<span class="sig-name descname"><span class="pre">write_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.check.BaseStatus.write_status" title="Link to this definition"></a></dt>
+<dd><p>base status update function</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.base.flow">
+<span id="jamip-abtools-base-flow-module"></span><h2>jamip.abtools.base.flow module<a class="headerlink" href="#module-jamip.abtools.base.flow" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.base.flow.WorkFlow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.base.flow.</span></span><span class="sig-name descname"><span class="pre">WorkFlow</span></span><a class="headerlink" href="#jamip.abtools.base.flow.WorkFlow" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.base.flow.WorkFlow.Links">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.flow.WorkFlow.Links" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserDict</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.flow.WorkFlow.Links.nodes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nodes</span></span><a class="headerlink" href="#jamip.abtools.base.flow.WorkFlow.Links.nodes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.flow.WorkFlow.Links.reverse">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reverse</span></span><a class="headerlink" href="#jamip.abtools.base.flow.WorkFlow.Links.reverse" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.flow.WorkFlow.allstate">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">allstate</span></span><a class="headerlink" href="#jamip.abtools.base.flow.WorkFlow.allstate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.flow.WorkFlow.info">
+<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.flow.WorkFlow.info" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.flow.WorkFlow.launch">
+<span class="sig-name descname"><span class="pre">launch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.flow.WorkFlow.launch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.flow.WorkFlow.minfo">
+<span class="sig-name descname"><span class="pre">minfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.flow.WorkFlow.minfo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.flow.WorkFlow.refresh">
+<span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.flow.WorkFlow.refresh" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.flow.WorkFlow.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.flow.WorkFlow.run" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.flow.WorkFlow.sinfo">
+<span class="sig-name descname"><span class="pre">sinfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.flow.WorkFlow.sinfo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.flow.WorkFlow.state">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#jamip.abtools.base.flow.WorkFlow.state" title="Link to this definition"></a></dt>
+<dd><p>waiting
+&gt; C: completed
+&gt; H: hold
+&gt; E: error
+&gt; R: running</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>&gt; W</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.base.kpoints">
+<span id="jamip-abtools-base-kpoints-module"></span><h2>jamip.abtools.base.kpoints module<a class="headerlink" href="#module-jamip.abtools.base.kpoints" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.BandPath">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.base.kpoints.</span></span><span class="sig-name descname"><span class="pre">BandPath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numbers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.kpoints.BandPath" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.BandPath.from_symbols">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_symbols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bandpath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpoints</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numbers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.kpoints.BandPath.from_symbols" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.BandPath.get_insert">
+<span class="sig-name descname"><span class="pre">get_insert</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.kpoints.BandPath.get_insert" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.BandPath.masks">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">masks</span></span><a class="headerlink" href="#jamip.abtools.base.kpoints.BandPath.masks" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.BandPath.model">
+<span class="sig-name descname"><span class="pre">model</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Line</span> <span class="pre">Model'</span></em><a class="headerlink" href="#jamip.abtools.base.kpoints.BandPath.model" title="Link to this definition"></a></dt>
+<dd><p>class of hym Kpath</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.BandPath.num_sites">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_sites</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#jamip.abtools.base.kpoints.BandPath.num_sites" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.BandPath.numbers">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numbers</span></span><a class="headerlink" href="#jamip.abtools.base.kpoints.BandPath.numbers" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.BandPath.qeformat">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">qeformat</span></span><a class="headerlink" href="#jamip.abtools.base.kpoints.BandPath.qeformat" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.BandPath.set_insert">
+<span class="sig-name descname"><span class="pre">set_insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.kpoints.BandPath.set_insert" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.BandPath.set_mesh">
+<span class="sig-name descname"><span class="pre">set_mesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lattice</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.kpoints.BandPath.set_mesh" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.BandPath.sites">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sites</span></span><a class="headerlink" href="#jamip.abtools.base.kpoints.BandPath.sites" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.BandPath.split">
+<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.kpoints.BandPath.split" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.KPT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.base.kpoints.</span></span><span class="sig-name descname"><span class="pre">KPT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.kpoints.KPT" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.KPT.position">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">position</span></span><a class="headerlink" href="#jamip.abtools.base.kpoints.KPT.position" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.KPT.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#jamip.abtools.base.kpoints.KPT.symbol" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.KPT.x">
+<span class="sig-name descname"><span class="pre">x</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#jamip.abtools.base.kpoints.KPT.x" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.KPT.y">
+<span class="sig-name descname"><span class="pre">y</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#jamip.abtools.base.kpoints.KPT.y" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.KPT.z">
+<span class="sig-name descname"><span class="pre">z</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#jamip.abtools.base.kpoints.KPT.z" title="Link to this definition"></a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.Kpath">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.base.kpoints.</span></span><span class="sig-name descname"><span class="pre">Kpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.kpoints.Kpath" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.Kpoints">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.base.kpoints.</span></span><span class="sig-name descname"><span class="pre">Kpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.kpoints.Kpoints" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Aim to produce the kmesh</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.Kpoints.comment">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">comment</span></span><a class="headerlink" href="#jamip.abtools.base.kpoints.Kpoints.comment" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.Kpoints.get_gamma_kpoints">
+<span class="sig-name descname"><span class="pre">get_gamma_kpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.kpoints.Kpoints.get_gamma_kpoints" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.Kpoints.get_reciprocal_kpoints">
+<span class="sig-name descname"><span class="pre">get_reciprocal_kpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.kpoints.Kpoints.get_reciprocal_kpoints" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.Kpoints.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#jamip.abtools.base.kpoints.Kpoints.model" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.kpoints.Kpoints.value">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#jamip.abtools.base.kpoints.Kpoints.value" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="jamip-abtools-base-kpoints-copy-module">
+<h2>jamip.abtools.base.kpoints copy module<a class="headerlink" href="#jamip-abtools-base-kpoints-copy-module" title="Link to this heading"></a></h2>
+</section>
+<section id="module-jamip.abtools.base.tasks">
+<span id="jamip-abtools-base-tasks-module"></span><h2>jamip.abtools.base.tasks module<a class="headerlink" href="#module-jamip.abtools.base.tasks" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.base.tasks.Incar">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.base.tasks.</span></span><span class="sig-name descname"><span class="pre">Incar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finish</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.tasks.Incar" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserDict</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.tasks.Incar.downdate">
+<span class="sig-name descname"><span class="pre">downdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.tasks.Incar.downdate" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.tasks.Incar.group">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">group</span></span><a class="headerlink" href="#jamip.abtools.base.tasks.Incar.group" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.tasks.Incar.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#jamip.abtools.base.tasks.Incar.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.tasks.Incar.path">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">path</span></span><a class="headerlink" href="#jamip.abtools.base.tasks.Incar.path" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.tasks.Incar.update_params">
+<span class="sig-name descname"><span class="pre">update_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.tasks.Incar.update_params" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jamip.abtools.base.tasks.Task">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jamip.abtools.base.tasks.</span></span><span class="sig-name descname"><span class="pre">Task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soft</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.tasks.Task" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserDict</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.tasks.Task.builder">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">builder</span></span><a class="headerlink" href="#jamip.abtools.base.tasks.Task.builder" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.tasks.Task.finish">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">finish</span></span><a class="headerlink" href="#jamip.abtools.base.tasks.Task.finish" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.tasks.Task.set_energy">
+<span class="sig-name descname"><span class="pre">set_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.tasks.Task.set_energy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jamip.abtools.base.tasks.Task.set_force">
+<span class="sig-name descname"><span class="pre">set_force</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">force</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jamip.abtools.base.tasks.Task.set_force" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jamip.abtools.base.tasks.Task.soft">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">soft</span></span><a class="headerlink" href="#jamip.abtools.base.tasks.Task.soft" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jamip.abtools.base">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jamip.abtools.base" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Kun Zhou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
